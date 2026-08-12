@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario de Cashflows ONs - Monitor Interactivo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .month-card { position: relative; z-index: 1; overflow: visible !important; min-height: 180px; }
+    .month-card:hover { z-index: 100 !important; }
+    .tooltip-container { position: relative; display: inline-block; }
+    .tooltip-container:hover { z-index: 9999 !important; }
+    .tooltip-popup {
+      display: none; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);
+      z-index: 99999; width: 210px; pointer-events: none;
+      box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.9), 0 10px 12px -5px rgba(0, 0, 0, 0.9);
+    }
+    .tooltip-container:hover .tooltip-popup { display: block; }
+    .tooltip-popup.popup-below { bottom: auto; top: 120%; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
+
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-emerald-500/10 p-2.5 rounded-xl border border-emerald-500/20 text-emerald-400">
+          <i class="fa-solid fa-chart-line text-xl"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-white tracking-wide">Monitor de Cashflows ONs</h1>
+          <p class="text-xs text-slate-400">Obligaciones Negociables en USD (Ley ARG & Ley NY)</p>
+        </div>
+      </div>
+
+      <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-sm">
+        <button id="tabBtnList" onclick="switchTab('list')" class="px-4 py-1.5 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">
+          <i class="fa-solid fa-list mr-1.5"></i> Listado & Filtros
+        </button>
+        <button id="tabBtnCalendar" onclick="switchTab('calendar')" class="px-4 py-1.5 rounded-lg font-medium transition-all text-slate-400 hover:text-white">
+          <i class="fa-solid fa-calendar-days mr-1.5"></i> Armador de Cartera
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+
+    <!-- PESTAÑA 1: LISTADO -->
+    <div id="tabList" class="space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4">
+          
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Buscar Ticker</label>
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-500 text-sm"></i>
+              <input type="text" id="filterTicker" placeholder="Ej: YCA6O..." 
+                     class="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors uppercase">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Jurisdicción</label>
+            <select id="filterLey" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+              <option value="ALL">Todas las Leyes</option>
+              <option value="Ley ARG">Ley Argentina</option>
+              <option value="Ley NY">Ley Nueva York</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Tipo de Activo</label>
+            <select id="filterTipo" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+              <option value="ALL">Todos los Tipos</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Mes de Pago</label>
+            <select id="filterMonth" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+              <option value="ALL">Todos los meses</option>
+              <option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option>
+              <option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option>
+              <option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option>
+              <option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
+            </select>
+          </div>
+
+          <div class="sm:col-span-2 md:col-span-2">
+            <label class="block text-xs font-semibold text-emerald-400 mb-1.5 uppercase">Simulador: VN Poseído</label>
+            <div class="relative">
+              <i class="fa-solid fa-dollar-sign absolute left-3 top-3 text-emerald-500 text-sm"></i>
+              <input type="number" id="inputVN" value="100" step="100" min="1" 
+                     class="w-full bg-slate-950 border border-emerald-500/40 rounded-xl pl-8 pr-3 py-2 text-sm font-semibold text-emerald-300 focus:outline-none focus:border-emerald-400 transition-colors">
+            </div>
+            <span class="text-[10px] text-slate-500 mt-1 block">* Por defecto calcula sobre 100 VN.</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+        <div class="p-4 border-b border-slate-800 flex justify-between items-center">
+          <h2 class="font-bold text-slate-200 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-emerald-400"></i> Cronograma Filtrado
+          </h2>
+          <span id="recordsCount" class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">Cargando datos...</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-950 text-xs uppercase text-slate-400 border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-4">Fecha Pago</th>
+                <th class="py-3 px-4">Ticker</th>
+                <th class="py-3 px-4">Ley</th>
+                <th class="py-3 px-4">Paridad</th>
+                <th class="py-3 px-4 text-right">Cupón (Interés)</th>
+                <th class="py-3 px-4 text-right">Amortización</th>
+                <th class="py-3 px-4 text-right">Flujo Total</th>
+                <th class="py-3 px-4 text-right">VN Residual Previo</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody" class="divide-y divide-slate-800/60 font-mono text-xs">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PESTAÑA 2: CALENDARIO -->
+    <div id="tabCalendar" class="space-y-6 hidden">
+      
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-3">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-sky-400"></i> Armador de Flujo & Filtros de Métricas
+            </h2>
+            <p class="text-xs text-slate-400 mt-0.5">Pasa el cursor sobre cada activo para ver sus datos completos y utiliza los filtros por Empresa, Rango o Años.</p>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-right">
+              <span class="text-[10px] text-slate-400 block uppercase font-semibold">ONs Seleccionadas</span>
+              <span id="selectedCount" class="text-base font-bold text-sky-400">0</span>
+            </div>
+            <button onclick="clearSelection()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors">
+              <i class="fa-solid fa-rotate-left mr-1"></i> Limpiar
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5 relative">
+            <label class="block text-[11px] font-semibold text-slate-300 uppercase">Empresas / Emisores</label>
+            <div class="relative">
+              <button onclick="toggleCompanyDropdown()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 flex justify-between items-center focus:outline-none">
+                <span id="companyDropdownLabel">Todas las empresas seleccionadas</span>
+                <i class="fa-solid fa-chevron-down text-slate-500 text-[10px]"></i>
+              </button>
+
+              <div id="companyDropdownMenu" class="hidden absolute top-full left-0 right-0 mt-1 bg-slate-900 border border-slate-700 rounded-xl p-3 z-50 max-h-60 overflow-y-auto shadow-2xl space-y-2">
+                <div class="flex justify-between items-center border-b border-slate-800 pb-1.5 mb-1.5">
+                  <label class="text-xs font-bold text-emerald-400 flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="selectAllCompanies" checked onchange="toggleSelectAllCompanies(this.checked)" class="rounded accent-emerald-500">
+                    <span>Seleccionar Todas</span>
+                  </label>
+                  <span id="selectedCompaniesCount" class="text-[10px] text-slate-400">(0/0)</span>
+                </div>
+                <div id="checkboxCompanyList" class="space-y-1"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
+            <label class="block text-[11px] font-semibold text-slate-300 uppercase">Cupón Vigente (% p.a.)</label>
+            <div class="flex items-center gap-2">
+              <input type="number" id="filterCuponMin" placeholder="Mín %" step="0.5" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none">
+              <span class="text-slate-500 text-xs">-</span>
+              <input type="number" id="filterCuponMax" placeholder="Máx %" step="0.5" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none">
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
+            <label class="block text-[11px] font-semibold text-slate-300 uppercase">Años Vencimiento</label>
+            <select id="filterVencYears" multiple class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none h-16"></select>
+          </div>
+
+          <div class="flex items-end">
+            <button onclick="resetCalendarFilters()" class="w-full bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 py-2 rounded-xl border border-slate-700 transition-colors">
+              <i class="fa-solid fa-filter-circle-xmark mr-1"></i> Resetear Filtros
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matriz de 12 Meses -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="calendarMatrix"></div>
+
+      <!-- Nominales e Insumos -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-6">
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+            <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-sky-400"></i> Asignación de Nominales (VN) por Activo
+            </h3>
+          </div>
+          <div id="nominalesInputsContainer" class="flex flex-wrap gap-3 pt-1"></div>
+        </div>
+
+        <div class="space-y-4 pt-2 border-t border-slate-800">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-3">
+            <h3 class="font-bold text-slate-200 flex items-center gap-2">
+              <i class="fa-solid fa-money-bill-wave text-emerald-400"></i> Flujo Proyectado Consolidado
+            </h3>
+            
+            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+              <!-- Pestañas de Años -->
+              <div id="yearTabsContainer" class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs overflow-x-auto">
+              </div>
+              
+              <!-- Toggle Día/Mes -->
+              <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
+                <button id="chartGroupMonth" onclick="setChartGrouping('month')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Por Mes</button>
+                <button id="chartGroupDay" onclick="setChartGrouping('day')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Por Día</button>
+              </div>
+              
+              <span id="portfolioTotalFlow" class="text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg shrink-0">Total: USD 0.00</span>
+            </div>
+          </div>
+
+          <div class="h-64 relative"><canvas id="chartPortfolio"></canvas></div>
+
+          <div class="overflow-x-auto pt-2">
+            <table class="w-full text-left text-sm text-slate-300">
+              <thead class="bg-slate-950 text-xs uppercase text-slate-400 border-b border-slate-800">
+                <tr>
+                  <th class="py-2.5 px-3">Fecha Pago</th>
+                  <th class="py-2.5 px-3">Ticker</th>
+                  <th class="py-2.5 px-3 text-right">Nominales (VN)</th>
+                  <th class="py-2.5 px-3 text-right">Interés Estimado</th>
+                  <th class="py-2.5 px-3 text-right">Amortización Estimada</th>
+                  <th class="py-2.5 px-3 text-right">Flujo Total Estimado</th>
+                </tr>
+              </thead>
+              <tbody id="portfolioTableBody" class="divide-y divide-slate-800/60 font-mono text-xs"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="flex justify-end pt-4 border-t border-slate-800">
+          <button onclick="downloadPDFReport()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-lg transition-all">
+            <i class="fa-solid fa-file-pdf text-base"></i> Descargar Informe PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let allData = [];
+    let universoData = {};
+
+    let selectedNominales = {}; 
+    let selectedCompaniesSet = new Set();
+    let portfolioChart = null;
+    let currentChartGroupMode = 'month';
+    let selectedChartYear = 'ALL';
+
+    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+    async function loadData() {
+      try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Error al leer el archivo data.json');
+        
+        const data = await response.json();
+        universoData = data.universo || {};
+
+        const now = new Date();
+        const yyyy = now.getFullYear();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        const localTodayISO = `${yyyy}-${mm}-${dd}`;
+
+        allData = (data.cashflows || []).filter(cf => {
+          const fechaFlujo = cf.Fecha_ISO || '9999-99-99';
+          return fechaFlujo >= localTodayISO;
+        });
+
+        initAdvancedFilters();
+        renderTable();
+      } catch (err) {
+        console.error("Error al cargar los datos:", err);
+        document.getElementById('tableBody').innerHTML = `<tr><td colspan="7" class="text-center py-8 text-amber-400 font-sans">
+          <i class="fa-solid fa-circle-exclamation text-2xl mb-2 block"></i>
+          Para que los datos carguen correctamente, sube <b>index.html</b> y <b>data.json</b> juntos en Netlify.
+        </td></tr>`;
+      }
+    }
+
+    function initAdvancedFilters() {
+      const tiposSet = new Set();
+      const empresasSet = new Set();
+      const yearSet = new Set();
+
+      Object.values(universoData).forEach(info => { 
+        if (info.Tipo_Inst) tiposSet.add(info.Tipo_Inst);
+        if (info.Emisor) empresasSet.add(info.Emisor); 
+        if (info.VencAño) yearSet.add(info.VencAño);
+      });
+
+      const selectTipo = document.getElementById('filterTipo');
+      Array.from(tiposSet).sort().forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.innerText = t;
+        selectTipo.appendChild(opt);
+      });
+
+      const sortedEmpresas = Array.from(empresasSet).sort();
+      selectedCompaniesSet = new Set(sortedEmpresas);
+
+      const checkboxContainer = document.getElementById('checkboxCompanyList');
+      checkboxContainer.innerHTML = sortedEmpresas.map(e => `
+        <label class="flex items-center gap-2 text-xs text-slate-300 hover:text-white cursor-pointer py-0.5">
+          <input type="checkbox" value="${e}" checked onchange="toggleCompanyCheckbox('${e}', this.checked)" class="company-checkbox rounded accent-emerald-500">
+          <span class="truncate">${e}</span>
+        </label>
+      `).join('');
+
+      updateCompanyDropdownStatus();
+
+      const sortedYears = Array.from(yearSet).sort((a,b) => a - b);
+      document.getElementById('filterVencYears').innerHTML = sortedYears.map(y => `<option value="${y}">${y}</option>`).join('');
+    }
+
+    function toggleCompanyDropdown() { document.getElementById('companyDropdownMenu').classList.toggle('hidden'); }
+
+    function toggleSelectAllCompanies(checked) {
+      document.querySelectorAll('.company-checkbox').forEach(cb => {
+        cb.checked = checked;
+        if (checked) selectedCompaniesSet.add(cb.value); else selectedCompaniesSet.delete(cb.value);
+      });
+      updateCompanyDropdownStatus();
+      renderCalendarMatrix();
+    }
+
+    function toggleCompanyCheckbox(empresa, checked) {
+      if (checked) selectedCompaniesSet.add(empresa); else selectedCompaniesSet.delete(empresa);
+      document.getElementById('selectAllCompanies').checked = (selectedCompaniesSet.size === document.querySelectorAll('.company-checkbox').length);
+      updateCompanyDropdownStatus();
+      renderCalendarMatrix();
+    }
+
+    function updateCompanyDropdownStatus() {
+      const total = document.querySelectorAll('.company-checkbox').length;
+      document.getElementById('selectedCompaniesCount').innerText = `(${selectedCompaniesSet.size}/${total})`;
+      document.getElementById('companyDropdownLabel').innerText = selectedCompaniesSet.size === total ? "Todas las empresas seleccionadas" : `${selectedCompaniesSet.size} empresas seleccionadas`;
+    }
+
+    function switchTab(tab) {
+      if (tab === 'list') {
+        document.getElementById('tabList').classList.remove('hidden');
+        document.getElementById('tabCalendar').classList.add('hidden');
+        document.getElementById('tabBtnList').className = "px-4 py-1.5 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow";
+        document.getElementById('tabBtnCalendar').className = "px-4 py-1.5 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      } else {
+        document.getElementById('tabList').classList.add('hidden');
+        document.getElementById('tabCalendar').classList.remove('hidden');
+        document.getElementById('tabBtnCalendar').className = "px-4 py-1.5 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow";
+        document.getElementById('tabBtnList').className = "px-4 py-1.5 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+        renderCalendarMatrix(); renderNominalesInputs(); renderPortfolioFlow();
+      }
+    }
+
+    function renderTable() {
+      const tickerFilter = (document.getElementById('filterTicker').value || '').toUpperCase().trim();
+      const leyFilter = document.getElementById('filterLey').value;
+      const monthFilter = document.getElementById('filterMonth').value;
+      const tipoFilter = document.getElementById('filterTipo').value;
+      const factor = (parseFloat(document.getElementById('inputVN').value) || 100) / 100;
+
+      const filtered = allData.filter(item => {
+        const itemTicker = (item.Ticker || '').toString().toUpperCase();
+        const info = universoData[item.Ticker] || {};
+        
+        return (!tickerFilter || itemTicker.includes(tickerFilter)) &&
+               (leyFilter === 'ALL' || item.Ley === leyFilter) &&
+               (monthFilter === 'ALL' || item.Mes_Num == monthFilter) &&
+               (tipoFilter === 'ALL' || info.Tipo_Inst === tipoFilter);
+      });
+
+      document.getElementById('recordsCount').innerText = `Mostrando ${filtered.length} pago(s)`;
+      document.getElementById('tableBody').innerHTML = filtered.length === 0 
+        ? `<tr><td colspan="8" class="text-center py-8 text-slate-500">No se encontraron resultados.</td></tr>`
+        : filtered.map(item => {
+            const info = universoData[item.Ticker] || {};
+            return `
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-3 px-4 font-semibold text-white">${item["Fecha de pago"] || ''}</td>
+                <td class="py-3 px-4 font-bold text-emerald-400">${item.Ticker || ''}</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 text-[10px] ${item.Ley === 'Ley NY' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20'} border rounded-md">${item.Ley}</span></td>
+                <td class="py-3 px-4 text-sky-400 font-semibold">${info.Paridad || '-'}</td>
+                <td class="py-3 px-4 text-right text-slate-300">USD ${(parseFloat(item["Interes c/100 VN"] || 0) * factor).toFixed(2)}</td>
+                <td class="py-3 px-4 text-right text-slate-300">USD ${(parseFloat(item["Amortizacion c/100 VN"] || 0) * factor).toFixed(2)}</td>
+                <td class="py-3 px-4 text-right font-bold text-emerald-400">USD ${(parseFloat(item["Flujo total c/100 VN"] || 0) * factor).toFixed(2)}</td>
+                <td class="py-3 px-4 text-right text-slate-400">${item["VN residual previo"] ?? ''}%</td>
+              </tr>
+            `;
+        }).join('');
+    }
+
+    function renderCalendarMatrix() {
+      const minCupon = parseFloat(document.getElementById('filterCuponMin').value);
+      const maxCupon = parseFloat(document.getElementById('filterCuponMax').value);
+      const selectedYears = Array.from(document.getElementById('filterVencYears').selectedOptions).map(o => o.value);
+
+      const monthsMap = {};
+      for (let m = 1; m <= 12; m++) monthsMap[m] = new Set();
+
+      allData.forEach(item => {
+        const tk = item.Ticker;
+        if (!tk || !item.Mes_Num) return;
+        const info = universoData[tk] || {};
+        if (!selectedCompaniesSet.has(info.Emisor)) return;
+        if (!isNaN(minCupon) && info.Cupon < minCupon) return;
+        if (!isNaN(maxCupon) && info.Cupon > maxCupon) return;
+        if (selectedYears.length > 0 && !selectedYears.includes(String(info.VencAño))) return;
+        monthsMap[item.Mes_Num].add(tk);
+      });
+
+      let html = '';
+      for (let m = 1; m <= 12; m++) {
+        const tickers = Array.from(monthsMap[m]).sort();
+        html += `
+          <div class="month-card bg-slate-900 border border-slate-800 rounded-xl p-3.5 flex flex-col justify-start space-y-2">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+              <span class="font-bold text-slate-200 text-sm">${monthNames[m-1]}</span>
+              <span class="text-[10px] text-slate-500 bg-slate-950 px-2 py-0.5 rounded-full border border-slate-800">${tickers.length} ONs</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5 pt-1 content-start">
+              ${tickers.map((tk, idx) => {
+                const isSelected = selectedNominales.hasOwnProperty(tk);
+                const info = universoData[tk] || {};
+                const isTopRow = idx < 4;
+                const popupPosClass = isTopRow ? 'popup-below' : '';
+
+                return `
+                  <div class="tooltip-container inline-block">
+                    <button onclick="toggleTicker('${tk}')" class="px-2.5 py-1 text-xs rounded-lg border transition-all ${isSelected ? 'bg-emerald-500 text-slate-950 font-bold border-emerald-400 shadow-lg scale-105' : 'bg-slate-950 text-slate-300 border-slate-700/80 hover:border-emerald-500'}">
+                      ${tk}
+                    </button>
+                    <div class="tooltip-popup ${popupPosClass} bg-slate-900 border border-slate-700 p-3 rounded-xl shadow-2xl text-xs space-y-1">
+                      <div class="font-bold text-emerald-400 border-b border-slate-800 pb-1 flex justify-between"><span>${tk}</span><span>${info.Ley || ''}</span></div>
+                      <div class="text-[10px] text-slate-400 font-semibold truncate mb-1">${info.Emisor || ''}</div>
+                      <div class="grid grid-cols-2 gap-x-2 text-[11px]">
+                        <span class="text-slate-400">Cupón:</span><span class="font-bold text-white text-right">${info.Cupon}%</span>
+                        <span class="text-slate-400">YTM:</span><span class="text-slate-300 text-right">${info.YTM}</span>
+                        <span class="text-slate-400">DM:</span><span class="text-slate-300 text-right">${info.DM}</span>
+                        <span class="text-slate-400">Venc:</span><span class="text-white text-right">${info.Vencimiento}</span>
+                        <span class="text-slate-400">Paridad:</span><span class="text-slate-300 text-right">${info.Paridad}</span>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('') || '<span class="text-[11px] text-slate-600 italic">Sin coincidencias</span>'}
+            </div>
+          </div>
+        `;
+      }
+      document.getElementById('calendarMatrix').innerHTML = html;
+      document.getElementById('selectedCount').innerText = Object.keys(selectedNominales).length;
+    }
+
+    function toggleTicker(tk) {
+      if (selectedNominales.hasOwnProperty(tk)) delete selectedNominales[tk]; else selectedNominales[tk] = 100;
+      renderCalendarMatrix(); renderNominalesInputs(); renderPortfolioFlow();
+    }
+
+    function clearSelection() { selectedNominales = {}; renderCalendarMatrix(); renderNominalesInputs(); renderPortfolioFlow(); }
+
+    function resetCalendarFilters() {
+      toggleSelectAllCompanies(true);
+      document.getElementById('filterCuponMin').value = '';
+      document.getElementById('filterCuponMax').value = '';
+      Array.from(document.getElementById('filterVencYears').options).forEach(o => o.selected = false);
+      renderCalendarMatrix();
+    }
+
+    function setChartGrouping(mode) {
+      currentChartGroupMode = mode;
+      document.getElementById('chartGroupMonth').className = mode === 'month' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      document.getElementById('chartGroupDay').className = mode === 'day' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      renderPortfolioFlow();
+    }
+
+    function setChartYear(year) {
+      selectedChartYear = year;
+      renderPortfolioFlow();
+    }
+
+    function renderNominalesInputs() {
+      const container = document.getElementById('nominalesInputsContainer');
+      const keys = Object.keys(selectedNominales).sort();
+      container.innerHTML = keys.length === 0 ? `<span class="text-xs text-slate-500 italic">Selecciona activos en la matriz superior.</span>` : keys.map(tk => `
+        <div class="bg-slate-950 border border-slate-800 px-3 py-2 rounded-xl flex items-center gap-2">
+          <span class="font-bold text-xs text-sky-400">${tk}:</span>
+          <input type="number" value="${selectedNominales[tk]}" min="1" step="100" oninput="updateNominal('${tk}', this.value)" class="w-24 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-emerald-300 font-bold focus:outline-none">
+          <span class="text-[10px] text-slate-500">VN</span>
+        </div>
+      `).join('');
+    }
+
+    function updateNominal(tk, val) {
+      const parsed = parseFloat(val);
+      if (!isNaN(parsed) && parsed > 0) { selectedNominales[tk] = parsed; renderPortfolioFlow(); }
+    }
+
+    function renderPortfolioFlow() {
+      const tbody = document.getElementById('portfolioTableBody');
+      const tabsContainer = document.getElementById('yearTabsContainer');
+      const keys = Object.keys(selectedNominales);
+      
+      if (keys.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-slate-500">Sin activos seleccionados.</td></tr>`;
+        document.getElementById('portfolioTotalFlow').innerText = "Total: USD 0.00";
+        tabsContainer.innerHTML = '';
+        if (portfolioChart) portfolioChart.destroy();
+        return;
+      }
+
+      const setKeys = new Set(keys);
+      const allSelectedItems = allData.filter(i => setKeys.has(i.Ticker)).sort((a,b) => (a.Fecha_ISO || '').localeCompare(b.Fecha_ISO || ''));
+
+      // 1. Calcular años disponibles
+      const yearsSet = new Set();
+      allSelectedItems.forEach(i => {
+        if (i.Fecha_ISO) yearsSet.add(i.Fecha_ISO.substring(0,4));
+      });
+      const availableYears = Array.from(yearsSet).sort();
+
+      // Validación del año seleccionado (default a 'ALL' si no hay o es inválido)
+      if (!selectedChartYear || (selectedChartYear !== 'ALL' && !availableYears.includes(selectedChartYear))) {
+        selectedChartYear = 'ALL';
+      }
+
+      // 2. Renderizar Pestañas de Años
+      if (availableYears.length === 0) {
+        tabsContainer.innerHTML = '';
+      } else {
+        const btnAllClass = selectedChartYear === 'ALL' ? 'text-emerald-400 bg-slate-800 shadow' : 'text-slate-400 hover:text-white';
+        let tabsHtml = `<button onclick="setChartYear('ALL')" class="px-3 py-1 rounded-lg font-medium transition-all shrink-0 ${btnAllClass}">Todos</button>`;
+        
+        availableYears.forEach(y => {
+            const btnClass = selectedChartYear === y ? 'text-emerald-400 bg-slate-800 shadow' : 'text-slate-400 hover:text-white';
+            tabsHtml += `<button onclick="setChartYear('${y}')" class="px-3 py-1 rounded-lg font-medium transition-all shrink-0 ${btnClass}">${y}</button>`;
+        });
+        tabsContainer.innerHTML = tabsHtml;
+      }
+
+      // 3. Filtrar los items en base al año elegido
+      const items = selectedChartYear === 'ALL' 
+        ? allSelectedItems 
+        : allSelectedItems.filter(i => i.Fecha_ISO && i.Fecha_ISO.startsWith(selectedChartYear));
+
+      let grandTotal = 0; 
+      const grouped = {};
+
+      tbody.innerHTML = items.map(item => {
+        const factor = (selectedNominales[item.Ticker] || 100) / 100;
+        const intVal = (parseFloat(item["Interes c/100 VN"]) || 0) * factor;
+        const amortVal = (parseFloat(item["Amortizacion c/100 VN"]) || 0) * factor;
+        const totalVal = (parseFloat(item["Flujo total c/100 VN"]) || 0) * factor;
+        grandTotal += totalVal;
+
+        // Logica para agrupar en el grafico
+        let k;
+        if (currentChartGroupMode === 'month') {
+            k = selectedChartYear === 'ALL' ? item.Año_Mes : parseInt(item.Mes_Num, 10);
+        } else {
+            k = item.Fecha_ISO; 
+        }
+        
+        if (k) {
+            grouped[k] = (grouped[k] || 0) + totalVal;
+        }
+
+        return `
+          <tr class="hover:bg-slate-800/40">
+            <td class="py-2.5 px-3 font-semibold text-white">${item["Fecha de pago"]}</td>
+            <td class="py-2.5 px-3 font-bold text-sky-400">${item.Ticker}</td>
+            <td class="py-2.5 px-3 text-right text-slate-400">${(selectedNominales[item.Ticker]).toLocaleString()}</td>
+            <td class="py-2.5 px-3 text-right text-slate-300">USD ${intVal.toFixed(2)}</td>
+            <td class="py-2.5 px-3 text-right text-slate-300">USD ${amortVal.toFixed(2)}</td>
+            <td class="py-2.5 px-3 text-right font-bold text-emerald-400">USD ${totalVal.toFixed(2)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('portfolioTotalFlow').innerText = `Total ${selectedChartYear === 'ALL' ? 'General' : selectedChartYear}: USD ${grandTotal.toFixed(2)}`;
+      
+      // 4. Preparar datos para inyectar en ChartJS
+      const labels = [];
+      const values = [];
+      const sortedKeys = Object.keys(grouped).sort();
+
+      if (currentChartGroupMode === 'month' && selectedChartYear !== 'ALL') {
+        for (let m = 1; m <= 12; m++) {
+          if (grouped[m]) {
+            labels.push(monthNames[m-1]); // Sale lindo el nombre: "Enero", "Febrero"
+            values.push(grouped[m]);
+          }
+        }
+      } else if (currentChartGroupMode === 'month' && selectedChartYear === 'ALL') {
+        sortedKeys.forEach(k => {
+          if (k === 'undefined' || !k) return;
+          const parts = k.split('-');
+          if (parts.length === 2) {
+              const y = parts[0];
+              const m = parts[1];
+              labels.push(`${monthNames[parseInt(m)-1].substring(0,3)} ${y}`); // "Ene 2026"
+              values.push(grouped[k]);
+          }
+        });
+      } else {
+        // Modo por día exacto
+        sortedKeys.forEach(k => {
+          if (k === 'undefined' || !k) return;
+          const parts = k.split('-');
+          if(parts.length >= 3) {
+              const y = parts[0];
+              const m = parts[1];
+              const d = parts[2];
+              labels.push(`${d}/${m}/${y.substring(2)}`); // DD/MM/YY
+              values.push(grouped[k]);
+          }
+        });
+      }
+      renderChart(labels, values);
+    }
+
+    function renderChart(labels, values) {
+      const ctx = document.getElementById('chartPortfolio').getContext('2d');
+      if (portfolioChart) portfolioChart.destroy();
+      portfolioChart = new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets: [{ data: values, backgroundColor: '#10b981', borderRadius: 4 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#94a3b8', font: { size: 11, weight: 'bold' } } }, y: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: '#1e293b' } } } }
+      });
+    }
+
+    function downloadPDFReport() {
+      const keys = Object.keys(selectedNominales);
+      if (keys.length === 0) { alert("Selecciona al menos una ON."); return; }
+
+      const today = new Date().toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+      const totalVN = keys.reduce((acc, tk) => acc + (selectedNominales[tk] || 100), 0);
+      let tirSum = 0, count = 0; const indMap = {};
+
+      const assetRows = keys.map(tk => {
+        const info = universoData[tk] || {};
+        const vn = selectedNominales[tk] || 100;
+        const ponderacion = ((vn / totalVN) * 100).toFixed(2) + '%';
+        const t = parseFloat((info.YTM || '').replace('%', ''));
+        if (!isNaN(t)) { tirSum += t * (vn / totalVN); count++; }
+        indMap[info.Emisor || 'N/D'] = (indMap[info.Emisor || 'N/D'] || 0) + vn;
+
+        return `
+          <tr style="border-bottom: 1px solid #1e293b;">
+            <td style="padding: 8px 12px; font-weight: bold; color: #38bdf8;">${tk}</td>
+            <td style="padding: 8px 12px; color: #cbd5e1;">${info.Emisor || 'N/D'}</td>
+            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #e2e8f0;">${ponderacion}</td>
+            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #ffffff;">${vn.toLocaleString()}</td>
+            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #ffffff;">${info.Cupon || 0}%</td>
+            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #ffffff;">${info.Paridad || 'N/D'}</td>
+            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #34d399;">${info.YTM || 'N/D'}</td>
+            <td style="padding: 8px 12px; text-align: right; color: #cbd5e1;">${info.DM || 'N/D'}</td>
+            <td style="padding: 8px 12px; text-align: right; color: #cbd5e1;">${info.Vencimiento || 'N/D'}</td>
+          </tr>
+        `;
+      }).join('');
+
+      const avgTIR = count > 0 ? tirSum.toFixed(2) + '%' : 'N/D';
+      const indRows = Object.keys(indMap).map(emp => {
+        const pct = ((indMap[emp] / totalVN) * 100).toFixed(1);
+        return `
+          <div style="margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 3px;">
+              <span style="color: #cbd5e1; font-weight: 500;">${emp}</span>
+              <span style="font-weight: bold; color: #38bdf8;">${pct}%</span>
+            </div>
+            <div style="width: 100%; height: 6px; background-color: #0f172a; border-radius: 9999px; overflow: hidden;">
+              <div style="background-color: #0284c7; height: 100%; width: ${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const setKeys = new Set(keys);
+      const portfolioItems = allData.filter(i => setKeys.has(i.Ticker)).sort((a,b) => (a.Fecha_ISO || '').localeCompare(b.Fecha_ISO || '')).slice(0, 6);
+      let totalAnual = 0;
+
+      const cfRows = portfolioItems.map(item => {
+        const val = (parseFloat(item["Flujo total c/100 VN"]) || 0) * ((selectedNominales[item.Ticker] || 100) / 100);
+        totalAnual += val;
+        return `
+          <tr style="border-bottom: 1px solid #1e293b;">
+            <td style="padding: 8px 12px; color: #ffffff; font-weight: 600;">${monthNames[(item.Mes_Num || 1) - 1].slice(0,3)}</td>
+            <td style="padding: 8px 12px; color: #38bdf8; font-weight: bold;">${item.Ticker}</td>
+            <td style="padding: 8px 12px; text-align: right; color: #34d399; font-weight: bold;">US$ ${val.toFixed(2)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      const printWin = window.open('', '_blank', 'width=1100,height=850');
+      printWin.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Propuesta de Cartera · Cuponera</title>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"><\/script>
+          <style>
+            @page { size: A4 landscape; margin: 8mm; }
+            body { background-color: #0b1329; color: #f8fafc; font-family: system-ui, sans-serif; margin: 0; padding: 24px; }
+            .card { background-color: #131e3d; border: 1px solid #1e293b; border-radius: 12px; padding: 16px; }
+            .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+            .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+            table { width: 100%; border-collapse: collapse; font-size: 11px; }
+            th { background-color: #0e1731; color: #94a3b8; text-transform: uppercase; font-size: 9px; padding: 8px 12px; text-align: left; }
+          </style>
+        </head>
+        <body>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 20px;">
+            <div>
+              <h1 style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff;">Propuesta de Cartera · Cuponera</h1>
+              <p style="margin: 3px 0 0 0; font-size: 12px; color: #38bdf8;">Renta en USD con pagos de cupón a lo largo del año</p>
+            </div>
+            <div style="font-size: 12px; color: #94a3b8; font-family: monospace;">${today}</div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">TIR PROMEDIO</span><span style="font-size: 18px; font-weight: bold; color: #34d399;">${avgTIR}</span></div>
+            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">DURATION PROMEDIO</span><span style="font-size: 18px; font-weight: bold; color: #ffffff;">2,82</span></div>
+            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">INSTRUMENTOS</span><span style="font-size: 18px; font-weight: bold; color: #38bdf8;">${keys.length}</span></div>
+          </div>
+
+          <div class="card" style="margin-bottom: 16px; padding: 0; overflow: hidden;">
+            <table>
+              <thead><tr><th>Ticker</th><th>Empresa</th><th style="text-align: right;">Ponder.</th><th style="text-align: right;">VN</th><th style="text-align: right;">Cupón</th><th style="text-align: right;">Paridad</th><th style="text-align: right;">TIR</th><th style="text-align: right;">Dur.</th><th style="text-align: right;">Venc.</th></tr></thead>
+              <tbody>${assetRows}</tbody>
+            </table>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 8px;">Composición</h3>
+              <div style="height: 140px; position: relative; display: flex; justify-content: center; align-items: center;"><canvas id="printPieCanvas"></canvas></div>
+              <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 14px; margin-bottom: 8px;">Distribución por Industria</h3>
+              ${indRows}
+            </div>
+
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 2px;">Flujo de Fondos</h3>
+                <p style="font-size: 9px; color: #94a3b8; margin-top: 0; margin-bottom: 8px;">Cupones estimados en USD según VN asignado</p>
+                <table><thead><tr><th>Mes</th><th>Ticker</th><th style="text-align: right;">Cupón (USD)</th></tr></thead><tbody>${cfRows}</tbody></table>
+              </div>
+              <div style="border-top: 1px solid #1e293b; padding-top: 10px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; font-weight: bold; color: #e2e8f0; text-transform: uppercase;">Total Anual</span>
+                <span style="font-size: 14px; font-weight: bold; color: #38bdf8;">US$ ${totalAnual.toFixed(2)}</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size: 9px; color: #64748b; margin-top: 14px; border-top: 1px solid #1e293b; padding-top: 8px; font-style: italic;">
+            El presente material tiene fines informativos y no constituye una recomendación de inversión.
+          </div>
+
+          <script>
+            window.addEventListener('load', () => {
+              const ctx = document.getElementById('printPieCanvas').getContext('2d');
+              new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                  labels: ${JSON.stringify(keys)},
+                  datasets: [{
+                    data: ${JSON.stringify(keys.map(tk => selectedNominales[tk] || 100))},
+                    backgroundColor: ['#0284c7', '#06b6d4', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'].slice(0, ${keys.length}),
+                    borderWidth: 0
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  animation: false,
+                  plugins: { legend: { position: 'right', labels: { color: '#f8fafc', font: { size: 10, weight: 'bold' } } } }
+                }
+              });
+              setTimeout(() => { printWin.print(); }, 500);
+            });
+          <\/script>
+        </body>
+        </html>
+      `);
+      printWin.document.close();
+    }
+
+    document.getElementById('filterTicker').addEventListener('input', renderTable);
+    document.getElementById('filterLey').addEventListener('change', renderTable);
+    document.getElementById('filterTipo').addEventListener('change', renderTable);
+    document.getElementById('filterMonth').addEventListener('change', renderTable);
+    document.getElementById('inputVN').addEventListener('input', renderTable);
+    document.getElementById('filterCuponMin').addEventListener('input', renderCalendarMatrix);
+    document.getElementById('filterCuponMax').addEventListener('input', renderCalendarMatrix);
+    document.getElementById('filterVencYears').addEventListener('change', renderCalendarMatrix);
+
+    loadData();
+  </script>
+</body>
+</html>
