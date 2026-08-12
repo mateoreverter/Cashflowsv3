@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "ultima_actualizacion": "12/08/2026 16:04:37",
+    "ultima_actualizacion": "12/08/2026 17:40:13",
     "total_activos": 270,
     "fuente": "Data912 API (vía GitHub Actions)"
   },
@@ -41859,9 +41859,9 @@
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.00%",
+      "YTM": "7.02%",
       "DM": "6.86",
-      "Paridad": "110.15%"
+      "Paridad": "110.00%"
     },
     "YM34O": {
       "Cupon": 8.3,
@@ -41870,9 +41870,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.44%",
+      "YTM": "6.40%",
       "DM": "4.90",
-      "Paridad": "110.65%"
+      "Paridad": "110.85%"
     },
     "MGCRO": {
       "Cupon": 7.8,
@@ -41881,9 +41881,9 @@
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.17%",
-      "DM": "7.16",
-      "Paridad": "107.35%"
+      "YTM": "7.16%",
+      "DM": "7.17",
+      "Paridad": "107.45%"
     },
     "YMCXO": {
       "Cupon": 8.8,
@@ -41903,9 +41903,9 @@
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.97%",
+      "YTM": "6.95%",
       "DM": "4.59",
-      "Paridad": "114.00%"
+      "Paridad": "114.10%"
     },
     "DNCAO": {
       "Cupon": 9.5,
@@ -41914,9 +41914,9 @@
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "8.80%",
-      "DM": "4.07",
-      "Paridad": "106.65%"
+      "YTM": "8.73%",
+      "DM": "4.08",
+      "Paridad": "106.95%"
     },
     "IRCPO": {
       "Cupon": 8.0,
@@ -41925,9 +41925,9 @@
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.82%",
+      "YTM": "6.83%",
       "DM": "5.40",
-      "Paridad": "110.50%"
+      "Paridad": "110.45%"
     },
     "TLCTO": {
       "Cupon": 8.5,
@@ -41936,9 +41936,9 @@
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.22%",
+      "YTM": "7.21%",
       "DM": "6.09",
-      "Paridad": "109.70%"
+      "Paridad": "109.75%"
     },
     "TLCMO": {
       "Cupon": 9.5,
@@ -41947,9 +41947,9 @@
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.97%",
+      "YTM": "6.01%",
       "DM": "3.20",
-      "Paridad": "113.15%"
+      "Paridad": "113.00%"
     },
     "VSCVO": {
       "Cupon": 8.5,
@@ -41969,9 +41969,9 @@
       "Emisor": "TRANSPORTADORA DE",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.78%",
+      "YTM": "6.76%",
       "DM": "6.34",
-      "Paridad": "109.20%"
+      "Paridad": "109.30%"
     },
     "EAC4O": {
       "Cupon": 9.8,
@@ -41980,9 +41980,9 @@
       "Emisor": "MSU GREEN ENERGY S.A.U.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.60%",
+      "YTM": "9.55%",
       "DM": "5.53",
-      "Paridad": "103.70%"
+      "Paridad": "104.00%"
     },
     "YMCIO": {
       "Cupon": 9.0,
@@ -41991,9 +41991,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "3.80%",
+      "YTM": "3.83%",
       "DM": "1.49",
-      "Paridad": "93.60%"
+      "Paridad": "93.55%"
     },
     "CP38O": {
       "Cupon": 11.9,
@@ -42002,9 +42002,9 @@
       "Emisor": "COMPAÑIA GENERAL DE",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.94%",
+      "YTM": "9.93%",
       "DM": "3.13",
-      "Paridad": "109.90%"
+      "Paridad": "109.95%"
     },
     "MGCOO": {
       "Cupon": 7.9,
@@ -42013,9 +42013,9 @@
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.58%",
-      "DM": "5.91",
-      "Paridad": "110.15%"
+      "YTM": "6.53%",
+      "DM": "5.92",
+      "Paridad": "110.50%"
     },
     "TSC3O": {
       "Cupon": 8.5,
@@ -42035,9 +42035,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.92%",
+      "YTM": "5.94%",
       "DM": "4.39",
-      "Paridad": "108.05%"
+      "Paridad": "107.95%"
     },
     "YM39O": {
       "Cupon": 8.8,
@@ -42046,9 +42046,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.57%",
+      "YTM": "5.63%",
       "DM": "3.25",
-      "Paridad": "111.90%"
+      "Paridad": "111.70%"
     },
     "RUCDO": {
       "Cupon": 9.8,
@@ -42057,9 +42057,9 @@
       "Emisor": "MSU ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "8.02%",
+      "YTM": "8.04%",
       "DM": "2.97",
-      "Paridad": "107.85%"
+      "Paridad": "107.80%"
     },
     "PN43O": {
       "Cupon": 7.8,
@@ -42068,9 +42068,9 @@
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.79%",
-      "DM": "6.48",
-      "Paridad": "108.05%"
+      "YTM": "6.84%",
+      "DM": "6.47",
+      "Paridad": "107.65%"
     },
     "DNC7O": {
       "Cupon": 9.8,
@@ -42079,9 +42079,9 @@
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.46%",
+      "YTM": "7.41%",
       "DM": "2.56",
-      "Paridad": "109.70%"
+      "Paridad": "109.85%"
     },
     "PLC5O": {
       "Cupon": 8.1,
@@ -42112,9 +42112,9 @@
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.07%",
+      "YTM": "6.06%",
       "DM": "4.04",
-      "Paridad": "110.85%"
+      "Paridad": "110.90%"
     },
     "TTCDO": {
       "Cupon": 7.6,
@@ -42123,9 +42123,9 @@
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.86%",
+      "YTM": "5.83%",
       "DM": "3.44",
-      "Paridad": "108.90%"
+      "Paridad": "109.00%"
     },
     "MGCMO": {
       "Cupon": 8.0,
@@ -42167,9 +42167,9 @@
       "Emisor": "BANCO MACRO S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.36%",
+      "YTM": "5.45%",
       "DM": "2.47",
-      "Paridad": "108.20%"
+      "Paridad": "107.95%"
     },
     "BACHO": {
       "Cupon": 8.0,
@@ -42189,9 +42189,9 @@
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.68%",
+      "YTM": "5.63%",
       "DM": "3.73",
-      "Paridad": "114.25%"
+      "Paridad": "114.45%"
     },
     "BYCHO": {
       "Cupon": 7.8,
@@ -42222,9 +42222,9 @@
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "3.79%",
+      "YTM": "3.80%",
       "DM": "1.37",
-      "Paridad": "51.48%"
+      "Paridad": "51.47%"
     },
     "TTCAO": {
       "Cupon": 7.6,
@@ -42244,9 +42244,9 @@
       "Emisor": "CAPEX S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "-1.16%",
+      "YTM": "-1.02%",
       "DM": "1.01",
-      "Paridad": "72.00%"
+      "Paridad": "71.90%"
     },
     "OZC8O": {
       "Cupon": 9.8,
@@ -42255,9 +42255,9 @@
       "Emisor": "EDEMSA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.86%",
+      "YTM": "9.88%",
       "DM": "4.09",
-      "Paridad": "102.20%"
+      "Paridad": "102.10%"
     },
     "PNDCO": {
       "Cupon": 9.1,
@@ -42299,9 +42299,9 @@
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.54%",
+      "YTM": "6.58%",
       "DM": "4.40",
-      "Paridad": "111.55%"
+      "Paridad": "111.35%"
     },
     "MCC3O": {
       "Cupon": 7.5,
@@ -42310,9 +42310,9 @@
       "Emisor": "PECOM SERVICIOS",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.20%",
+      "YTM": "7.23%",
       "DM": "3.06",
-      "Paridad": "103.30%"
+      "Paridad": "103.20%"
     },
     "VSCRO": {
       "Cupon": 7.7,
@@ -42321,9 +42321,9 @@
       "Emisor": "VISTA ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.27%",
-      "DM": "3.40",
-      "Paridad": "111.65%"
+      "YTM": "5.26%",
+      "DM": "3.41",
+      "Paridad": "111.70%"
     },
     "WBS3O": {
       "Cupon": 6.0,
@@ -42343,9 +42343,9 @@
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.13%",
+      "YTM": "7.04%",
       "DM": "1.73",
-      "Paridad": "104.75%"
+      "Paridad": "104.90%"
     },
     "YM38O": {
       "Cupon": 7.5,
@@ -42354,9 +42354,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.91%",
+      "YTM": "4.02%",
       "DM": "0.88",
-      "Paridad": "103.80%"
+      "Paridad": "103.70%"
     },
     "YM37O": {
       "Cupon": 7.0,
@@ -42376,9 +42376,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.03%",
+      "YTM": "5.16%",
       "DM": "2.24",
-      "Paridad": "106.20%"
+      "Paridad": "105.90%"
     },
     "BYCVO": {
       "Cupon": 6.3,
@@ -42387,9 +42387,9 @@
       "Emisor": "BANCO DE GALICIA Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-12.82%",
-      "DM": "0.06",
-      "Paridad": "103.80%"
+      "YTM": "-5.72%",
+      "DM": "0.05",
+      "Paridad": "103.40%"
     },
     "DNC3O": {
       "Cupon": 9.8,
@@ -42409,9 +42409,9 @@
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.21%",
+      "YTM": "5.15%",
       "DM": "2.66",
-      "Paridad": "107.95%"
+      "Paridad": "108.10%"
     },
     "PLC6O": {
       "Cupon": 6.5,
@@ -42420,9 +42420,9 @@
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.27%",
+      "YTM": "5.19%",
       "DM": "2.21",
-      "Paridad": "106.00%"
+      "Paridad": "106.20%"
     },
     "YM35O": {
       "Cupon": 6.3,
@@ -42431,9 +42431,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.22%",
-      "DM": "0.50",
-      "Paridad": "101.95%"
+      "YTM": "4.35%",
+      "DM": "0.51",
+      "Paridad": "102.40%"
     },
     "PQCSO": {
       "Cupon": 8.0,
@@ -42442,9 +42442,9 @@
       "Emisor": "PETROQUIMICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.96%",
-      "DM": "3.51",
-      "Paridad": "108.30%"
+      "YTM": "6.86%",
+      "DM": "3.52",
+      "Paridad": "108.70%"
     },
     "DNCBO": {
       "Cupon": 7.5,
@@ -42464,9 +42464,9 @@
       "Emisor": "LOMA NEGRA C.I.A.S.A",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.27%",
+      "YTM": "4.10%",
       "DM": "0.89",
-      "Paridad": "103.90%"
+      "Paridad": "104.05%"
     },
     "PLC2O": {
       "Cupon": 7.5,
@@ -42475,9 +42475,9 @@
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.83%",
-      "DM": "2.89",
-      "Paridad": "107.65%"
+      "YTM": "5.64%",
+      "DM": "2.90",
+      "Paridad": "108.25%"
     },
     "YM43O": {
       "Cupon": 5.5,
@@ -42486,9 +42486,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.70%",
+      "YTM": "5.71%",
       "DM": "3.14",
-      "Paridad": "101.40%"
+      "Paridad": "101.35%"
     },
     "IRCOO": {
       "Cupon": 7.3,
@@ -42497,9 +42497,9 @@
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.66%",
+      "YTM": "5.81%",
       "DM": "2.75",
-      "Paridad": "105.25%"
+      "Paridad": "104.80%"
     },
     "MGCQO": {
       "Cupon": 7.3,
@@ -42508,9 +42508,9 @@
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.08%",
+      "YTM": "3.98%",
       "DM": "1.81",
-      "Paridad": "106.20%"
+      "Paridad": "106.40%"
     },
     "PN36O": {
       "Cupon": 7.3,
@@ -42519,9 +42519,9 @@
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.88%",
-      "DM": "4.17",
-      "Paridad": "108.30%"
+      "YTM": "5.82%",
+      "DM": "4.18",
+      "Paridad": "108.60%"
     },
     "RC2CO": {
       "Cupon": 5.9,
@@ -42530,9 +42530,9 @@
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-0.26%",
+      "YTM": "1.06%",
       "DM": "0.15",
-      "Paridad": "103.00%"
+      "Paridad": "102.80%"
     },
     "CICAO": {
       "Cupon": 8.0,
@@ -42585,9 +42585,9 @@
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.70%",
+      "YTM": "3.87%",
       "DM": "0.83",
-      "Paridad": "104.20%"
+      "Paridad": "104.05%"
     },
     "TLCOO": {
       "Cupon": 7.0,
@@ -42596,9 +42596,9 @@
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.18%",
+      "YTM": "5.09%",
       "DM": "2.03",
-      "Paridad": "105.50%"
+      "Paridad": "105.70%"
     },
     "MGCTO": {
       "Cupon": 5.5,
@@ -42618,9 +42618,9 @@
       "Emisor": "EDEMSA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.76%",
-      "DM": "1.16",
-      "Paridad": "103.30%"
+      "YTM": "6.26%",
+      "DM": "1.17",
+      "Paridad": "103.90%"
     },
     "OLC7O": {
       "Cupon": 6.9,
@@ -42629,9 +42629,9 @@
       "Emisor": "OLEODUCTOS DEL VALLE",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.80%",
-      "DM": "2.94",
-      "Paridad": "106.95%"
+      "YTM": "5.47%",
+      "DM": "2.95",
+      "Paridad": "108.00%"
     },
     "PLC3O": {
       "Cupon": 7.3,
@@ -42662,9 +42662,9 @@
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.00%",
+      "YTM": "5.03%",
       "DM": "1.93",
-      "Paridad": "103.85%"
+      "Paridad": "103.80%"
     },
     "VBC2O": {
       "Cupon": 7.8,
@@ -42684,9 +42684,9 @@
       "Emisor": "MSU ENERGY S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.84%",
+      "YTM": "6.79%",
       "DM": "0.98",
-      "Paridad": "101.15%"
+      "Paridad": "101.20%"
     },
     "CS48O": {
       "Cupon": 8.0,
@@ -42695,9 +42695,9 @@
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.29%",
+      "YTM": "5.32%",
       "DM": "1.71",
-      "Paridad": "105.70%"
+      "Paridad": "105.65%"
     },
     "XMC1O": {
       "Cupon": 8.0,
@@ -42761,9 +42761,9 @@
       "Emisor": "OLEODUCTOS DEL VALLE S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.62%",
+      "YTM": "5.48%",
       "DM": "2.43",
-      "Paridad": "106.45%"
+      "Paridad": "106.80%"
     },
     "RC1CO": {
       "Cupon": 7.6,
@@ -42772,9 +42772,9 @@
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.71%",
-      "DM": "4.69",
-      "Paridad": "110.10%"
+      "YTM": "5.57%",
+      "DM": "4.70",
+      "Paridad": "110.80%"
     },
     "CS50O": {
       "Cupon": 7.3,
@@ -42783,9 +42783,9 @@
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.73%",
+      "YTM": "5.76%",
       "DM": "2.17",
-      "Paridad": "108.65%"
+      "Paridad": "108.60%"
     },
     "YFCNO": {
       "Cupon": 6.0,
@@ -42794,9 +42794,9 @@
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-6.68%",
-      "DM": "0.15",
-      "Paridad": "104.00%"
+      "YTM": "-3.41%",
+      "DM": "0.14",
+      "Paridad": "103.50%"
     },
     "YM40O": {
       "Cupon": 7.5,
@@ -42838,9 +42838,9 @@
       "Emisor": "LUZ DE TRES PICOS S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.78%",
-      "DM": "2.11",
-      "Paridad": "104.50%"
+      "YTM": "7.02%",
+      "DM": "2.12",
+      "Paridad": "106.20%"
     },
     "TTCEO": {
       "Cupon": 5.5,
@@ -42860,9 +42860,9 @@
       "Emisor": "LOMA NEGRA C.I.A.S.A",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.46%",
+      "YTM": "5.50%",
       "DM": "2.18",
-      "Paridad": "102.90%"
+      "Paridad": "102.80%"
     },
     "MTC2O": {
       "Cupon": 6.5,
@@ -42882,9 +42882,9 @@
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.86%",
-      "DM": "2.98",
-      "Paridad": "112.00%"
+      "YTM": "4.24%",
+      "DM": "3.00",
+      "Paridad": "114.10%"
     },
     "CS47O": {
       "Cupon": 7.0,
@@ -42893,9 +42893,9 @@
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.92%",
+      "YTM": "5.75%",
       "DM": "1.98",
-      "Paridad": "104.15%"
+      "Paridad": "104.50%"
     },
     "NPCCO": {
       "Cupon": 8.0,
@@ -42904,9 +42904,9 @@
       "Emisor": "CENTRAL PUERTO S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.65%",
-      "DM": "2.53",
-      "Paridad": "110.40%"
+      "YTM": "5.15%",
+      "DM": "2.54",
+      "Paridad": "111.80%"
     },
     "TLCUO": {
       "Cupon": 6.5,
@@ -42926,9 +42926,9 @@
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.47%",
+      "YTM": "5.40%",
       "DM": "1.56",
-      "Paridad": "100.30%"
+      "Paridad": "100.40%"
     },
     "TLCWO": {
       "Cupon": 6.3,
@@ -42948,9 +42948,9 @@
       "Emisor": "CAMUZZI GAS PAMPEANA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.32%",
+      "YTM": "6.01%",
       "DM": "0.48",
-      "Paridad": "105.15%"
+      "Paridad": "104.80%"
     },
     "TTCBO": {
       "Cupon": 6.5,
@@ -42970,9 +42970,9 @@
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.45%",
+      "YTM": "5.38%",
       "DM": "2.73",
-      "Paridad": "106.20%"
+      "Paridad": "106.40%"
     },
     "OTS2O": {
       "Cupon": 7.0,
@@ -43036,9 +43036,9 @@
       "Emisor": "JOHN DEERE CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.83%",
+      "YTM": "4.67%",
       "DM": "0.89",
-      "Paridad": "103.85%"
+      "Paridad": "104.00%"
     },
     "TTC8O": {
       "Cupon": 5.0,
@@ -43069,9 +43069,9 @@
       "Emisor": "CNH INDUSTRIAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.99%",
-      "DM": "2.17",
-      "Paridad": "101.50%"
+      "YTM": "7.31%",
+      "DM": "2.16",
+      "Paridad": "100.80%"
     },
     "PN34O": {
       "Cupon": 5.0,
@@ -43124,9 +43124,9 @@
       "Emisor": "OTAMERICA EBYTEM S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.82%",
+      "YTM": "6.11%",
       "DM": "2.48",
-      "Paridad": "106.40%"
+      "Paridad": "105.65%"
     },
     "DEC2O": {
       "Cupon": 8.5,
@@ -43135,9 +43135,9 @@
       "Emisor": "EDESA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.21%",
-      "DM": "0.49",
-      "Paridad": "105.70%"
+      "YTM": "7.08%",
+      "DM": "0.48",
+      "Paridad": "104.75%"
     },
     "YFCOO": {
       "Cupon": 6.8,
@@ -43179,9 +43179,9 @@
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.24%",
-      "DM": "0.50",
-      "Paridad": "104.15%"
+      "YTM": "4.48%",
+      "DM": "0.51",
+      "Paridad": "104.55%"
     },
     "BYCXO": {
       "Cupon": 5.5,
@@ -43223,9 +43223,9 @@
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.24%",
-      "DM": "1.34",
-      "Paridad": "104.30%"
+      "YTM": "4.96%",
+      "DM": "1.33",
+      "Paridad": "103.30%"
     },
     "YFCLO": {
       "Cupon": 6.8,
@@ -43234,9 +43234,9 @@
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.96%",
-      "DM": "2.01",
-      "Paridad": "105.55%"
+      "YTM": "5.17%",
+      "DM": "2.00",
+      "Paridad": "105.10%"
     },
     "MIC3O": {
       "Cupon": 8.5,
@@ -43245,9 +43245,9 @@
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.36%",
+      "YTM": "7.65%",
       "DM": "0.23",
-      "Paridad": "100.60%"
+      "Paridad": "100.30%"
     },
     "OTS5O": {
       "Cupon": 6.7,
@@ -43267,9 +43267,9 @@
       "Emisor": "AEROPUERTOS",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.79%",
+      "YTM": "4.10%",
       "DM": "0.33",
-      "Paridad": "101.35%"
+      "Paridad": "101.25%"
     },
     "BYCWO": {
       "Cupon": 6.0,
@@ -43300,9 +43300,9 @@
       "Emisor": "PECOM SERVICIOS ENERGIA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.32%",
+      "YTM": "5.60%",
       "DM": "0.74",
-      "Paridad": "102.45%"
+      "Paridad": "103.00%"
     },
     "PN42O": {
       "Cupon": 6.0,
@@ -43311,9 +43311,9 @@
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.67%",
-      "DM": "0.64",
-      "Paridad": "103.50%"
+      "YTM": "5.12%",
+      "DM": "0.63",
+      "Paridad": "102.55%"
     },
     "MSSFO": {
       "Cupon": 7.5,
@@ -43333,9 +43333,9 @@
       "Emisor": "LEDESMA S.A.A.I.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.48%",
+      "YTM": "6.53%",
       "DM": "1.04",
-      "Paridad": "100.90%"
+      "Paridad": "100.85%"
     },
     "YFCKO": {
       "Cupon": 5.3,
@@ -43399,9 +43399,9 @@
       "Emisor": "360 ENERGY SOLAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.79%",
+      "YTM": "8.32%",
       "DM": "0.93",
-      "Paridad": "101.90%"
+      "Paridad": "102.35%"
     },
     "SNSBO": {
       "Cupon": 9.5,
@@ -43421,9 +43421,9 @@
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.34%",
+      "YTM": "7.40%",
       "DM": "0.87",
-      "Paridad": "101.35%"
+      "Paridad": "101.30%"
     },
     "BF39O": {
       "Cupon": 5.8,
@@ -43509,9 +43509,9 @@
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.65%",
-      "DM": "3.15",
-      "Paridad": "104.00%"
+      "YTM": "5.42%",
+      "DM": "3.16",
+      "Paridad": "104.75%"
     },
     "OTS3O": {
       "Cupon": 7.0,
@@ -43575,9 +43575,9 @@
       "Emisor": "MSU S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.32%",
-      "DM": "2.25",
-      "Paridad": "108.30%"
+      "YTM": "8.11%",
+      "DM": "2.21",
+      "Paridad": "104.05%"
     },
     "GYC4O": {
       "Cupon": 8.0,
@@ -43586,9 +43586,9 @@
       "Emisor": "360 ENERGY SOLAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.38%",
-      "DM": "1.09",
-      "Paridad": "101.25%"
+      "YTM": "7.61%",
+      "DM": "1.08",
+      "Paridad": "101.00%"
     },
     "YMCZO": {
       "Cupon": 7.0,
@@ -43630,9 +43630,9 @@
       "Emisor": "YPF ENERGIA ELECTRICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "0.97%",
-      "DM": "0.76",
-      "Paridad": "104.40%"
+      "YTM": "3.27%",
+      "DM": "0.75",
+      "Paridad": "102.60%"
     },
     "PQCTO": {
       "Cupon": 8.5,
@@ -43894,9 +43894,9 @@
       "Emisor": "INVERSORA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "17.39%",
-      "DM": "0.13",
-      "Paridad": "99.00%"
+      "YTM": "3.28%",
+      "DM": "0.15",
+      "Paridad": "101.00%"
     },
     "LR7BO": {
       "Cupon": 9.0,
@@ -43949,9 +43949,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "7.35%",
+      "YTM": "7.30%",
       "DM": "1.49",
-      "Paridad": "54.41%"
+      "Paridad": "54.45%"
     },
     "GD29": {
       "Cupon": 1.0,
@@ -43960,9 +43960,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "5.64%",
-      "DM": "1.52",
-      "Paridad": "55.83%"
+      "YTM": "5.30%",
+      "DM": "1.53",
+      "Paridad": "56.12%"
     },
     "AL30": {
       "Cupon": 0.8,
@@ -43971,9 +43971,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "7.66%",
+      "YTM": "7.55%",
       "DM": "1.91",
-      "Paridad": "56.45%"
+      "Paridad": "56.57%"
     },
     "AO28": {
       "Cupon": 6.0,
@@ -43982,9 +43982,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "8.31%",
+      "YTM": "8.27%",
       "DM": "1.92",
-      "Paridad": "96.14%"
+      "Paridad": "96.21%"
     },
     "GD30": {
       "Cupon": 0.8,
@@ -43993,9 +43993,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "6.14%",
-      "DM": "1.95",
-      "Paridad": "58.13%"
+      "YTM": "5.94%",
+      "DM": "1.96",
+      "Paridad": "58.36%"
     },
     "AN29": {
       "Cupon": 6.5,
@@ -44004,9 +44004,9 @@
       "Emisor": "TESORO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "8.86%",
+      "YTM": "8.82%",
       "DM": "2.73",
-      "Paridad": "95.15%"
+      "Paridad": "95.25%"
     },
     "AE38": {
       "Cupon": 5.0,
@@ -44015,9 +44015,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.00%",
+      "YTM": "9.93%",
       "DM": "4.30",
-      "Paridad": "80.04%"
+      "Paridad": "80.29%"
     },
     "GD38": {
       "Cupon": 5.0,
@@ -44026,9 +44026,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "8.70%",
+      "YTM": "8.72%",
       "DM": "4.45",
-      "Paridad": "84.72%"
+      "Paridad": "84.66%"
     },
     "AL35": {
       "Cupon": 4.1,
@@ -44037,9 +44037,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.80%",
+      "YTM": "9.77%",
       "DM": "5.04",
-      "Paridad": "77.51%"
+      "Paridad": "77.61%"
     },
     "GD35": {
       "Cupon": 4.1,
@@ -44048,9 +44048,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "8.97%",
+      "YTM": "8.95%",
       "DM": "5.11",
-      "Paridad": "80.85%"
+      "Paridad": "80.90%"
     },
     "AL41": {
       "Cupon": 3.5,
@@ -44059,9 +44059,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.86%",
-      "DM": "5.48",
-      "Paridad": "72.23%"
+      "YTM": "9.76%",
+      "DM": "5.50",
+      "Paridad": "72.65%"
     },
     "GD41": {
       "Cupon": 3.5,
@@ -44070,9 +44070,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.02%",
-      "DM": "5.63",
-      "Paridad": "75.70%"
+      "YTM": "9.05%",
+      "DM": "5.62",
+      "Paridad": "75.57%"
     },
     "GD46": {
       "Cupon": 4.1,
@@ -44081,9 +44081,9 @@
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.08%",
-      "DM": "6.07",
-      "Paridad": "68.95%"
+      "YTM": "9.05%",
+      "DM": "6.08",
+      "Paridad": "69.05%"
     },
     "BPOA7": {
       "Cupon": 5.0,
@@ -44092,9 +44092,9 @@
       "Emisor": "BANCO CENTRAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "BOPREAL",
-      "YTM": "3.51%",
+      "YTM": "3.62%",
       "DM": "0.91",
-      "Paridad": "102.85%"
+      "Paridad": "102.75%"
     },
     "BPOB7": {
       "Cupon": 5.0,
@@ -44103,9 +44103,9 @@
       "Emisor": "BANCO CENTRAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "BOPREAL",
-      "YTM": "3.67%",
+      "YTM": "3.78%",
       "DM": "0.91",
-      "Paridad": "102.70%"
+      "Paridad": "102.60%"
     },
     "BPOC7": {
       "Cupon": 5.0,
@@ -44125,9 +44125,9 @@
       "Emisor": "BANCO CENTRAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "BOPREAL",
-      "YTM": "3.56%",
+      "YTM": "3.73%",
       "DM": "0.91",
-      "Paridad": "102.80%"
+      "Paridad": "102.65%"
     },
     "BPOA8": {
       "Cupon": 3.0,
@@ -44268,9 +44268,9 @@
       "Emisor": "CORDOBA",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Provincial",
-      "YTM": "7.96%",
+      "YTM": "7.93%",
       "DM": "5.28",
-      "Paridad": "104.60%"
+      "Paridad": "104.75%"
     },
     "ERF25": {
       "Cupon": 8.3,
@@ -44521,9 +44521,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "6.56%",
+      "YTM": "6.52%",
       "DM": "2.34",
-      "Paridad": "104.50%"
+      "Paridad": "104.60%"
     },
     "GOC4O": {
       "Cupon": 10.950000000000001,
@@ -44554,9 +44554,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "2.67%",
+      "YTM": "3.21%",
       "DM": "0.18",
-      "Paridad": "102.00%"
+      "Paridad": "101.90%"
     },
     "HJCGO": {
       "Cupon": 6.5,
@@ -44587,9 +44587,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "6.54%",
+      "YTM": "6.20%",
       "DM": "2.04",
-      "Paridad": "101.30%"
+      "Paridad": "102.00%"
     },
     "ICC6O": {
       "Cupon": 1.86,
@@ -44642,9 +44642,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "22.67%",
-      "DM": "5.58",
-      "Paridad": "26.20%"
+      "YTM": "22.91%",
+      "DM": "5.55",
+      "Paridad": "25.85%"
     },
     "MU32O": {
       "Cupon": 9.0,
@@ -44653,9 +44653,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "10.33%",
-      "DM": "1.17",
-      "Paridad": "100.00%"
+      "YTM": "11.32%",
+      "DM": "1.16",
+      "Paridad": "98.86%"
     },
     "PECMO": {
       "Cupon": 3.0,
@@ -44675,9 +44675,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "14.15%",
-      "DM": "4.09",
-      "Paridad": "68.51%"
+      "YTM": "14.30%",
+      "DM": "4.08",
+      "Paridad": "68.10%"
     },
     "PFC3O": {
       "Cupon": 2.9,
@@ -44686,9 +44686,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "5.67%",
+      "YTM": "5.74%",
       "DM": "2.80",
-      "Paridad": "102.00%"
+      "Paridad": "101.80%"
     },
     "RC3CO": {
       "Cupon": 28.52,
@@ -44752,9 +44752,9 @@
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "19.35%",
+      "YTM": "19.65%",
       "DM": "1.93",
-      "Paridad": "67.95%"
+      "Paridad": "67.55%"
     },
     "SXC4O": {
       "Cupon": 0.0,
