@@ -302,5 +302,3 @@ if __name__ == '__main__':
     except Exception as e:
         print("\n--- Ocurrió un ERROR ---")
         traceback.print_exc()
-    finally:
-        input("\nPresiona Enter para cerrar esta ventana...")
