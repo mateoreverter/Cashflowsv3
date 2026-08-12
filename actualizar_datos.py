@@ -4,7 +4,7 @@ import json
 import traceback
 import requests
 import urllib3
-from datetime import datetime
+from datetime import datetime, timedelta
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -36,7 +36,6 @@ def obtener_precios_usd_data912(tickers_universo):
     print("\nConectando a Data912 para descargar precios en vivo...")
     precios_usd = {}
     
-    # Diccionario con múltiples variantes de tickers en dólares para los Bopreales
     MAPEO_ESPECIAL = {
         "BPO27": ["BPJ27D", "BPO27D", "BPO2D", "BPI27D"], 
         "BPO28": ["BPJ28D", "BPO28D"],
@@ -53,7 +52,7 @@ def obtener_precios_usd_data912(tickers_universo):
     ]
     
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
         "Accept": "application/json"
     }
     
@@ -75,7 +74,6 @@ def obtener_precios_usd_data912(tickers_universo):
             precio = item.get('px_bid', 0)
             
         if precio > 0:
-            # Filtro anti-pesos: si el precio es mayor a 200 USD, lo descartamos
             if precio > 200:
                 continue
                 
@@ -89,7 +87,6 @@ def obtener_precios_usd_data912(tickers_universo):
             if match_especial:
                 continue
             
-            # Cruce normal para el resto de ONs (asegurando que terminen en D)
             if ticker_data.endswith('D'):
                 base_ticker = None
                 if ticker_data in tickers_universo:
@@ -197,7 +194,6 @@ def main():
             
             ytm_val = f"{tir_math*100:.2f}%" if tir_math is not None else ytm_excel
             dm_val = f"{dm_math:.2f}" if dm_math is not None else dm_excel
-            # MODIFICACIÓN DE DISEÑO: Muestra Paridad como porcentaje (%)
             paridad_val = f"{precio_hoy:.2f}%" 
             
         else:
@@ -233,21 +229,15 @@ def main():
         if tk not in universo_dict:
             procesar_activo(tk)
 
-    # ==================================================
-    # LIMPIEZA FINAL: FILTRO ESTRICTO HARD DOLLAR
-    # ==================================================
     print("\nEjecutando limpieza de bonos en pesos y basura...")
     prefijos_basura = ('TX', 'TC', 'T2', 'T3', 'T4', 'T5', 'T6', 'DI', 'PR', 'PA', 'TV', 'TO', 'CU', 'NO')
     tickers_a_eliminar = []
     
     for tk, data in universo_dict.items():
-        # 1. Borramos si arranca con algún prefijo de bono CER, Tasa Fija, Cupones, etc.
         if tk.startswith(prefijos_basura):
             tickers_a_eliminar.append(tk)
             continue
             
-        # 2. Borramos si es un activo "huérfano" (viene solo de flujos) y no le pudimos calcular precio.
-        #    (Esto significa que nadie lo operó en USD y no está en tu Excel principal).
         if data['Emisor'] == 'Otros' and data['Paridad'] == 'N/D':
             tickers_a_eliminar.append(tk)
 
@@ -271,7 +261,6 @@ def main():
     df_cf_clean = df_cf_clean.dropna(subset=['Ticker'])
     df_cf_clean['Ticker'] = df_cf_clean['Ticker'].astype(str).str.strip().str.upper()
     
-    # Sincronizamos los flujos para borrar también los cupones de la basura eliminada
     df_cf_clean = df_cf_clean[df_cf_clean['Ticker'].isin(universo_dict.keys())]
     
     if 'Ley' not in df_cf_clean.columns:
@@ -287,7 +276,16 @@ def main():
 
     df_cf_clean = df_cf_clean.fillna('')
 
+    # Calculamos hora de Argentina restando 3 horas al UTC global
+    hora_arg = datetime.utcnow() - timedelta(hours=3)
+    metadata = {
+        "ultima_actualizacion": hora_arg.strftime("%d/%m/%Y %H:%M:%S"),
+        "total_activos": len(universo_dict),
+        "fuente": "Data912 API (vía GitHub Actions)"
+    }
+
     output_data = {
+        "metadata": metadata,
         "cashflows": df_cf_clean.to_dict(orient='records'),
         "universo": universo_dict
     }
