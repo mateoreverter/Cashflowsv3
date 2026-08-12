@@ -2,12 +2,8 @@ name: Actualizar Precios y TIRs Data912
 
 on:
   schedule:
-    # Está en horario UTC (3 horas más que en Argentina).
-    # 14:00 UTC = 11:00 ARG
-    # 18:00 UTC = 15:00 ARG
-    # 20:00 UTC = 17:00 ARG (Cierre de mercado)
-    - cron: '0 14,18,20 * * 1-5' # Corre de Lunes a Viernes en esos 3 horarios
-  workflow_dispatch: # Esto te agrega un botón para correrlo a mano cuando quieras
+    - cron: '0 14,18,20 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   update-data:
@@ -15,10 +11,10 @@ jobs:
 
     steps:
     - name: 1. Clonar el repositorio
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: 2. Configurar Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
