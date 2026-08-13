@@ -36,6 +36,7 @@ def obtener_precios_usd_data912(tickers_universo):
     print("\nConectando a Data912 para descargar precios en vivo...")
     precios_usd = {}
     
+    # Diccionario revertido: Solo Bopreales
     MAPEO_ESPECIAL = {
         "BPO27": ["BPJ27D", "BPO27D", "BPO2D", "BPI27D"], 
         "BPO28": ["BPJ28D", "BPO28D"],
@@ -115,7 +116,7 @@ def main():
     
     archivo_flujos = os.path.join(directorio_base, 'flujos.xlsx')
     archivo_universo = os.path.join(directorio_base, 'cashflows_ON_USD_ley_ARG_NY_universo_solo_USD_2.xlsx')
-    archivo_salida = os.path.join(directorio_base, 'data.json')
+    archivo_salida_js = os.path.join(directorio_base, 'data.js')
 
     print("Cargando archivos Excel...")
     df_flujos = pd.read_excel(archivo_flujos)
@@ -276,7 +277,6 @@ def main():
 
     df_cf_clean = df_cf_clean.fillna('')
 
-    # Calculamos hora de Argentina restando 3 horas al UTC global
     hora_arg = datetime.utcnow() - timedelta(hours=3)
     metadata = {
         "ultima_actualizacion": hora_arg.strftime("%d/%m/%Y %H:%M:%S"),
@@ -290,11 +290,13 @@ def main():
         "universo": universo_dict
     }
 
-    print(f"Guardando data.json en: {archivo_salida}...")
-    with open(archivo_salida, "w", encoding="utf-8") as f:
+    print(f"Guardando data.js en: {archivo_salida_js}...")
+    with open(archivo_salida_js, "w", encoding="utf-8") as f:
+        f.write("const jsonData = ")
         json.dump(output_data, f, ensure_ascii=False, indent=2)
+        f.write(";")
 
-    print("¡Éxito total! Archivo generado limpio, filtrado y con diseño actualizado. Súbelo a Netlify.")
+    print("¡Éxito total! Archivo JS generado listo para usar de forma local.")
 
 if __name__ == '__main__':
     try:

@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Cargamos directamente los datos JS sin bloqueo CORS -->
+  <script src="data.js"></script>
   <style>
     .month-card { position: relative; z-index: 1; overflow: visible !important; min-height: 180px; }
     .month-card:hover { z-index: 100 !important; }
@@ -32,7 +34,6 @@
         <div>
           <div class="flex items-center gap-3">
             <h1 class="text-xl font-bold text-white tracking-wide">Monitor de Cashflows ONs</h1>
-            <!-- Botón Conectado (Badge) -->
             <button onclick="openStatusModal()" class="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-md hover:bg-emerald-500/20 transition-all focus:outline-none">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -61,9 +62,10 @@
     <!-- PESTAÑA 1: LISTADO -->
     <div id="tabList" class="space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4">
+        <!-- Grilla ajustada a 7 columnas para alojar Año de Pago -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
           
-          <div>
+          <div class="col-span-1">
             <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Buscar Ticker</label>
             <div class="relative">
               <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-500 text-sm"></i>
@@ -72,7 +74,7 @@
             </div>
           </div>
 
-          <div>
+          <div class="col-span-1">
             <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Jurisdicción</label>
             <select id="filterLey" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
               <option value="ALL">Todas las Leyes</option>
@@ -81,14 +83,22 @@
             </select>
           </div>
 
-          <div>
+          <div class="col-span-1">
             <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Tipo de Activo</label>
             <select id="filterTipo" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
               <option value="ALL">Todos los Tipos</option>
             </select>
           </div>
 
-          <div>
+          <!-- Filtro AÑO DE PAGO -->
+          <div class="col-span-1">
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Año de Pago</label>
+            <select id="filterYearList" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+              <option value="ALL">Todos los años</option>
+            </select>
+          </div>
+
+          <div class="col-span-1">
             <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Mes de Pago</label>
             <select id="filterMonth" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
               <option value="ALL">Todos los meses</option>
@@ -99,7 +109,7 @@
             </select>
           </div>
 
-          <div class="sm:col-span-2 md:col-span-2">
+          <div class="col-span-1 sm:col-span-2 lg:col-span-2">
             <label class="block text-xs font-semibold text-emerald-400 mb-1.5 uppercase">Simulador: VN Poseído</label>
             <div class="relative">
               <i class="fa-solid fa-dollar-sign absolute left-3 top-3 text-emerald-500 text-sm"></i>
@@ -154,12 +164,27 @@
           </div>
           
           <div class="flex items-center gap-3">
-            <div class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-right">
+            <div class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-right hidden sm:block">
               <span class="text-[10px] text-slate-400 block uppercase font-semibold">ONs Seleccionadas</span>
               <span id="selectedCount" class="text-base font-bold text-sky-400">0</span>
             </div>
-            <button onclick="clearSelection()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors">
-              <i class="fa-solid fa-rotate-left mr-1"></i> Limpiar
+            
+            <!-- INPUT OCULTO PARA CARGAR ARCHIVOS -->
+            <input type="file" id="importPortfolioInput" accept=".json" style="display:none;" onchange="handleImport(event)">
+            
+            <!-- BOTÓN CARGAR CARTERA -->
+            <button onclick="triggerImport()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Cargar Cartera">
+              <i class="fa-solid fa-upload"></i>
+            </button>
+
+            <!-- BOTÓN GUARDAR CARTERA -->
+            <button onclick="exportPortfolio()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Guardar Cartera">
+              <i class="fa-solid fa-download"></i>
+            </button>
+
+            <!-- BOTÓN LIMPIAR -->
+            <button onclick="clearSelection()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Limpiar todo">
+              <i class="fa-solid fa-rotate-left mr-1"></i> <span class="hidden sm:inline">Limpiar</span>
             </button>
           </div>
         </div>
@@ -195,9 +220,26 @@
             </div>
           </div>
 
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
+          <!-- AÑOS VENCIMIENTO MULTI-SELECT -->
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5 relative">
             <label class="block text-[11px] font-semibold text-slate-300 uppercase">Años Vencimiento</label>
-            <select id="filterVencYears" multiple class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:outline-none h-16"></select>
+            <div class="relative">
+              <button onclick="toggleVencYearDropdown()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 flex justify-between items-center focus:outline-none">
+                <span id="vencYearDropdownLabel">Todos los años</span>
+                <i class="fa-solid fa-chevron-down text-slate-500 text-[10px]"></i>
+              </button>
+
+              <div id="vencYearDropdownMenu" class="hidden absolute top-full left-0 right-0 mt-1 bg-slate-900 border border-slate-700 rounded-xl p-3 z-50 max-h-60 overflow-y-auto shadow-2xl space-y-2">
+                <div class="flex justify-between items-center border-b border-slate-800 pb-1.5 mb-1.5">
+                  <label class="text-xs font-bold text-emerald-400 flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="selectAllVencYears" checked onchange="toggleSelectAllVencYears(this.checked)" class="rounded accent-emerald-500">
+                    <span>Seleccionar Todos</span>
+                  </label>
+                  <span id="selectedVencYearsCount" class="text-[10px] text-slate-400">(0/0)</span>
+                </div>
+                <div id="checkboxVencYearList" class="space-y-1 grid grid-cols-2 gap-1"></div>
+              </div>
+            </div>
           </div>
 
           <div class="flex items-end">
@@ -261,7 +303,7 @@
 
         <div class="flex justify-end pt-4 border-t border-slate-800">
           <button onclick="downloadPDFReport()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-lg transition-all">
-            <i class="fa-solid fa-file-pdf text-base"></i> Descargar Informe PDF
+            <i class="fa-solid fa-file-export text-base"></i> Exportar Informe
           </button>
         </div>
       </div>
@@ -310,20 +352,19 @@
 
     let selectedNominales = {}; 
     let selectedCompaniesSet = new Set();
+    let selectedVencYearsSet = new Set(); 
+    
     let portfolioChart = null;
     let currentChartGroupMode = 'month';
     let selectedChartYear = 'ALL';
 
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-    async function loadData() {
+    function loadData() {
       try {
-        const response = await fetch('data.json');
-        if (!response.ok) throw new Error('Error al leer el archivo data.json');
-        
-        const data = await response.json();
+        const data = typeof jsonData !== 'undefined' ? jsonData : {};
         universoData = data.universo || {};
-        systemMetaData = data.metadata || {}; // Guardamos los datos nuevos que escupe Python
+        systemMetaData = data.metadata || {};
 
         const now = new Date();
         const yyyy = now.getFullYear();
@@ -340,14 +381,9 @@
         renderTable();
       } catch (err) {
         console.error("Error al cargar los datos:", err);
-        document.getElementById('tableBody').innerHTML = `<tr><td colspan="8" class="text-center py-8 text-amber-400 font-sans">
-          <i class="fa-solid fa-circle-exclamation text-2xl mb-2 block"></i>
-          Para que los datos carguen correctamente, sube <b>index.html</b> y <b>data.json</b> juntos en Netlify.
-        </td></tr>`;
       }
     }
 
-    // Funciones del Modal de Estado
     function openStatusModal() {
       document.getElementById('modalLastUpdate').innerText = systemMetaData.ultima_actualizacion || 'N/D';
       document.getElementById('modalTotalAssets').innerText = systemMetaData.total_activos || Object.keys(universoData).length;
@@ -359,64 +395,138 @@
       document.getElementById('statusModal').classList.add('hidden');
     }
 
+    // Funciones Exportar / Importar Cartera
+    function exportPortfolio() {
+      const keys = Object.keys(selectedNominales);
+      if (keys.length === 0) {
+        alert("No hay activos en la cartera para guardar.");
+        return;
+      }
+      const dataStr = JSON.stringify(selectedNominales, null, 2);
+      const blob = new Blob([dataStr], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'mi_cartera_ons.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function triggerImport() {
+      document.getElementById('importPortfolioInput').click();
+    }
+
+    function handleImport(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (typeof imported === 'object' && imported !== null) {
+            selectedNominales = imported;
+            renderCalendarMatrix();
+            renderNominalesInputs();
+            renderPortfolioFlow();
+          } else {
+            alert("El archivo no tiene el formato correcto.");
+          }
+        } catch (error) {
+          alert("Error al leer el archivo. Asegúrate de que sea el archivo JSON descargado previamente.");
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = ""; // Resetear input
+    }
+
     function initAdvancedFilters() {
       const tiposSet = new Set();
       const empresasSet = new Set();
-      const yearSet = new Set();
+      const vencYearSet = new Set();
+      const paymentYearSet = new Set(); 
 
       Object.values(universoData).forEach(info => { 
         if (info.Tipo_Inst) tiposSet.add(info.Tipo_Inst);
         if (info.Emisor) empresasSet.add(info.Emisor); 
-        if (info.VencAño) yearSet.add(info.VencAño);
+        if (info.VencAño) vencYearSet.add(info.VencAño);
+      });
+
+      allData.forEach(item => {
+        if (item.Fecha_ISO) paymentYearSet.add(item.Fecha_ISO.substring(0,4));
       });
 
       const selectTipo = document.getElementById('filterTipo');
       Array.from(tiposSet).sort().forEach(t => {
         const opt = document.createElement('option');
-        opt.value = t;
-        opt.innerText = t;
-        selectTipo.appendChild(opt);
+        opt.value = t; opt.innerText = t; selectTipo.appendChild(opt);
+      });
+
+      const selectYearList = document.getElementById('filterYearList');
+      Array.from(paymentYearSet).sort().forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y; opt.innerText = y; selectYearList.appendChild(opt);
       });
 
       const sortedEmpresas = Array.from(empresasSet).sort();
       selectedCompaniesSet = new Set(sortedEmpresas);
-
-      const checkboxContainer = document.getElementById('checkboxCompanyList');
-      checkboxContainer.innerHTML = sortedEmpresas.map(e => `
+      document.getElementById('checkboxCompanyList').innerHTML = sortedEmpresas.map(e => `
         <label class="flex items-center gap-2 text-xs text-slate-300 hover:text-white cursor-pointer py-0.5">
           <input type="checkbox" value="${e}" checked onchange="toggleCompanyCheckbox('${e}', this.checked)" class="company-checkbox rounded accent-emerald-500">
           <span class="truncate">${e}</span>
         </label>
       `).join('');
-
       updateCompanyDropdownStatus();
 
-      const sortedYears = Array.from(yearSet).sort((a,b) => a - b);
-      document.getElementById('filterVencYears').innerHTML = sortedYears.map(y => `<option value="${y}">${y}</option>`).join('');
+      const sortedVencYears = Array.from(vencYearSet).sort((a,b) => a - b);
+      selectedVencYearsSet = new Set(sortedVencYears.map(String));
+      document.getElementById('checkboxVencYearList').innerHTML = sortedVencYears.map(y => `
+        <label class="flex items-center gap-2 text-xs text-slate-300 hover:text-white cursor-pointer py-0.5">
+          <input type="checkbox" value="${y}" checked onchange="toggleVencYearCheckbox('${y}', this.checked)" class="venc-year-checkbox rounded accent-emerald-500">
+          <span class="truncate">${y}</span>
+        </label>
+      `).join('');
+      updateVencYearDropdownStatus();
     }
 
+    // Lógica Empresas
     function toggleCompanyDropdown() { document.getElementById('companyDropdownMenu').classList.toggle('hidden'); }
-
     function toggleSelectAllCompanies(checked) {
       document.querySelectorAll('.company-checkbox').forEach(cb => {
         cb.checked = checked;
         if (checked) selectedCompaniesSet.add(cb.value); else selectedCompaniesSet.delete(cb.value);
       });
-      updateCompanyDropdownStatus();
-      renderCalendarMatrix();
+      updateCompanyDropdownStatus(); renderCalendarMatrix();
     }
-
     function toggleCompanyCheckbox(empresa, checked) {
       if (checked) selectedCompaniesSet.add(empresa); else selectedCompaniesSet.delete(empresa);
       document.getElementById('selectAllCompanies').checked = (selectedCompaniesSet.size === document.querySelectorAll('.company-checkbox').length);
-      updateCompanyDropdownStatus();
-      renderCalendarMatrix();
+      updateCompanyDropdownStatus(); renderCalendarMatrix();
     }
-
     function updateCompanyDropdownStatus() {
       const total = document.querySelectorAll('.company-checkbox').length;
       document.getElementById('selectedCompaniesCount').innerText = `(${selectedCompaniesSet.size}/${total})`;
       document.getElementById('companyDropdownLabel').innerText = selectedCompaniesSet.size === total ? "Todas las empresas seleccionadas" : `${selectedCompaniesSet.size} empresas seleccionadas`;
+    }
+
+    // Lógica Años de Vencimiento
+    function toggleVencYearDropdown() { document.getElementById('vencYearDropdownMenu').classList.toggle('hidden'); }
+    function toggleSelectAllVencYears(checked) {
+      document.querySelectorAll('.venc-year-checkbox').forEach(cb => {
+        cb.checked = checked;
+        if (checked) selectedVencYearsSet.add(String(cb.value)); else selectedVencYearsSet.delete(String(cb.value));
+      });
+      updateVencYearDropdownStatus(); renderCalendarMatrix();
+    }
+    function toggleVencYearCheckbox(year, checked) {
+      if (checked) selectedVencYearsSet.add(String(year)); else selectedVencYearsSet.delete(String(year));
+      document.getElementById('selectAllVencYears').checked = (selectedVencYearsSet.size === document.querySelectorAll('.venc-year-checkbox').length);
+      updateVencYearDropdownStatus(); renderCalendarMatrix();
+    }
+    function updateVencYearDropdownStatus() {
+      const total = document.querySelectorAll('.venc-year-checkbox').length;
+      document.getElementById('selectedVencYearsCount').innerText = `(${selectedVencYearsSet.size}/${total})`;
+      document.getElementById('vencYearDropdownLabel').innerText = selectedVencYearsSet.size === total ? "Todos los años" : `${selectedVencYearsSet.size} años seleccionados`;
     }
 
     function switchTab(tab) {
@@ -439,6 +549,7 @@
       const leyFilter = document.getElementById('filterLey').value;
       const monthFilter = document.getElementById('filterMonth').value;
       const tipoFilter = document.getElementById('filterTipo').value;
+      const yearFilter = document.getElementById('filterYearList').value;
       const factor = (parseFloat(document.getElementById('inputVN').value) || 100) / 100;
 
       const filtered = allData.filter(item => {
@@ -448,7 +559,8 @@
         return (!tickerFilter || itemTicker.includes(tickerFilter)) &&
                (leyFilter === 'ALL' || item.Ley === leyFilter) &&
                (monthFilter === 'ALL' || item.Mes_Num == monthFilter) &&
-               (tipoFilter === 'ALL' || info.Tipo_Inst === tipoFilter);
+               (tipoFilter === 'ALL' || info.Tipo_Inst === tipoFilter) &&
+               (yearFilter === 'ALL' || (item.Fecha_ISO && item.Fecha_ISO.startsWith(yearFilter)));
       });
 
       document.getElementById('recordsCount').innerText = `Mostrando ${filtered.length} pago(s)`;
@@ -474,7 +586,6 @@
     function renderCalendarMatrix() {
       const minCupon = parseFloat(document.getElementById('filterCuponMin').value);
       const maxCupon = parseFloat(document.getElementById('filterCuponMax').value);
-      const selectedYears = Array.from(document.getElementById('filterVencYears').selectedOptions).map(o => o.value);
 
       const monthsMap = {};
       for (let m = 1; m <= 12; m++) monthsMap[m] = new Set();
@@ -486,7 +597,7 @@
         if (!selectedCompaniesSet.has(info.Emisor)) return;
         if (!isNaN(minCupon) && info.Cupon < minCupon) return;
         if (!isNaN(maxCupon) && info.Cupon > maxCupon) return;
-        if (selectedYears.length > 0 && !selectedYears.includes(String(info.VencAño))) return;
+        if (selectedVencYearsSet.size > 0 && !selectedVencYearsSet.has(String(info.VencAño))) return;
         monthsMap[item.Mes_Num].add(tk);
       });
 
@@ -542,9 +653,9 @@
 
     function resetCalendarFilters() {
       toggleSelectAllCompanies(true);
+      toggleSelectAllVencYears(true);
       document.getElementById('filterCuponMin').value = '';
       document.getElementById('filterCuponMax').value = '';
-      Array.from(document.getElementById('filterVencYears').options).forEach(o => o.selected = false);
       renderCalendarMatrix();
     }
 
@@ -624,7 +735,8 @@
       const grouped = {};
 
       tbody.innerHTML = items.map(item => {
-        const factor = (selectedNominales[item.Ticker] || 100) / 100;
+        const tk = item.Ticker;
+        const factor = (selectedNominales[tk] || 100) / 100;
         const intVal = (parseFloat(item["Interes c/100 VN"]) || 0) * factor;
         const amortVal = (parseFloat(item["Amortizacion c/100 VN"]) || 0) * factor;
         const totalVal = (parseFloat(item["Flujo total c/100 VN"]) || 0) * factor;
@@ -638,7 +750,8 @@
         }
         
         if (k) {
-            grouped[k] = (grouped[k] || 0) + totalVal;
+            if(!grouped[k]) grouped[k] = {};
+            grouped[k][tk] = (grouped[k][tk] || 0) + totalVal;
         }
 
         return `
@@ -656,7 +769,6 @@
       document.getElementById('portfolioTotalFlow').innerText = `Total ${selectedChartYear === 'ALL' ? 'General' : selectedChartYear}: USD ${grandTotal.toFixed(2)}`;
       
       const labels = [];
-      const values = [];
       const sortedKeys = Object.keys(grouped).sort((a,b) => {
           if (currentChartGroupMode === 'month' && selectedChartYear !== 'ALL') {
               return parseInt(a) - parseInt(b);
@@ -667,7 +779,6 @@
       if (currentChartGroupMode === 'month' && selectedChartYear !== 'ALL') {
         sortedKeys.forEach(k => {
           labels.push(monthNames[parseInt(k)-1]);
-          values.push(grouped[k]);
         });
       } else if (currentChartGroupMode === 'month' && selectedChartYear === 'ALL') {
         sortedKeys.forEach(k => {
@@ -677,7 +788,6 @@
               const y = parts[0];
               const m = parts[1];
               labels.push(`${monthNames[parseInt(m)-1].substring(0,3)} ${y}`);
-              values.push(grouped[k]);
           }
         });
       } else {
@@ -689,20 +799,47 @@
               const m = parts[1];
               const d = parts[2];
               labels.push(`${d}/${m}/${y.substring(2)}`);
-              values.push(grouped[k]);
           }
         });
       }
-      renderChart(labels, values);
+
+      const colors = ['#10b981', '#0ea5e9', '#8b5cf6', '#f59e0b', '#ec4899', '#14b8a6', '#f43f5e', '#6366f1', '#f97316', '#3b82f6'];
+      const datasets = keys.map((tk, idx) => {
+          return {
+              label: tk,
+              data: sortedKeys.map(k => grouped[k][tk] || 0),
+              backgroundColor: colors[idx % colors.length],
+              borderRadius: 4
+          };
+      });
+
+      renderChart(labels, datasets);
     }
 
-    function renderChart(labels, values) {
+    function renderChart(labels, datasets) {
       const ctx = document.getElementById('chartPortfolio').getContext('2d');
       if (portfolioChart) portfolioChart.destroy();
       portfolioChart = new Chart(ctx, {
         type: 'bar',
-        data: { labels, datasets: [{ data: values, backgroundColor: '#10b981', borderRadius: 4 }] },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#94a3b8', font: { size: 11, weight: 'bold' } } }, y: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: '#1e293b' } } } }
+        data: { labels, datasets },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false, 
+            plugins: { 
+                legend: { display: true, position: 'top', labels: { color: '#94a3b8', font: { size: 10 } } },
+                tooltip: { 
+                    mode: 'index', 
+                    intersect: false,
+                    filter: function(tooltipItem) {
+                        return tooltipItem.raw > 0;
+                    }
+                } 
+            }, 
+            scales: { 
+                x: { stacked: true, ticks: { color: '#94a3b8', font: { size: 11, weight: 'bold' } } }, 
+                y: { stacked: true, ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: '#1e293b' } } 
+            } 
+        }
       });
     }
 
@@ -710,11 +847,13 @@
       const keys = Object.keys(selectedNominales);
       if (keys.length === 0) { alert("Selecciona al menos una ON."); return; }
 
+      const sortedKeysByVN = [...keys].sort((a, b) => (selectedNominales[b] || 100) - (selectedNominales[a] || 100));
+
       const today = new Date().toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' });
       const totalVN = keys.reduce((acc, tk) => acc + (selectedNominales[tk] || 100), 0);
       let tirSum = 0, count = 0; const indMap = {};
 
-      const assetRows = keys.map(tk => {
+      const assetRows = sortedKeysByVN.map(tk => {
         const info = universoData[tk] || {};
         const vn = selectedNominales[tk] || 100;
         const ponderacion = ((vn / totalVN) * 100).toFixed(2) + '%';
@@ -724,21 +863,23 @@
 
         return `
           <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 8px 12px; font-weight: bold; color: #38bdf8;">${tk}</td>
-            <td style="padding: 8px 12px; color: #cbd5e1;">${info.Emisor || 'N/D'}</td>
-            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #e2e8f0;">${ponderacion}</td>
-            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #ffffff;">${vn.toLocaleString()}</td>
-            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #ffffff;">${info.Cupon || 0}%</td>
-            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #ffffff;">${info.Paridad || 'N/D'}</td>
-            <td style="padding: 8px 12px; text-align: right; font-weight: bold; color: #34d399;">${info.YTM || 'N/D'}</td>
-            <td style="padding: 8px 12px; text-align: right; color: #cbd5e1;">${info.DM || 'N/D'}</td>
-            <td style="padding: 8px 12px; text-align: right; color: #cbd5e1;">${info.Vencimiento || 'N/D'}</td>
+            <td style="padding: 4px 8px; font-weight: bold; color: #38bdf8;">${tk}</td>
+            <td style="padding: 4px 8px; color: #cbd5e1;">${info.Emisor || 'N/D'}</td>
+            <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: #e2e8f0;">${ponderacion}</td>
+            <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: #ffffff;">${vn.toLocaleString()}</td>
+            <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: #ffffff;">${info.Cupon || 0}%</td>
+            <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: #ffffff;">${info.Paridad || 'N/D'}</td>
+            <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: #34d399;">${info.YTM || 'N/D'}</td>
+            <td style="padding: 4px 8px; text-align: right; color: #cbd5e1;">${info.DM || 'N/D'}</td>
+            <td style="padding: 4px 8px; text-align: right; color: #cbd5e1;">${info.Vencimiento || 'N/D'}</td>
           </tr>
         `;
       }).join('');
 
       const avgTIR = count > 0 ? tirSum.toFixed(2) + '%' : 'N/D';
-      const indRows = Object.keys(indMap).map(emp => {
+      
+      const sortedIndustries = Object.keys(indMap).sort((a, b) => indMap[b] - indMap[a]);
+      const indRows = sortedIndustries.map(emp => {
         const pct = ((indMap[emp] / totalVN) * 100).toFixed(1);
         return `
           <div style="margin-bottom: 8px;">
@@ -754,19 +895,25 @@
       }).join('');
 
       const setKeys = new Set(keys);
-      const portfolioItems = allData.filter(i => setKeys.has(i.Ticker)).sort((a,b) => (a.Fecha_ISO || '').localeCompare(b.Fecha_ISO || '')).slice(0, 6);
-      let totalAnual = 0;
+      const portfolioItems = allData.filter(i => setKeys.has(i.Ticker));
+      const flowsByYear = {};
+      let totalProyectado = 0;
 
-      const cfRows = portfolioItems.map(item => {
-        const val = (parseFloat(item["Flujo total c/100 VN"]) || 0) * ((selectedNominales[item.Ticker] || 100) / 100);
-        totalAnual += val;
-        return `
-          <tr style="border-bottom: 1px solid #1e293b;">
-            <td style="padding: 8px 12px; color: #ffffff; font-weight: 600;">${monthNames[(item.Mes_Num || 1) - 1].slice(0,3)}</td>
-            <td style="padding: 8px 12px; color: #38bdf8; font-weight: bold;">${item.Ticker}</td>
-            <td style="padding: 8px 12px; text-align: right; color: #34d399; font-weight: bold;">US$ ${val.toFixed(2)}</td>
-          </tr>
-        `;
+      portfolioItems.forEach(item => {
+          const factor = (selectedNominales[item.Ticker] || 100) / 100;
+          const val = (parseFloat(item["Flujo total c/100 VN"]) || 0) * factor;
+          totalProyectado += val;
+          const year = item.Fecha_ISO ? item.Fecha_ISO.substring(0, 4) : 'N/D';
+          flowsByYear[year] = (flowsByYear[year] || 0) + val;
+      });
+
+      const cfRows = Object.keys(flowsByYear).sort().map(year => {
+          return `
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 12px; color: #ffffff; font-weight: bold;">${year}</td>
+              <td style="padding: 6px 12px; text-align: right; color: #34d399; font-weight: bold;">US$ ${flowsByYear[year].toFixed(2)}</td>
+            </tr>
+          `;
       }).join('');
 
       const printWin = window.open('', '_blank', 'width=1100,height=850');
@@ -776,32 +923,54 @@
         <head>
           <title>Propuesta de Cartera · Cuponera</title>
           <script src="https://cdn.jsdelivr.net/npm/chart.js"><\/script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"><\/script>
           <style>
-            @page { size: A4 landscape; margin: 8mm; }
-            body { background-color: #0b1329; color: #f8fafc; font-family: system-ui, sans-serif; margin: 0; padding: 24px; }
-            .card { background-color: #131e3d; border: 1px solid #1e293b; border-radius: 12px; padding: 16px; }
-            .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
-            .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+            @page { size: A4 landscape; margin: 0mm; }
+            * { box-sizing: border-box; }
+            html { background-color: #0b1329 !important; }
+            body { 
+                background-color: #0b1329 !important; 
+                color: #f8fafc; 
+                font-family: system-ui, sans-serif; 
+                margin: 0 !important; 
+                padding: 6mm 10mm; 
+                height: 100vh; 
+                overflow: hidden;
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important;
+            }
+            .card { background-color: #131e3d !important; border: 1px solid #1e293b !important; border-radius: 12px; padding: 12px; }
+            .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
+            .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
             table { width: 100%; border-collapse: collapse; font-size: 11px; }
-            th { background-color: #0e1731; color: #94a3b8; text-transform: uppercase; font-size: 9px; padding: 8px 12px; text-align: left; }
+            th { background-color: #0e1731 !important; color: #94a3b8 !important; text-transform: uppercase; font-size: 9px; padding: 4px 8px; text-align: left; }
+            
+            @media print {
+                .no-print { display: none !important; }
+            }
           </style>
         </head>
-        <body>
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 20px;">
+        <body id="reportContent">
+          <div id="printButtons" class="no-print" style="margin-bottom: 10px; display: flex; gap: 10px; justify-content: flex-end;">
+            <button onclick="window.print()" style="background: #3b82f6; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; font-family: inherit;">🖨️ Guardar PDF</button>
+            <button onclick="downloadImage()" style="background: #10b981; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; font-family: inherit;">🖼️ Descargar Imagen</button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 12px;">
             <div>
-              <h1 style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff;">Propuesta de Cartera · Cuponera</h1>
-              <p style="margin: 3px 0 0 0; font-size: 12px; color: #38bdf8;">Renta en USD con pagos de cupón a lo largo del año</p>
+              <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff;">Propuesta de Cartera · Cuponera</h1>
+              <p style="margin: 2px 0 0 0; font-size: 11px; color: #38bdf8;">Renta en USD con pagos de cupón a lo largo del año</p>
             </div>
-            <div style="font-size: 12px; color: #94a3b8; font-family: monospace;">${today}</div>
+            <div style="font-size: 11px; color: #94a3b8; font-family: monospace;">${today}</div>
           </div>
 
           <div class="grid-3">
-            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">TIR PROMEDIO</span><span style="font-size: 18px; font-weight: bold; color: #34d399;">${avgTIR}</span></div>
-            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">DURATION PROMEDIO</span><span style="font-size: 18px; font-weight: bold; color: #ffffff;">2,82</span></div>
-            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">INSTRUMENTOS</span><span style="font-size: 18px; font-weight: bold; color: #38bdf8;">${keys.length}</span></div>
+            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">TIR PROMEDIO</span><span style="font-size: 16px; font-weight: bold; color: #34d399;">${avgTIR}</span></div>
+            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">DURATION PROMEDIO</span><span style="font-size: 16px; font-weight: bold; color: #ffffff;">2,82</span></div>
+            <div class="card"><span style="font-size: 9px; color: #94a3b8; font-weight: bold; display: block; margin-bottom: 3px;">INSTRUMENTOS</span><span style="font-size: 16px; font-weight: bold; color: #38bdf8;">${keys.length}</span></div>
           </div>
 
-          <div class="card" style="margin-bottom: 16px; padding: 0; overflow: hidden;">
+          <div class="card" style="margin-bottom: 12px; padding: 0; overflow: hidden;">
             <table>
               <thead><tr><th>Ticker</th><th>Empresa</th><th style="text-align: right;">Ponder.</th><th style="text-align: right;">VN</th><th style="text-align: right;">Cupón</th><th style="text-align: right;">Paridad</th><th style="text-align: right;">TIR</th><th style="text-align: right;">Dur.</th><th style="text-align: right;">Venc.</th></tr></thead>
               <tbody>${assetRows}</tbody>
@@ -810,26 +979,26 @@
 
           <div class="grid-2">
             <div class="card">
-              <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 8px;">Composición</h3>
-              <div style="height: 140px; position: relative; display: flex; justify-content: center; align-items: center;"><canvas id="printPieCanvas"></canvas></div>
-              <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 14px; margin-bottom: 8px;">Distribución por Industria</h3>
+              <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 4px;">Composición</h3>
+              <div style="height: 120px; position: relative; display: flex; justify-content: center; align-items: center;"><canvas id="printPieCanvas"></canvas></div>
+              <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 10px; margin-bottom: 8px;">Distribución por Industria</h3>
               ${indRows}
             </div>
 
             <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
               <div>
-                <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 2px;">Flujo de Fondos</h3>
-                <p style="font-size: 9px; color: #94a3b8; margin-top: 0; margin-bottom: 8px;">Cupones estimados en USD según VN asignado</p>
-                <table><thead><tr><th>Mes</th><th>Ticker</th><th style="text-align: right;">Cupón (USD)</th></tr></thead><tbody>${cfRows}</tbody></table>
+                <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 2px;">Flujo de Fondos Anual</h3>
+                <p style="font-size: 9px; color: #94a3b8; margin-top: 0; margin-bottom: 8px;">Cupones estimados consolidados en USD</p>
+                <table><thead><tr><th>Año</th><th style="text-align: right;">Flujo Proyectado (USD)</th></tr></thead><tbody>${cfRows}</tbody></table>
               </div>
               <div style="border-top: 1px solid #1e293b; padding-top: 10px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 11px; font-weight: bold; color: #e2e8f0; text-transform: uppercase;">Total Anual</span>
-                <span style="font-size: 14px; font-weight: bold; color: #38bdf8;">US$ ${totalAnual.toFixed(2)}</span>
+                <span style="font-size: 11px; font-weight: bold; color: #e2e8f0; text-transform: uppercase;">Total Proyectado</span>
+                <span style="font-size: 14px; font-weight: bold; color: #38bdf8;">US$ ${totalProyectado.toFixed(2)}</span>
               </div>
             </div>
           </div>
 
-          <div style="font-size: 9px; color: #64748b; margin-top: 14px; border-top: 1px solid #1e293b; padding-top: 8px; font-style: italic;">
+          <div style="font-size: 9px; color: #64748b; margin-top: 10px; border-top: 1px solid #1e293b; padding-top: 6px; font-style: italic;">
             El presente material tiene fines informativos y no constituye una recomendación de inversión.
           </div>
 
@@ -839,10 +1008,10 @@
               new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                  labels: ${JSON.stringify(keys)},
+                  labels: ${JSON.stringify(sortedKeysByVN)},
                   datasets: [{
-                    data: ${JSON.stringify(keys.map(tk => selectedNominales[tk] || 100))},
-                    backgroundColor: ['#0284c7', '#06b6d4', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'].slice(0, ${keys.length}),
+                    data: ${JSON.stringify(sortedKeysByVN.map(tk => selectedNominales[tk] || 100))},
+                    backgroundColor: ['#0284c7', '#06b6d4', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#eab308', '#ec4899', '#8b5cf6'].slice(0, ${sortedKeysByVN.length}),
                     borderWidth: 0
                   }]
                 },
@@ -853,8 +1022,19 @@
                   plugins: { legend: { position: 'right', labels: { color: '#f8fafc', font: { size: 10, weight: 'bold' } } } }
                 }
               });
-              setTimeout(() => { printWin.print(); }, 500);
             });
+
+            function downloadImage() {
+                const btnDiv = document.getElementById('printButtons');
+                btnDiv.style.display = 'none'; 
+                html2canvas(document.body, { backgroundColor: '#0b1329', scale: 2 }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'Reporte_Cartera.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    btnDiv.style.display = 'flex'; 
+                });
+            }
           <\/script>
         </body>
         </html>
@@ -865,11 +1045,11 @@
     document.getElementById('filterTicker').addEventListener('input', renderTable);
     document.getElementById('filterLey').addEventListener('change', renderTable);
     document.getElementById('filterTipo').addEventListener('change', renderTable);
+    document.getElementById('filterYearList').addEventListener('change', renderTable);
     document.getElementById('filterMonth').addEventListener('change', renderTable);
     document.getElementById('inputVN').addEventListener('input', renderTable);
     document.getElementById('filterCuponMin').addEventListener('input', renderCalendarMatrix);
     document.getElementById('filterCuponMax').addEventListener('input', renderCalendarMatrix);
-    document.getElementById('filterVencYears').addEventListener('change', renderCalendarMatrix);
 
     loadData();
   </script>
