@@ -265,14 +265,21 @@
         </div>
 
         <div class="space-y-4 pt-2 border-t border-slate-800">
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-3">
-            <h3 class="font-bold text-slate-200 flex items-center gap-2">
+          <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 border-b border-slate-800 pb-3">
+            <h3 class="font-bold text-slate-200 flex items-center gap-2 shrink-0">
               <i class="fa-solid fa-money-bill-wave text-emerald-400"></i> Flujo Proyectado Consolidado
             </h3>
             
-            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+            <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto xl:justify-end">
               <div id="yearTabsContainer" class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs overflow-x-auto"></div>
               
+              <!-- NUEVO: SELECTOR DE VISTA DEL GRÁFICO (DESGLOSE VS TOTAL) -->
+              <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
+                <button id="chartViewStacked" onclick="setChartViewMode('stacked')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Desglose</button>
+                <button id="chartViewTotal" onclick="setChartViewMode('total')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Total</button>
+              </div>
+
+              <!-- SELECTOR DE AGRUPACIÓN (MES VS DÍA) -->
               <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
                 <button id="chartGroupMonth" onclick="setChartGrouping('month')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Por Mes</button>
                 <button id="chartGroupDay" onclick="setChartGrouping('day')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Por Día</button>
@@ -357,6 +364,7 @@
     let portfolioChart = null;
     let currentChartGroupMode = 'month';
     let selectedChartYear = 'ALL';
+    let chartViewMode = 'stacked'; // NUEVA VARIABLE PARA CONTROLAR EL GRÁFICO (Desglose vs Total)
 
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -671,6 +679,14 @@
       renderPortfolioFlow();
     }
 
+    // NUEVA FUNCIÓN: PARA CAMBIAR ENTRE DESGLOSE DE ACTIVOS O TOTAL UNIFICADO
+    function setChartViewMode(mode) {
+      chartViewMode = mode;
+      document.getElementById('chartViewStacked').className = mode === 'stacked' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      document.getElementById('chartViewTotal').className = mode === 'total' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      renderPortfolioFlow();
+    }
+
     function renderNominalesInputs() {
       const container = document.getElementById('nominalesInputsContainer');
       const keys = Object.keys(selectedNominales).sort();
@@ -803,15 +819,31 @@
         });
       }
 
-      const colors = ['#10b981', '#0ea5e9', '#8b5cf6', '#f59e0b', '#ec4899', '#14b8a6', '#f43f5e', '#6366f1', '#f97316', '#3b82f6'];
-      const datasets = keys.map((tk, idx) => {
-          return {
-              label: tk,
-              data: sortedKeys.map(k => grouped[k][tk] || 0),
-              backgroundColor: colors[idx % colors.length],
+      // LÓGICA DE DIBUJO DEPENDIENDO DEL MODO (TOTAL VS DESGLOSE)
+      let datasets = [];
+      
+      if (chartViewMode === 'total') {
+          datasets = [{
+              label: 'Flujo Total (USD)',
+              data: sortedKeys.map(k => {
+                  let sum = 0;
+                  for(let tk in grouped[k]) sum += grouped[k][tk];
+                  return sum;
+              }),
+              backgroundColor: '#10b981', // Verde unificado
               borderRadius: 4
-          };
-      });
+          }];
+      } else {
+          const colors = ['#10b981', '#0ea5e9', '#8b5cf6', '#f59e0b', '#ec4899', '#14b8a6', '#f43f5e', '#6366f1', '#f97316', '#3b82f6'];
+          datasets = keys.map((tk, idx) => {
+              return {
+                  label: tk,
+                  data: sortedKeys.map(k => grouped[k][tk] || 0),
+                  backgroundColor: colors[idx % colors.length],
+                  borderRadius: 4
+              };
+          });
+      }
 
       renderChart(labels, datasets);
     }
@@ -826,12 +858,27 @@
             responsive: true, 
             maintainAspectRatio: false, 
             plugins: { 
-                legend: { display: true, position: 'top', labels: { color: '#94a3b8', font: { size: 10 } } },
+                // Desaparecemos la leyenda si estamos en modo TOTAL
+                legend: { 
+                    display: chartViewMode === 'stacked', 
+                    position: 'top', 
+                    labels: { color: '#94a3b8', font: { size: 10 } } 
+                },
                 tooltip: { 
                     mode: 'index', 
                     intersect: false,
                     filter: function(tooltipItem) {
                         return tooltipItem.raw > 0;
+                    },
+                    // NUEVO: AGREGA LA LÍNEA FINAL DE "TOTAL: USD X"
+                    callbacks: {
+                        footer: function(tooltipItems) {
+                            let sum = 0;
+                            tooltipItems.forEach(function(tooltipItem) {
+                                sum += tooltipItem.parsed.y;
+                            });
+                            return '\nTotal: USD ' + sum.toFixed(2);
+                        }
                     }
                 } 
             }, 
