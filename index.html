@@ -364,7 +364,7 @@
     let portfolioChart = null;
     let currentChartGroupMode = 'month';
     let selectedChartYear = 'ALL';
-    let chartViewMode = 'stacked'; // NUEVA VARIABLE PARA CONTROLAR EL GRÁFICO (Desglose vs Total)
+    let chartViewMode = 'stacked';
 
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -679,7 +679,6 @@
       renderPortfolioFlow();
     }
 
-    // NUEVA FUNCIÓN: PARA CAMBIAR ENTRE DESGLOSE DE ACTIVOS O TOTAL UNIFICADO
     function setChartViewMode(mode) {
       chartViewMode = mode;
       document.getElementById('chartViewStacked').className = mode === 'stacked' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
@@ -819,7 +818,6 @@
         });
       }
 
-      // LÓGICA DE DIBUJO DEPENDIENDO DEL MODO (TOTAL VS DESGLOSE)
       let datasets = [];
       
       if (chartViewMode === 'total') {
@@ -830,7 +828,7 @@
                   for(let tk in grouped[k]) sum += grouped[k][tk];
                   return sum;
               }),
-              backgroundColor: '#10b981', // Verde unificado
+              backgroundColor: '#10b981',
               borderRadius: 4
           }];
       } else {
@@ -858,7 +856,6 @@
             responsive: true, 
             maintainAspectRatio: false, 
             plugins: { 
-                // Desaparecemos la leyenda si estamos en modo TOTAL
                 legend: { 
                     display: chartViewMode === 'stacked', 
                     position: 'top', 
@@ -870,7 +867,6 @@
                     filter: function(tooltipItem) {
                         return tooltipItem.raw > 0;
                     },
-                    // NUEVO: AGREGA LA LÍNEA FINAL DE "TOTAL: USD X"
                     callbacks: {
                         footer: function(tooltipItems) {
                             let sum = 0;
@@ -909,7 +905,7 @@
         indMap[info.Emisor || 'N/D'] = (indMap[info.Emisor || 'N/D'] || 0) + vn;
 
         return `
-          <tr style="border-bottom: 1px solid #1e293b;">
+          <tr style="border-bottom: 1px solid #1e293b; page-break-inside: avoid; break-inside: avoid;">
             <td style="padding: 4px 8px; font-weight: bold; color: #38bdf8;">${tk}</td>
             <td style="padding: 4px 8px; color: #cbd5e1;">${info.Emisor || 'N/D'}</td>
             <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: #e2e8f0;">${ponderacion}</td>
@@ -974,19 +970,28 @@
           <style>
             @page { size: A4 landscape; margin: 0mm; }
             * { box-sizing: border-box; }
-            html { background-color: #0b1329 !important; }
+            html { 
+                background-color: #0b1329 !important; 
+                min-height: 100vh; /* Permite que la página crezca sin cortes */
+            }
             body { 
                 background-color: #0b1329 !important; 
                 color: #f8fafc; 
                 font-family: system-ui, sans-serif; 
                 margin: 0 !important; 
                 padding: 6mm 10mm; 
-                height: 100vh; 
-                overflow: hidden;
+                min-height: 100vh; /* Permite hacer scroll */
                 -webkit-print-color-adjust: exact !important; 
                 print-color-adjust: exact !important;
             }
-            .card { background-color: #131e3d !important; border: 1px solid #1e293b !important; border-radius: 12px; padding: 12px; }
+            .card { 
+                background-color: #131e3d !important; 
+                border: 1px solid #1e293b !important; 
+                border-radius: 12px; 
+                padding: 12px; 
+                page-break-inside: avoid; /* Evita que las tarjetas se corten al medio al imprimir */
+                break-inside: avoid;
+            }
             .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
             .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
             table { width: 100%; border-collapse: collapse; font-size: 11px; }
@@ -1074,7 +1079,15 @@
             function downloadImage() {
                 const btnDiv = document.getElementById('printButtons');
                 btnDiv.style.display = 'none'; 
-                html2canvas(document.body, { backgroundColor: '#0b1329', scale: 2 }).then(canvas => {
+                
+                // Forzamos un pequeño scroll al top para evitar recortes raros del navegador
+                window.scrollTo(0, 0);
+
+                html2canvas(document.documentElement, { 
+                    backgroundColor: '#0b1329', 
+                    scale: 2,
+                    windowHeight: document.documentElement.scrollHeight
+                }).then(canvas => {
                     const link = document.createElement('a');
                     link.download = 'Reporte_Cartera.png';
                     link.href = canvas.toDataURL('image/png');
