@@ -1,6 +1,6 @@
 const jsonData = {
   "metadata": {
-    "ultima_actualizacion": "17/08/2026 11:23:47",
+    "ultima_actualizacion": "17/08/2026 15:34:57",
     "total_activos": 309,
     "fuente": "Data912 API (vía GitHub Actions)"
   },
