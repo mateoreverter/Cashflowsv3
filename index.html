@@ -144,7 +144,6 @@
                 <th class="py-3 px-4 text-right">VN Residual Final</th>
               </tr>
             </thead>
-            <!-- La tabla usa un diseño de filas agrupadas. Reemplazamos tbody central por estructura flexible -->
             <tbody id="tableBody" class="font-mono text-xs">
             </tbody>
           </table>
@@ -170,13 +169,12 @@
               <span id="selectedCount" class="text-base font-bold text-sky-400">0</span>
             </div>
             
-            <!-- INPUT OCULTOS PARA ARCHIVOS -->
             <input type="file" id="importPortfolioInput" accept=".json" style="display:none;" onchange="handleImport(event)">
             <input type="file" id="importExcelInput" accept=".xlsx, .xls" style="display:none;" onchange="handleExcelImport(event)">
 
             <!-- NUEVO: BOTÓN IMPORTAR EXCEL (POSICIÓN FINAL) -->
             <button onclick="document.getElementById('importExcelInput').click()" class="bg-indigo-600 hover:bg-indigo-500 text-xs text-white px-3 py-2.5 rounded-xl border border-indigo-500/50 transition-colors shadow-lg shadow-indigo-500/20" title="Subir Excel de Posición Final">
-              <i class="fa-solid fa-file-excel mr-1"></i> <span class="hidden sm:inline">Importar Excel</span>
+              <i class="fa-solid fa-file-excel mr-1"></i> <span class="hidden sm:inline">Importar Posición</span>
             </button>
             
             <button onclick="triggerImport()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Cargar JSON Cartera">
@@ -194,7 +192,6 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-1">
-          <!-- BUSCADOR TICKER CALENDARIO -->
           <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
             <label class="block text-[11px] font-semibold text-slate-300 uppercase">Buscar Ticker</label>
             <div class="relative">
@@ -414,7 +411,6 @@
       document.getElementById('statusModal').classList.add('hidden');
     }
 
-    // Funciones Exportar / Importar Cartera JSON
     function exportPortfolio() {
       const keys = Object.keys(selectedNominales);
       if (keys.length === 0) {
@@ -457,7 +453,6 @@
       event.target.value = ""; 
     }
 
-    // NUEVO: PROCESAMIENTO AUTOMÁTICO DE EXCEL DE POSICIÓN FINAL
     function handleExcelImport(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -474,19 +469,17 @@
           
           let countImported = 0;
           jsonArr.forEach((row, index) => {
-              if (index === 0) return; // Saltamos la cabecera (Fila 1)
-              if (!row || row.length < 13) return; // Aseguramos llegar a la columna M
+              if (index === 0) return; 
+              if (!row || row.length < 13) return; 
               
-              const tipoStr = String(row[12] || '').toUpperCase(); // Columna M
-              // Filtramos por Corporativos o Bonos
+              const tipoStr = String(row[12] || '').toUpperCase(); 
               if (tipoStr.includes('CORPORATIVO') || tipoStr.includes('BONO')) {
-                  const tkRaw = String(row[11] || '').trim().toUpperCase(); // Columna L
-                  let cantidad = parseFloat(row[0]); // Columna A
+                  const tkRaw = String(row[11] || '').trim().toUpperCase(); 
+                  let cantidad = parseFloat(row[0]); 
                   if (isNaN(cantidad)) cantidad = 0;
                   
                   if (tkRaw && cantidad > 0) {
                       let finalTk = null;
-                      // Mapeo inteligente de terminaciones D vs O en base de datos
                       if (universoData[tkRaw]) {
                           finalTk = tkRaw;
                       } else if (tkRaw.endsWith('D') && universoData[tkRaw.slice(0, -1)]) {
@@ -624,7 +617,6 @@
       }
     }
 
-    // NUEVO: SISTEMA DE DESPLIEGUE (COLLAPSE) EN TABLA DE LISTADO
     function toggleRow(tk) {
         const icon = document.getElementById('icon-' + tk);
         const rows = document.querySelectorAll('.child-row-' + tk);
@@ -660,7 +652,6 @@
                (yearFilter === 'ALL' || (item.Fecha_ISO && item.Fecha_ISO.startsWith(yearFilter)));
       });
 
-      // Agrupamos la info de flujos por activo para mostrar 1 fila principal
       const groupedData = {};
       filtered.forEach(item => {
         if (!groupedData[item.Ticker]) groupedData[item.Ticker] = [];
@@ -690,7 +681,6 @@
 
         const leyBadge = info.Ley === 'Ley NY' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
 
-        // FILA PRINCIPAL DEL ACTIVO
         html += `
           <tr class="hover:bg-slate-800/60 transition-colors cursor-pointer border-b border-slate-800/80 bg-slate-900/50" onclick="toggleRow('${tk}')">
             <td class="py-3 px-4 font-semibold text-slate-400 hover:text-white transition-colors select-none whitespace-nowrap"><i class="fa-solid fa-chevron-right text-[10px] w-4 text-center transition-transform" id="icon-${tk}"></i>Ver ${flows.length} pagos</td>
@@ -704,7 +694,6 @@
           </tr>
         `;
 
-        // FILAS HIJAS (FLUJOS OCULTOS POR DEFECTO)
         flows.forEach(item => {
           html += `
             <tr class="child-row-${tk} hidden text-xs text-slate-400/80 bg-slate-950/40 hover:bg-slate-800/30 transition-colors border-b border-slate-800/40">
@@ -736,7 +725,6 @@
         const tk = item.Ticker;
         if (!tk || !item.Mes_Num) return;
         
-        // Filtro buscador Ticker en Calendario
         if (searchCalendar && !tk.includes(searchCalendar)) return;
 
         const info = universoData[tk] || {};
