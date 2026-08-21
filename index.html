@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lector de Archivos Excel 100% en el Navegador -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <!-- Cargamos directamente los datos JS sin bloqueo CORS -->
   <script src="data.js"></script>
   <style>
@@ -62,7 +64,6 @@
     <!-- PESTAÑA 1: LISTADO -->
     <div id="tabList" class="space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
-        <!-- Grilla ajustada a 7 columnas para alojar Año de Pago -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
           
           <div class="col-span-1">
@@ -90,7 +91,6 @@
             </select>
           </div>
 
-          <!-- Filtro AÑO DE PAGO -->
           <div class="col-span-1">
             <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase">Año de Pago</label>
             <select id="filterYearList" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
@@ -125,7 +125,7 @@
       <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
         <div class="p-4 border-b border-slate-800 flex justify-between items-center">
           <h2 class="font-bold text-slate-200 flex items-center gap-2">
-            <i class="fa-solid fa-list-check text-emerald-400"></i> Cronograma Filtrado
+            <i class="fa-solid fa-list-check text-emerald-400"></i> Cronograma Filtrado (Por Activo)
           </h2>
           <span id="recordsCount" class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">Cargando datos...</span>
         </div>
@@ -134,17 +134,18 @@
           <table class="w-full text-left text-sm text-slate-300">
             <thead class="bg-slate-950 text-xs uppercase text-slate-400 border-b border-slate-800">
               <tr>
-                <th class="py-3 px-4">Fecha Pago</th>
+                <th class="py-3 px-4">Acción</th>
                 <th class="py-3 px-4">Ticker</th>
                 <th class="py-3 px-4">Ley</th>
                 <th class="py-3 px-4">Paridad</th>
-                <th class="py-3 px-4 text-right">Cupón (Interés)</th>
-                <th class="py-3 px-4 text-right">Amortización</th>
-                <th class="py-3 px-4 text-right">Flujo Total</th>
-                <th class="py-3 px-4 text-right">VN Residual Previo</th>
+                <th class="py-3 px-4 text-right">Cupón (Interés Total)</th>
+                <th class="py-3 px-4 text-right">Amortización (Total)</th>
+                <th class="py-3 px-4 text-right">Flujo Total Consolidado</th>
+                <th class="py-3 px-4 text-right">VN Residual Final</th>
               </tr>
             </thead>
-            <tbody id="tableBody" class="divide-y divide-slate-800/60 font-mono text-xs">
+            <!-- La tabla usa un diseño de filas agrupadas. Reemplazamos tbody central por estructura flexible -->
+            <tbody id="tableBody" class="font-mono text-xs">
             </tbody>
           </table>
         </div>
@@ -163,38 +164,51 @@
             <p class="text-xs text-slate-400 mt-0.5">Pasa el cursor sobre cada activo para ver sus datos completos y utiliza los filtros por Empresa, Rango o Años.</p>
           </div>
           
-          <div class="flex items-center gap-3">
+          <div class="flex flex-wrap items-center gap-3">
             <div class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-right hidden sm:block">
               <span class="text-[10px] text-slate-400 block uppercase font-semibold">ONs Seleccionadas</span>
               <span id="selectedCount" class="text-base font-bold text-sky-400">0</span>
             </div>
             
-            <!-- INPUT OCULTO PARA CARGAR ARCHIVOS -->
+            <!-- INPUT OCULTOS PARA ARCHIVOS -->
             <input type="file" id="importPortfolioInput" accept=".json" style="display:none;" onchange="handleImport(event)">
+            <input type="file" id="importExcelInput" accept=".xlsx, .xls" style="display:none;" onchange="handleExcelImport(event)">
+
+            <!-- NUEVO: BOTÓN IMPORTAR EXCEL (POSICIÓN FINAL) -->
+            <button onclick="document.getElementById('importExcelInput').click()" class="bg-indigo-600 hover:bg-indigo-500 text-xs text-white px-3 py-2.5 rounded-xl border border-indigo-500/50 transition-colors shadow-lg shadow-indigo-500/20" title="Subir Excel de Posición Final">
+              <i class="fa-solid fa-file-excel mr-1"></i> <span class="hidden sm:inline">Importar Excel</span>
+            </button>
             
-            <!-- BOTÓN CARGAR CARTERA -->
-            <button onclick="triggerImport()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Cargar Cartera">
+            <button onclick="triggerImport()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Cargar JSON Cartera">
               <i class="fa-solid fa-upload"></i>
             </button>
 
-            <!-- BOTÓN GUARDAR CARTERA -->
-            <button onclick="exportPortfolio()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Guardar Cartera">
+            <button onclick="exportPortfolio()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Guardar JSON Cartera">
               <i class="fa-solid fa-download"></i>
             </button>
 
-            <!-- BOTÓN LIMPIAR -->
             <button onclick="clearSelection()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 px-3 py-2.5 rounded-xl border border-slate-700 transition-colors" title="Limpiar todo">
               <i class="fa-solid fa-rotate-left mr-1"></i> <span class="hidden sm:inline">Limpiar</span>
             </button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-1">
+          <!-- BUSCADOR TICKER CALENDARIO -->
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
+            <label class="block text-[11px] font-semibold text-slate-300 uppercase">Buscar Ticker</label>
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-1.5 text-slate-500 text-xs"></i>
+              <input type="text" id="filterTickerCalendar" placeholder="Ej: AE38..." oninput="renderCalendarMatrix()"
+                     class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-7 pr-2 py-1 text-xs text-white focus:outline-none uppercase">
+            </div>
+          </div>
+
           <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5 relative">
             <label class="block text-[11px] font-semibold text-slate-300 uppercase">Empresas / Emisores</label>
             <div class="relative">
               <button onclick="toggleCompanyDropdown()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 flex justify-between items-center focus:outline-none">
-                <span id="companyDropdownLabel">Todas las empresas seleccionadas</span>
+                <span id="companyDropdownLabel" class="truncate pr-2">Todas seleccionadas</span>
                 <i class="fa-solid fa-chevron-down text-slate-500 text-[10px]"></i>
               </button>
 
@@ -220,12 +234,11 @@
             </div>
           </div>
 
-          <!-- AÑOS VENCIMIENTO MULTI-SELECT -->
           <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5 relative">
             <label class="block text-[11px] font-semibold text-slate-300 uppercase">Años Vencimiento</label>
             <div class="relative">
               <button onclick="toggleVencYearDropdown()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 flex justify-between items-center focus:outline-none">
-                <span id="vencYearDropdownLabel">Todos los años</span>
+                <span id="vencYearDropdownLabel" class="truncate pr-2">Todos los años</span>
                 <i class="fa-solid fa-chevron-down text-slate-500 text-[10px]"></i>
               </button>
 
@@ -273,13 +286,11 @@
             <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto xl:justify-end">
               <div id="yearTabsContainer" class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs overflow-x-auto"></div>
               
-              <!-- NUEVO: SELECTOR DE VISTA DEL GRÁFICO (DESGLOSE VS TOTAL) -->
               <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
                 <button id="chartViewStacked" onclick="setChartViewMode('stacked')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Desglose</button>
                 <button id="chartViewTotal" onclick="setChartViewMode('total')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Total</button>
               </div>
 
-              <!-- SELECTOR DE AGRUPACIÓN (MES VS DÍA) -->
               <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
                 <button id="chartGroupMonth" onclick="setChartGrouping('month')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Por Mes</button>
                 <button id="chartGroupDay" onclick="setChartGrouping('day')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Por Día</button>
@@ -403,7 +414,7 @@
       document.getElementById('statusModal').classList.add('hidden');
     }
 
-    // Funciones Exportar / Importar Cartera
+    // Funciones Exportar / Importar Cartera JSON
     function exportPortfolio() {
       const keys = Object.keys(selectedNominales);
       if (keys.length === 0) {
@@ -420,9 +431,7 @@
       URL.revokeObjectURL(url);
     }
 
-    function triggerImport() {
-      document.getElementById('importPortfolioInput').click();
-    }
+    function triggerImport() { document.getElementById('importPortfolioInput').click(); }
 
     function handleImport(event) {
       const file = event.target.files[0];
@@ -438,14 +447,79 @@
             renderNominalesInputs();
             renderPortfolioFlow();
           } else {
-            alert("El archivo no tiene el formato correcto.");
+            alert("El archivo JSON no tiene el formato correcto.");
           }
         } catch (error) {
           alert("Error al leer el archivo. Asegúrate de que sea el archivo JSON descargado previamente.");
         }
       };
       reader.readAsText(file);
-      event.target.value = ""; // Resetear input
+      event.target.value = ""; 
+    }
+
+    // NUEVO: PROCESAMIENTO AUTOMÁTICO DE EXCEL DE POSICIÓN FINAL
+    function handleExcelImport(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, {type: 'array'});
+          const firstSheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[firstSheetName];
+          
+          const jsonArr = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+          
+          let countImported = 0;
+          jsonArr.forEach((row, index) => {
+              if (index === 0) return; // Saltamos la cabecera (Fila 1)
+              if (!row || row.length < 13) return; // Aseguramos llegar a la columna M
+              
+              const tipoStr = String(row[12] || '').toUpperCase(); // Columna M
+              // Filtramos por Corporativos o Bonos
+              if (tipoStr.includes('CORPORATIVO') || tipoStr.includes('BONO')) {
+                  const tkRaw = String(row[11] || '').trim().toUpperCase(); // Columna L
+                  let cantidad = parseFloat(row[0]); // Columna A
+                  if (isNaN(cantidad)) cantidad = 0;
+                  
+                  if (tkRaw && cantidad > 0) {
+                      let finalTk = null;
+                      // Mapeo inteligente de terminaciones D vs O en base de datos
+                      if (universoData[tkRaw]) {
+                          finalTk = tkRaw;
+                      } else if (tkRaw.endsWith('D') && universoData[tkRaw.slice(0, -1)]) {
+                          finalTk = tkRaw.slice(0, -1);
+                      } else if (tkRaw.endsWith('D') && universoData[tkRaw.slice(0, -1) + 'O']) {
+                          finalTk = tkRaw.slice(0, -1) + 'O';
+                      } else if (universoData[tkRaw + 'O']) {
+                          finalTk = tkRaw + 'O';
+                      }
+                      
+                      if (finalTk) {
+                          selectedNominales[finalTk] = (selectedNominales[finalTk] || 0) + cantidad;
+                          countImported++;
+                      }
+                  }
+              }
+          });
+          
+          if (countImported > 0) {
+              alert(`¡Éxito! Se agruparon e importaron nominales desde ${countImported} filas de tu Excel.`);
+              renderCalendarMatrix();
+              renderNominalesInputs();
+              renderPortfolioFlow();
+          } else {
+              alert("El Excel se leyó, pero no se encontraron 'Bonos' o 'Corporativos' válidos con nominales.");
+          }
+        } catch (error) {
+            console.error("Error al procesar Excel:", error);
+            alert("Hubo un error leyendo el archivo Excel. Asegurate de subir la Posición Final estándar.");
+        }
+      };
+      reader.readAsArrayBuffer(file);
+      event.target.value = "";
     }
 
     function initAdvancedFilters() {
@@ -497,7 +571,6 @@
       updateVencYearDropdownStatus();
     }
 
-    // Lógica Empresas
     function toggleCompanyDropdown() { document.getElementById('companyDropdownMenu').classList.toggle('hidden'); }
     function toggleSelectAllCompanies(checked) {
       document.querySelectorAll('.company-checkbox').forEach(cb => {
@@ -514,10 +587,9 @@
     function updateCompanyDropdownStatus() {
       const total = document.querySelectorAll('.company-checkbox').length;
       document.getElementById('selectedCompaniesCount').innerText = `(${selectedCompaniesSet.size}/${total})`;
-      document.getElementById('companyDropdownLabel').innerText = selectedCompaniesSet.size === total ? "Todas las empresas seleccionadas" : `${selectedCompaniesSet.size} empresas seleccionadas`;
+      document.getElementById('companyDropdownLabel').innerText = selectedCompaniesSet.size === total ? "Todas seleccionadas" : `${selectedCompaniesSet.size} seleccionadas`;
     }
 
-    // Lógica Años de Vencimiento
     function toggleVencYearDropdown() { document.getElementById('vencYearDropdownMenu').classList.toggle('hidden'); }
     function toggleSelectAllVencYears(checked) {
       document.querySelectorAll('.venc-year-checkbox').forEach(cb => {
@@ -534,7 +606,7 @@
     function updateVencYearDropdownStatus() {
       const total = document.querySelectorAll('.venc-year-checkbox').length;
       document.getElementById('selectedVencYearsCount').innerText = `(${selectedVencYearsSet.size}/${total})`;
-      document.getElementById('vencYearDropdownLabel').innerText = selectedVencYearsSet.size === total ? "Todos los años" : `${selectedVencYearsSet.size} años seleccionados`;
+      document.getElementById('vencYearDropdownLabel').innerText = selectedVencYearsSet.size === total ? "Todos los años" : `${selectedVencYearsSet.size} años sel.`;
     }
 
     function switchTab(tab) {
@@ -552,6 +624,24 @@
       }
     }
 
+    // NUEVO: SISTEMA DE DESPLIEGUE (COLLAPSE) EN TABLA DE LISTADO
+    function toggleRow(tk) {
+        const icon = document.getElementById('icon-' + tk);
+        const rows = document.querySelectorAll('.child-row-' + tk);
+        if (rows.length === 0) return;
+        const isHidden = rows[0].classList.contains('hidden');
+
+        if (isHidden) {
+            icon.classList.remove('fa-chevron-right');
+            icon.classList.add('fa-chevron-down');
+            rows.forEach(r => r.classList.remove('hidden'));
+        } else {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-right');
+            rows.forEach(r => r.classList.add('hidden'));
+        }
+    }
+
     function renderTable() {
       const tickerFilter = (document.getElementById('filterTicker').value || '').toUpperCase().trim();
       const leyFilter = document.getElementById('filterLey').value;
@@ -563,7 +653,6 @@
       const filtered = allData.filter(item => {
         const itemTicker = (item.Ticker || '').toString().toUpperCase();
         const info = universoData[item.Ticker] || {};
-        
         return (!tickerFilter || itemTicker.includes(tickerFilter)) &&
                (leyFilter === 'ALL' || item.Ley === leyFilter) &&
                (monthFilter === 'ALL' || item.Mes_Num == monthFilter) &&
@@ -571,29 +660,74 @@
                (yearFilter === 'ALL' || (item.Fecha_ISO && item.Fecha_ISO.startsWith(yearFilter)));
       });
 
-      document.getElementById('recordsCount').innerText = `Mostrando ${filtered.length} pago(s)`;
-      document.getElementById('tableBody').innerHTML = filtered.length === 0 
-        ? `<tr><td colspan="8" class="text-center py-8 text-slate-500">No se encontraron resultados.</td></tr>`
-        : filtered.map(item => {
-            const info = universoData[item.Ticker] || {};
-            return `
-              <tr class="hover:bg-slate-800/40 transition-colors">
-                <td class="py-3 px-4 font-semibold text-white">${item["Fecha de pago"] || ''}</td>
-                <td class="py-3 px-4 font-bold text-emerald-400">${item.Ticker || ''}</td>
-                <td class="py-3 px-4"><span class="px-2 py-0.5 text-[10px] ${item.Ley === 'Ley NY' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20'} border rounded-md">${item.Ley}</span></td>
-                <td class="py-3 px-4 text-sky-400 font-semibold">${info.Paridad || '-'}</td>
-                <td class="py-3 px-4 text-right text-slate-300">USD ${(parseFloat(item["Interes c/100 VN"] || 0) * factor).toFixed(2)}</td>
-                <td class="py-3 px-4 text-right text-slate-300">USD ${(parseFloat(item["Amortizacion c/100 VN"] || 0) * factor).toFixed(2)}</td>
-                <td class="py-3 px-4 text-right font-bold text-emerald-400">USD ${(parseFloat(item["Flujo total c/100 VN"] || 0) * factor).toFixed(2)}</td>
-                <td class="py-3 px-4 text-right text-slate-400">${item["VN residual previo"] ?? ''}%</td>
-              </tr>
-            `;
-        }).join('');
+      // Agrupamos la info de flujos por activo para mostrar 1 fila principal
+      const groupedData = {};
+      filtered.forEach(item => {
+        if (!groupedData[item.Ticker]) groupedData[item.Ticker] = [];
+        groupedData[item.Ticker].push(item);
+      });
+
+      const uniqueTickers = Object.keys(groupedData).sort();
+      document.getElementById('recordsCount').innerText = `Mostrando ${uniqueTickers.length} activo(s) con ${filtered.length} flujos`;
+      
+      const tbody = document.getElementById('tableBody');
+      if (uniqueTickers.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-8 text-slate-500">No se encontraron resultados.</td></tr>`;
+        return;
+      }
+
+      let html = '';
+      uniqueTickers.forEach(tk => {
+        const flows = groupedData[tk];
+        const info = universoData[tk] || {};
+        
+        let sumInt = 0, sumAmort = 0, sumTotal = 0;
+        flows.forEach(f => {
+            sumInt += (parseFloat(f["Interes c/100 VN"]) || 0) * factor;
+            sumAmort += (parseFloat(f["Amortizacion c/100 VN"]) || 0) * factor;
+            sumTotal += (parseFloat(f["Flujo total c/100 VN"]) || 0) * factor;
+        });
+
+        const leyBadge = info.Ley === 'Ley NY' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+
+        // FILA PRINCIPAL DEL ACTIVO
+        html += `
+          <tr class="hover:bg-slate-800/60 transition-colors cursor-pointer border-b border-slate-800/80 bg-slate-900/50" onclick="toggleRow('${tk}')">
+            <td class="py-3 px-4 font-semibold text-slate-400 hover:text-white transition-colors select-none whitespace-nowrap"><i class="fa-solid fa-chevron-right text-[10px] w-4 text-center transition-transform" id="icon-${tk}"></i>Ver ${flows.length} pagos</td>
+            <td class="py-3 px-4 font-bold text-emerald-400">${tk}</td>
+            <td class="py-3 px-4"><span class="px-2 py-0.5 text-[10px] ${leyBadge} border rounded-md">${info.Ley || flows[0].Ley}</span></td>
+            <td class="py-3 px-4 text-sky-400 font-semibold">${info.Paridad || '-'}</td>
+            <td class="py-3 px-4 text-right text-slate-300 font-bold">USD ${sumInt.toFixed(2)}</td>
+            <td class="py-3 px-4 text-right text-slate-300 font-bold">USD ${sumAmort.toFixed(2)}</td>
+            <td class="py-3 px-4 text-right font-bold text-emerald-400">USD ${sumTotal.toFixed(2)}</td>
+            <td class="py-3 px-4 text-right text-slate-500">-</td>
+          </tr>
+        `;
+
+        // FILAS HIJAS (FLUJOS OCULTOS POR DEFECTO)
+        flows.forEach(item => {
+          html += `
+            <tr class="child-row-${tk} hidden text-xs text-slate-400/80 bg-slate-950/40 hover:bg-slate-800/30 transition-colors border-b border-slate-800/40">
+              <td class="py-2 px-4 pl-12 font-mono"><i class="fa-regular fa-calendar-days mr-2 opacity-50"></i>${item["Fecha de pago"] || ''}</td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 text-right">USD ${((parseFloat(item["Interes c/100 VN"])||0)*factor).toFixed(2)}</td>
+              <td class="py-2 px-4 text-right">USD ${((parseFloat(item["Amortizacion c/100 VN"])||0)*factor).toFixed(2)}</td>
+              <td class="py-2 px-4 text-right text-emerald-500/70 font-semibold">USD ${((parseFloat(item["Flujo total c/100 VN"])||0)*factor).toFixed(2)}</td>
+              <td class="py-2 px-4 text-right">${item["VN residual previo"] ?? ''}%</td>
+            </tr>
+          `;
+        });
+      });
+
+      tbody.innerHTML = html;
     }
 
     function renderCalendarMatrix() {
       const minCupon = parseFloat(document.getElementById('filterCuponMin').value);
       const maxCupon = parseFloat(document.getElementById('filterCuponMax').value);
+      const searchCalendar = (document.getElementById('filterTickerCalendar').value || '').toUpperCase().trim();
 
       const monthsMap = {};
       for (let m = 1; m <= 12; m++) monthsMap[m] = new Set();
@@ -601,6 +735,10 @@
       allData.forEach(item => {
         const tk = item.Ticker;
         if (!tk || !item.Mes_Num) return;
+        
+        // Filtro buscador Ticker en Calendario
+        if (searchCalendar && !tk.includes(searchCalendar)) return;
+
         const info = universoData[tk] || {};
         if (!selectedCompaniesSet.has(info.Emisor)) return;
         if (!isNaN(minCupon) && info.Cupon < minCupon) return;
@@ -660,6 +798,7 @@
     function clearSelection() { selectedNominales = {}; renderCalendarMatrix(); renderNominalesInputs(); renderPortfolioFlow(); }
 
     function resetCalendarFilters() {
+      document.getElementById('filterTickerCalendar').value = '';
       toggleSelectAllCompanies(true);
       toggleSelectAllVencYears(true);
       document.getElementById('filterCuponMin').value = '';
@@ -819,7 +958,6 @@
       }
 
       let datasets = [];
-      
       if (chartViewMode === 'total') {
           datasets = [{
               label: 'Flujo Total (USD)',
@@ -972,7 +1110,7 @@
             * { box-sizing: border-box; }
             html { 
                 background-color: #0b1329 !important; 
-                min-height: 100vh; /* Permite que la página crezca sin cortes */
+                min-height: 100vh; 
             }
             body { 
                 background-color: #0b1329 !important; 
@@ -980,7 +1118,7 @@
                 font-family: system-ui, sans-serif; 
                 margin: 0 !important; 
                 padding: 6mm 10mm; 
-                min-height: 100vh; /* Permite hacer scroll */
+                min-height: 100vh; 
                 -webkit-print-color-adjust: exact !important; 
                 print-color-adjust: exact !important;
             }
@@ -989,7 +1127,7 @@
                 border: 1px solid #1e293b !important; 
                 border-radius: 12px; 
                 padding: 12px; 
-                page-break-inside: avoid; /* Evita que las tarjetas se corten al medio al imprimir */
+                page-break-inside: avoid; 
                 break-inside: avoid;
             }
             .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
@@ -1079,8 +1217,6 @@
             function downloadImage() {
                 const btnDiv = document.getElementById('printButtons');
                 btnDiv.style.display = 'none'; 
-                
-                // Forzamos un pequeño scroll al top para evitar recortes raros del navegador
                 window.scrollTo(0, 0);
 
                 html2canvas(document.documentElement, { 
