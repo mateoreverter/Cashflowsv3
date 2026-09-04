@@ -172,7 +172,6 @@
             <input type="file" id="importPortfolioInput" accept=".json" style="display:none;" onchange="handleImport(event)">
             <input type="file" id="importExcelInput" accept=".xlsx, .xls" style="display:none;" onchange="handleExcelImport(event)">
 
-            <!-- NUEVO: BOTÓN IMPORTAR EXCEL (POSICIÓN FINAL) -->
             <button onclick="document.getElementById('importExcelInput').click()" class="bg-indigo-600 hover:bg-indigo-500 text-xs text-white px-3 py-2.5 rounded-xl border border-indigo-500/50 transition-colors shadow-lg shadow-indigo-500/20" title="Subir Excel de Posición Final">
               <i class="fa-solid fa-file-excel mr-1"></i> <span class="hidden sm:inline">Importar Posición</span>
             </button>
@@ -283,6 +282,12 @@
             <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto xl:justify-end">
               <div id="yearTabsContainer" class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs overflow-x-auto"></div>
               
+              <!-- NUEVO FILTRO: AMORTIZACIÓN VS SOLO INTERÉS -->
+              <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
+                <button id="chartFlowAll" onclick="setChartFlowMode('all')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Con Amort.</button>
+                <button id="chartFlowInt" onclick="setChartFlowMode('interest')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Solo Interés</button>
+              </div>
+
               <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs shrink-0">
                 <button id="chartViewStacked" onclick="setChartViewMode('stacked')" class="px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow">Desglose</button>
                 <button id="chartViewTotal" onclick="setChartViewMode('total')" class="px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white">Total</button>
@@ -373,6 +378,7 @@
     let currentChartGroupMode = 'month';
     let selectedChartYear = 'ALL';
     let chartViewMode = 'stacked';
+    let chartFlowMode = 'all'; // NUEVA VARIABLE PARA FILTRAR AMORTIZACIONES
 
     const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
@@ -813,6 +819,14 @@
       renderPortfolioFlow();
     }
 
+    // NUEVA FUNCIÓN PARA FILTRAR AMORTIZACIÓN VS SOLO INTERÉS
+    function setChartFlowMode(mode) {
+      chartFlowMode = mode;
+      document.getElementById('chartFlowAll').className = mode === 'all' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      document.getElementById('chartFlowInt').className = mode === 'interest' ? "px-3 py-1 rounded-lg font-medium transition-all text-emerald-400 bg-slate-800 shadow" : "px-3 py-1 rounded-lg font-medium transition-all text-slate-400 hover:text-white";
+      renderPortfolioFlow();
+    }
+
     function renderNominalesInputs() {
       const container = document.getElementById('nominalesInputsContainer');
       const keys = Object.keys(selectedNominales).sort();
@@ -881,8 +895,11 @@
         const factor = (selectedNominales[tk] || 100) / 100;
         const intVal = (parseFloat(item["Interes c/100 VN"]) || 0) * factor;
         const amortVal = (parseFloat(item["Amortizacion c/100 VN"]) || 0) * factor;
-        const totalVal = (parseFloat(item["Flujo total c/100 VN"]) || 0) * factor;
-        grandTotal += totalVal;
+        const totalValOriginal = (parseFloat(item["Flujo total c/100 VN"]) || 0) * factor;
+        
+        // Dependiendo del filtro, sumamos el total o solo el interés
+        const valueForChart = chartFlowMode === 'all' ? totalValOriginal : intVal;
+        grandTotal += valueForChart;
 
         let k;
         if (currentChartGroupMode === 'month') {
@@ -893,9 +910,10 @@
         
         if (k) {
             if(!grouped[k]) grouped[k] = {};
-            grouped[k][tk] = (grouped[k][tk] || 0) + totalVal;
+            grouped[k][tk] = (grouped[k][tk] || 0) + valueForChart;
         }
 
+        // La tabla sigue mostrando la verdad absoluta de los números reales para que el usuario no se confunda
         return `
           <tr class="hover:bg-slate-800/40">
             <td class="py-2.5 px-3 font-semibold text-white">${item["Fecha de pago"]}</td>
@@ -903,12 +921,14 @@
             <td class="py-2.5 px-3 text-right text-slate-400">${(selectedNominales[item.Ticker]).toLocaleString()}</td>
             <td class="py-2.5 px-3 text-right text-slate-300">USD ${intVal.toFixed(2)}</td>
             <td class="py-2.5 px-3 text-right text-slate-300">USD ${amortVal.toFixed(2)}</td>
-            <td class="py-2.5 px-3 text-right font-bold text-emerald-400">USD ${totalVal.toFixed(2)}</td>
+            <td class="py-2.5 px-3 text-right font-bold text-emerald-400">USD ${totalValOriginal.toFixed(2)}</td>
           </tr>
         `;
       }).join('');
 
-      document.getElementById('portfolioTotalFlow').innerText = `Total ${selectedChartYear === 'ALL' ? 'General' : selectedChartYear}: USD ${grandTotal.toFixed(2)}`;
+      const modoTexto = chartFlowMode === 'all' ? 'General' : 'General (Solo Interés)';
+      const añoTexto = selectedChartYear === 'ALL' ? '' : ` ${selectedChartYear}`;
+      document.getElementById('portfolioTotalFlow').innerText = `Total ${modoTexto}${añoTexto}: USD ${grandTotal.toFixed(2)}`;
       
       const labels = [];
       const sortedKeys = Object.keys(grouped).sort((a,b) => {
@@ -1070,7 +1090,12 @@
 
       portfolioItems.forEach(item => {
           const factor = (selectedNominales[item.Ticker] || 100) / 100;
-          const val = (parseFloat(item["Flujo total c/100 VN"]) || 0) * factor;
+          const intVal = (parseFloat(item["Interes c/100 VN"]) || 0) * factor;
+          const amortVal = (parseFloat(item["Amortizacion c/100 VN"]) || 0) * factor;
+          
+          // El PDF respeta lo que estés viendo en la pantalla (Total o Solo Interés)
+          const val = chartFlowMode === 'all' ? (intVal + amortVal) : intVal;
+
           totalProyectado += val;
           const year = item.Fecha_ISO ? item.Fecha_ISO.substring(0, 4) : 'N/D';
           flowsByYear[year] = (flowsByYear[year] || 0) + val;
@@ -1084,6 +1109,9 @@
             </tr>
           `;
       }).join('');
+
+      const textProyectado = chartFlowMode === 'all' ? 'Total Proyectado' : 'Total Proyectado (Solo Interés)';
+      const textSubtitulo = chartFlowMode === 'all' ? 'Cupones estimados consolidados en USD' : 'Cupones estimados consolidados en USD (Solo Intereses)';
 
       const printWin = window.open('', '_blank', 'width=1100,height=850');
       printWin.document.write(`
@@ -1166,11 +1194,11 @@
             <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
               <div>
                 <h3 style="font-size: 11px; text-transform: uppercase; color: #e2e8f0; margin-top: 0; margin-bottom: 2px;">Flujo de Fondos Anual</h3>
-                <p style="font-size: 9px; color: #94a3b8; margin-top: 0; margin-bottom: 8px;">Cupones estimados consolidados en USD</p>
+                <p style="font-size: 9px; color: #94a3b8; margin-top: 0; margin-bottom: 8px;">${textSubtitulo}</p>
                 <table><thead><tr><th>Año</th><th style="text-align: right;">Flujo Proyectado (USD)</th></tr></thead><tbody>${cfRows}</tbody></table>
               </div>
               <div style="border-top: 1px solid #1e293b; padding-top: 10px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 11px; font-weight: bold; color: #e2e8f0; text-transform: uppercase;">Total Proyectado</span>
+                <span style="font-size: 11px; font-weight: bold; color: #e2e8f0; text-transform: uppercase;">${textProyectado}</span>
                 <span style="font-size: 14px; font-weight: bold; color: #38bdf8;">US$ ${totalProyectado.toFixed(2)}</span>
               </div>
             </div>
