@@ -1,7 +1,7 @@
 const jsonData = {
   "metadata": {
-    "ultima_actualizacion": "10/09/2026 14:29:14",
-    "total_activos": 232,
+    "ultima_actualizacion": "10/09/2026 17:24:01",
+    "total_activos": 272,
     "fuente": "Data912 API (vía GitHub Actions)"
   },
   "cashflows": [
@@ -602,6 +602,201 @@ const jsonData = {
       "Fecha_ISO": "2026-11-07",
       "Año_Mes": "2026-11",
       "Mes_Num": 11
+    },
+    {
+      "Ticker": "AFCJO",
+      "Fecha de pago": "06/02/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-02-06",
+      "Año_Mes": "2026-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "AFCJO",
+      "Fecha de pago": "06/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.36,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.36,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-06",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "AFCJO",
+      "Fecha de pago": "06/02/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.39,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.39,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-06",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/02/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-02-06",
+      "Año_Mes": "2026-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.47,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.47,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-06",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/02/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.53,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.53,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-06",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/08/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.47,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.47,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-08-06",
+      "Año_Mes": "2027-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/02/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.53,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.53,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-02-06",
+      "Año_Mes": "2028-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/08/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.49,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-08-06",
+      "Año_Mes": "2028-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "AFCKO",
+      "Fecha de pago": "06/02/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.53,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.53,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-02-06",
+      "Año_Mes": "2029-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "AFCPO",
+      "Fecha de pago": "05/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-05",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "AFCPO",
+      "Fecha de pago": "05/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.63,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.63,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-05",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "AFCPO",
+      "Fecha de pago": "05/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.62,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.62,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-05",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "AFCPO",
+      "Fecha de pago": "05/12/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.63,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.63,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-05",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "AFCPO",
+      "Fecha de pago": "05/06/2028",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.63,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.63,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-05",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
     },
     {
       "Ticker": "AL29",
@@ -6155,6 +6350,45 @@ const jsonData = {
       "Mes_Num": 5
     },
     {
+      "Ticker": "BF45O",
+      "Fecha de pago": "08/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-08",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "BF45O",
+      "Fecha de pago": "08/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.64,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.64,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-08",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "BF45O",
+      "Fecha de pago": "08/05/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.61,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 101.61,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-08",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
       "Ticker": "BGC4O",
       "Fecha de pago": "13/11/2025",
       "VN residual previo": 100.0,
@@ -7065,6 +7299,71 @@ const jsonData = {
       "Mes_Num": 10
     },
     {
+      "Ticker": "BVCRO",
+      "Fecha de pago": "15/01/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-15",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "BVCRO",
+      "Fecha de pago": "15/04/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.73,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.73,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-04-15",
+      "Año_Mes": "2026-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "BVCRO",
+      "Fecha de pago": "15/07/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.75,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.75,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-15",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "BVCRO",
+      "Fecha de pago": "15/10/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-10-15",
+      "Año_Mes": "2026-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "BVCRO",
+      "Fecha de pago": "15/01/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.76,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 101.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-15",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
       "Ticker": "BYCHO",
       "Fecha de pago": "10/10/2024",
       "VN residual previo": 100.0,
@@ -7297,6 +7596,71 @@ const jsonData = {
       "Fecha_ISO": "2026-12-30",
       "Año_Mes": "2026-12",
       "Mes_Num": 12
+    },
+    {
+      "Ticker": "BYY2O",
+      "Fecha de pago": "05/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-05",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "BYY2O",
+      "Fecha de pago": "05/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.38,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.38,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-05",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "BYY2O",
+      "Fecha de pago": "05/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-05",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "BYY2O",
+      "Fecha de pago": "05/12/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.38,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.38,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-05",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "BYY2O",
+      "Fecha de pago": "05/06/2028",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.38,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.38,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-05",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
     },
     {
       "Ticker": "CAC5O",
@@ -8027,6 +8391,253 @@ const jsonData = {
       "Mes_Num": 2
     },
     {
+      "Ticker": "CIC7O",
+      "Fecha de pago": "12/11/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-11-12",
+      "Año_Mes": "2024-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC7O",
+      "Fecha de pago": "12/05/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.98,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.98,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-05-12",
+      "Año_Mes": "2025-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC7O",
+      "Fecha de pago": "12/11/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.02,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.02,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-11-12",
+      "Año_Mes": "2025-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC7O",
+      "Fecha de pago": "12/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.98,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.98,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-12",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC7O",
+      "Fecha de pago": "12/11/2026",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.02,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.02,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-12",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/11/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-11-12",
+      "Año_Mes": "2024-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/05/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.72,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.72,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-05-12",
+      "Año_Mes": "2025-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/11/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-11-12",
+      "Año_Mes": "2025-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.72,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.72,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-12",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-12",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/05/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.72,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.72,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-12",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/11/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-11-12",
+      "Año_Mes": "2027-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/05/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.74,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.74,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-05-12",
+      "Año_Mes": "2028-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC8O",
+      "Fecha de pago": "12/11/2028",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-11-12",
+      "Año_Mes": "2028-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC9O",
+      "Fecha de pago": "21/05/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-05-21",
+      "Año_Mes": "2025-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC9O",
+      "Fecha de pago": "21/11/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.16,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.16,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-11-21",
+      "Año_Mes": "2025-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC9O",
+      "Fecha de pago": "21/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.09,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.09,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-21",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CIC9O",
+      "Fecha de pago": "21/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.16,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.16,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-21",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "CIC9O",
+      "Fecha de pago": "21/05/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 4.09,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 104.09,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-21",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
       "Ticker": "CICAO",
       "Fecha de pago": "03/12/2025",
       "VN residual previo": 100.0,
@@ -8194,6 +8805,591 @@ const jsonData = {
       "Fecha_ISO": "2029-02-09",
       "Año_Mes": "2029-02",
       "Mes_Num": 2
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-12-10",
+      "Año_Mes": "2024-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-06-10",
+      "Año_Mes": "2025-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-10",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-10",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-10",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-10",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-10",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-10",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-12-10",
+      "Año_Mes": "2028-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-06-10",
+      "Año_Mes": "2029-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-12-10",
+      "Año_Mes": "2029-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2030",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-06-10",
+      "Año_Mes": "2030-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2030",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-12-10",
+      "Año_Mes": "2030-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2031",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-06-10",
+      "Año_Mes": "2031-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2031",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-12-10",
+      "Año_Mes": "2031-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2032",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-06-10",
+      "Año_Mes": "2032-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2032",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-12-10",
+      "Año_Mes": "2032-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2033",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2033-06-10",
+      "Año_Mes": "2033-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2033",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2033-12-10",
+      "Año_Mes": "2033-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/06/2034",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2034-06-10",
+      "Año_Mes": "2034-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLI1O",
+      "Fecha de pago": "10/12/2034",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.5,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2034-12-10",
+      "Año_Mes": "2034-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "17/08/2021",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2021-08-17",
+      "Año_Mes": "2021-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "25/01/2022",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2022-01-25",
+      "Año_Mes": "2022-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "25/07/2022",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.15,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.15,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2022-07-25",
+      "Año_Mes": "2022-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "25/01/2023",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.17,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.17,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2023-01-25",
+      "Año_Mes": "2023-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "25/07/2023",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.6,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.6,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2023-07-25",
+      "Año_Mes": "2023-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "25/01/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-01-25",
+      "Año_Mes": "2024-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "25/07/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-07-25",
+      "Año_Mes": "2024-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "12/10/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-10-12",
+      "Año_Mes": "2024-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2024",
+      "VN residual previo": 75.408397,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 24.59,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 24.59,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-12-10",
+      "Año_Mes": "2024-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "14/05/2025",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 19.55,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 19.55,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-05-14",
+      "Año_Mes": "2025-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2025",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 1.27,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.27,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-06-10",
+      "Año_Mes": "2025-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2025",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 0.98,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.98,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-10",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2026",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-10",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2026",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-10",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2027",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 1.96,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.96,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-10",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2027",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 1.96,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.96,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-10",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2028",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-10",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2028",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-12-10",
+      "Año_Mes": "2028-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2029",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-06-10",
+      "Año_Mes": "2029-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2029",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-12-10",
+      "Año_Mes": "2029-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2030",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-06-10",
+      "Año_Mes": "2030-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2030",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-12-10",
+      "Año_Mes": "2030-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/06/2031",
+      "VN residual previo": 55.858072,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-06-10",
+      "Año_Mes": "2031-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CLSIO",
+      "Fecha de pago": "10/12/2031",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.37,
+      "Amortizacion c/100 VN": 55.86,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 58.23,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-12-10",
+      "Año_Mes": "2031-12",
+      "Mes_Num": 12
     },
     {
       "Ticker": "CO24D",
@@ -9821,6 +11017,214 @@ const jsonData = {
       "Mes_Num": 8
     },
     {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/10/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-10-10",
+      "Año_Mes": "2024-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/04/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-04-10",
+      "Año_Mes": "2025-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/10/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-10-10",
+      "Año_Mes": "2025-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/04/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-04-10",
+      "Año_Mes": "2026-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/10/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-10-10",
+      "Año_Mes": "2026-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/04/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-04-10",
+      "Año_Mes": "2027-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "CP36O",
+      "Fecha de pago": "10/10/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-10-10",
+      "Año_Mes": "2027-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/03/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-03-10",
+      "Año_Mes": "2025-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/06/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-06-10",
+      "Año_Mes": "2025-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/09/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-09-10",
+      "Año_Mes": "2025-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/12/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.75,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.75,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-10",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/03/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.73,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.73,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-03-10",
+      "Año_Mes": "2026-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-10",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/09/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-09-10",
+      "Año_Mes": "2026-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.75,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.75,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-10",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "CP37O",
+      "Fecha de pago": "10/03/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.73,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 101.73,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-03-10",
+      "Año_Mes": "2027-03",
+      "Mes_Num": 3
+    },
+    {
       "Ticker": "CP38O",
       "Fecha de pago": "28/11/2025",
       "VN residual previo": 100.0,
@@ -10079,6 +11483,97 @@ const jsonData = {
       "Fecha_ISO": "2028-03-09",
       "Año_Mes": "2028-03",
       "Mes_Num": 3
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "18/07/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-07-18",
+      "Año_Mes": "2024-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "18/01/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-01-18",
+      "Año_Mes": "2025-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "18/07/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.74,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.74,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-07-18",
+      "Año_Mes": "2025-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "19/01/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-19",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "18/07/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.74,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.74,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-18",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "18/01/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.76,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.76,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-18",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "CS46O",
+      "Fecha de pago": "18/07/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 0.74,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 100.74,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-07-18",
+      "Año_Mes": "2027-07",
+      "Mes_Num": 7
     },
     {
       "Ticker": "CS47O",
@@ -12328,6 +13823,97 @@ const jsonData = {
       "Fecha_ISO": "2027-07-20",
       "Año_Mes": "2027-07",
       "Mes_Num": 7
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-11",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-11",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/05/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.72,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.72,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-11",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/11/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-11-11",
+      "Año_Mes": "2027-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/05/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.74,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.74,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-05-11",
+      "Año_Mes": "2028-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/11/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-11-11",
+      "Año_Mes": "2028-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "FYC1O",
+      "Fecha de pago": "11/05/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.72,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.72,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-05-11",
+      "Año_Mes": "2029-05",
+      "Mes_Num": 5
     },
     {
       "Ticker": "GD29",
@@ -15697,6 +17283,812 @@ const jsonData = {
       "Mes_Num": 12
     },
     {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "24/10/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-10-24",
+      "Año_Mes": "2024-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/10/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.04,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.04,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-10-28",
+      "Año_Mes": "2025-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/11/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-11-28",
+      "Año_Mes": "2025-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/12/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-28",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/01/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-28",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/02/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-02-28",
+      "Año_Mes": "2026-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/03/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.84,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.84,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-03-28",
+      "Año_Mes": "2026-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/04/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-04-28",
+      "Año_Mes": "2026-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-28",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-28",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/07/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-28",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-28",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/09/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-09-28",
+      "Año_Mes": "2026-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/10/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-10-28",
+      "Año_Mes": "2026-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-28",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-28",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/01/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-28",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/02/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-28",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/03/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.84,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.84,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-03-28",
+      "Año_Mes": "2027-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/04/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-04-28",
+      "Año_Mes": "2027-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/05/2027",
+      "VN residual previo": 98.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-28",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/06/2027",
+      "VN residual previo": 96.0,
+      "Interes c/100 VN": 0.92,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.92,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-28",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/07/2027",
+      "VN residual previo": 94.0,
+      "Interes c/100 VN": 0.87,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.87,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-07-28",
+      "Año_Mes": "2027-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/08/2027",
+      "VN residual previo": 92.0,
+      "Interes c/100 VN": 0.88,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-08-28",
+      "Año_Mes": "2027-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/09/2027",
+      "VN residual previo": 90.0,
+      "Interes c/100 VN": 0.86,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-09-28",
+      "Año_Mes": "2027-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/10/2027",
+      "VN residual previo": 88.0,
+      "Interes c/100 VN": 0.81,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.81,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-10-28",
+      "Año_Mes": "2027-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/11/2027",
+      "VN residual previo": 86.0,
+      "Interes c/100 VN": 0.82,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.82,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-11-28",
+      "Año_Mes": "2027-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/12/2027",
+      "VN residual previo": 84.0,
+      "Interes c/100 VN": 0.78,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-28",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/01/2028",
+      "VN residual previo": 82.0,
+      "Interes c/100 VN": 0.78,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-01-28",
+      "Año_Mes": "2028-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/02/2028",
+      "VN residual previo": 80.0,
+      "Interes c/100 VN": 0.77,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.77,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-02-28",
+      "Año_Mes": "2028-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/03/2028",
+      "VN residual previo": 78.0,
+      "Interes c/100 VN": 0.7,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.7,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-03-28",
+      "Año_Mes": "2028-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/04/2028",
+      "VN residual previo": 76.0,
+      "Interes c/100 VN": 0.73,
+      "Amortizacion c/100 VN": 2.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.73,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-04-28",
+      "Año_Mes": "2028-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/05/2028",
+      "VN residual previo": 73.75,
+      "Interes c/100 VN": 0.69,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.94,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-05-28",
+      "Año_Mes": "2028-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/06/2028",
+      "VN residual previo": 71.5,
+      "Interes c/100 VN": 0.69,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.94,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-28",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/07/2028",
+      "VN residual previo": 69.25,
+      "Interes c/100 VN": 0.65,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-07-28",
+      "Año_Mes": "2028-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/08/2028",
+      "VN residual previo": 67.0,
+      "Interes c/100 VN": 0.65,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-08-28",
+      "Año_Mes": "2028-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/09/2028",
+      "VN residual previo": 64.75,
+      "Interes c/100 VN": 0.63,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-09-28",
+      "Año_Mes": "2028-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/10/2028",
+      "VN residual previo": 62.5,
+      "Interes c/100 VN": 0.59,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.84,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-10-28",
+      "Año_Mes": "2028-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/11/2028",
+      "VN residual previo": 60.25,
+      "Interes c/100 VN": 0.58,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.83,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-11-28",
+      "Año_Mes": "2028-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/12/2028",
+      "VN residual previo": 58.0,
+      "Interes c/100 VN": 0.54,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.79,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-12-28",
+      "Año_Mes": "2028-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/01/2029",
+      "VN residual previo": 55.75,
+      "Interes c/100 VN": 0.54,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.79,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-01-28",
+      "Año_Mes": "2029-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/02/2029",
+      "VN residual previo": 53.5,
+      "Interes c/100 VN": 0.52,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.77,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-02-28",
+      "Año_Mes": "2029-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/03/2029",
+      "VN residual previo": 51.25,
+      "Interes c/100 VN": 0.45,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.7,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-03-28",
+      "Año_Mes": "2029-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/04/2029",
+      "VN residual previo": 49.0,
+      "Interes c/100 VN": 0.48,
+      "Amortizacion c/100 VN": 2.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.73,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-04-28",
+      "Año_Mes": "2029-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/05/2029",
+      "VN residual previo": 46.5,
+      "Interes c/100 VN": 0.44,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.94,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-05-28",
+      "Año_Mes": "2029-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/06/2029",
+      "VN residual previo": 44.0,
+      "Interes c/100 VN": 0.43,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-06-28",
+      "Año_Mes": "2029-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/07/2029",
+      "VN residual previo": 41.5,
+      "Interes c/100 VN": 0.4,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-07-28",
+      "Año_Mes": "2029-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/08/2029",
+      "VN residual previo": 39.0,
+      "Interes c/100 VN": 0.39,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.89,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-08-28",
+      "Año_Mes": "2029-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/09/2029",
+      "VN residual previo": 36.5,
+      "Interes c/100 VN": 0.36,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-09-28",
+      "Año_Mes": "2029-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/10/2029",
+      "VN residual previo": 34.0,
+      "Interes c/100 VN": 0.33,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.83,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-10-28",
+      "Año_Mes": "2029-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/11/2029",
+      "VN residual previo": 31.5,
+      "Interes c/100 VN": 0.32,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.82,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-11-28",
+      "Año_Mes": "2029-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/12/2029",
+      "VN residual previo": 29.0,
+      "Interes c/100 VN": 0.28,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-12-28",
+      "Año_Mes": "2029-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/01/2030",
+      "VN residual previo": 26.5,
+      "Interes c/100 VN": 0.27,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.77,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-01-28",
+      "Año_Mes": "2030-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/02/2030",
+      "VN residual previo": 24.0,
+      "Interes c/100 VN": 0.25,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.75,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-02-28",
+      "Año_Mes": "2030-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/03/2030",
+      "VN residual previo": 21.5,
+      "Interes c/100 VN": 0.2,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.7,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-03-28",
+      "Año_Mes": "2030-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/04/2030",
+      "VN residual previo": 19.0,
+      "Interes c/100 VN": 0.2,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.7,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-04-28",
+      "Año_Mes": "2030-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/05/2030",
+      "VN residual previo": 16.5,
+      "Interes c/100 VN": 0.17,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.67,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-05-28",
+      "Año_Mes": "2030-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/06/2030",
+      "VN residual previo": 14.0,
+      "Interes c/100 VN": 0.15,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.65,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-06-28",
+      "Año_Mes": "2030-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/07/2030",
+      "VN residual previo": 11.5,
+      "Interes c/100 VN": 0.13,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.63,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-07-28",
+      "Año_Mes": "2030-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/08/2030",
+      "VN residual previo": 9.0,
+      "Interes c/100 VN": 0.11,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.61,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-08-28",
+      "Año_Mes": "2030-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/09/2030",
+      "VN residual previo": 6.5,
+      "Interes c/100 VN": 0.08,
+      "Amortizacion c/100 VN": 2.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 2.58,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-09-28",
+      "Año_Mes": "2030-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "GOC4O",
+      "Fecha de pago": "28/10/2030",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 0.06,
+      "Amortizacion c/100 VN": 6.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 6.56,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-10-28",
+      "Año_Mes": "2030-10",
+      "Mes_Num": 10
+    },
+    {
       "Ticker": "GYC4O",
       "Fecha de pago": "30/10/2024",
       "VN residual previo": 100.0,
@@ -16035,6 +18427,279 @@ const jsonData = {
       "Mes_Num": 11
     },
     {
+      "Ticker": "HJCFO",
+      "Fecha de pago": "21/10/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-10-21",
+      "Año_Mes": "2024-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCFO",
+      "Fecha de pago": "21/04/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.49,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-04-21",
+      "Año_Mes": "2025-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "HJCFO",
+      "Fecha de pago": "21/10/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.51,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-10-21",
+      "Año_Mes": "2025-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCFO",
+      "Fecha de pago": "21/04/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.49,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-04-21",
+      "Año_Mes": "2026-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "HJCFO",
+      "Fecha de pago": "21/10/2026",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.51,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-10-21",
+      "Año_Mes": "2026-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/10/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-10-21",
+      "Año_Mes": "2024-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/04/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-04-21",
+      "Año_Mes": "2025-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/10/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-10-21",
+      "Año_Mes": "2025-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/04/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-04-21",
+      "Año_Mes": "2026-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/10/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-10-21",
+      "Año_Mes": "2026-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/04/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-04-21",
+      "Año_Mes": "2027-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/10/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-10-21",
+      "Año_Mes": "2027-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/04/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-04-21",
+      "Año_Mes": "2028-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "HJCGO",
+      "Fecha de pago": "21/10/2028",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-10-21",
+      "Año_Mes": "2028-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "17/01/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-01-17",
+      "Año_Mes": "2025-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "17/07/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.47,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.47,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-07-17",
+      "Año_Mes": "2025-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "19/01/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.53,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.53,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-19",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "17/07/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.47,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.47,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-17",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "17/01/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.53,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.53,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-17",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "17/07/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.47,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.47,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-07-17",
+      "Año_Mes": "2027-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "HJCHO",
+      "Fecha de pago": "17/01/2028",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.53,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.53,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-01-17",
+      "Año_Mes": "2028-01",
+      "Mes_Num": 1
+    },
+    {
       "Ticker": "HJCIO",
       "Fecha de pago": "27/05/2025",
       "VN residual previo": 100.0,
@@ -16256,6 +18921,84 @@ const jsonData = {
       "Mes_Num": 1
     },
     {
+      "Ticker": "HJCLO",
+      "Fecha de pago": "08/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-08",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "HJCLO",
+      "Fecha de pago": "08/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-08",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "HJCLO",
+      "Fecha de pago": "08/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-08",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "HJCLO",
+      "Fecha de pago": "08/12/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-08",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "HJCLO",
+      "Fecha de pago": "08/06/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-08",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "HJCLO",
+      "Fecha de pago": "08/12/2028",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-12-08",
+      "Año_Mes": "2028-12",
+      "Mes_Num": 12
+    },
+    {
       "Ticker": "HVS1O",
       "Fecha de pago": "08/07/2025",
       "VN residual previo": 100.0,
@@ -16423,6 +19166,71 @@ const jsonData = {
       "Fecha_ISO": "2028-07-08",
       "Año_Mes": "2028-07",
       "Mes_Num": 7
+    },
+    {
+      "Ticker": "ICC6O",
+      "Fecha de pago": "22/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-22",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "ICC6O",
+      "Fecha de pago": "22/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-22",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "ICC6O",
+      "Fecha de pago": "22/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-22",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "ICC6O",
+      "Fecha de pago": "22/02/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.93,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.93,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-22",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "ICC6O",
+      "Fecha de pago": "22/05/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 100.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-22",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
     },
     {
       "Ticker": "IRCFO",
@@ -17190,6 +19998,45 @@ const jsonData = {
       "Fecha_ISO": "2035-03-31",
       "Año_Mes": "2035-03",
       "Mes_Num": 3
+    },
+    {
+      "Ticker": "IRCQO",
+      "Fecha de pago": "08/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-08",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "IRCQO",
+      "Fecha de pago": "08/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-08",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "IRCQO",
+      "Fecha de pago": "08/06/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.87,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 101.87,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-08",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
     },
     {
       "Ticker": "JNC5O",
@@ -20091,6 +22938,591 @@ const jsonData = {
       "Mes_Num": 5
     },
     {
+      "Ticker": "MJC1O",
+      "Fecha de pago": "19/02/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-02-19",
+      "Año_Mes": "2026-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "MJC1O",
+      "Fecha de pago": "19/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.97,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.97,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-19",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "MJC1O",
+      "Fecha de pago": "19/02/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 4.03,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 104.03,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-19",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "31/03/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-03-31",
+      "Año_Mes": "2026-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.69,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.69,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-30",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-30",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-30",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-30",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-12-30",
+      "Año_Mes": "2028-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-06-30",
+      "Año_Mes": "2029-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-12-30",
+      "Año_Mes": "2029-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2030",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-06-30",
+      "Año_Mes": "2030-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2030",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-12-30",
+      "Año_Mes": "2030-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2031",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-06-30",
+      "Año_Mes": "2031-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2031",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-12-30",
+      "Año_Mes": "2031-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2032",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-06-30",
+      "Año_Mes": "2032-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2032",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-12-30",
+      "Año_Mes": "2032-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2033",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2033-06-30",
+      "Año_Mes": "2033-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2033",
+      "VN residual previo": 95.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 5.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 6.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2033-12-30",
+      "Año_Mes": "2033-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2034",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 1.42,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.42,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2034-06-30",
+      "Año_Mes": "2034-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2034",
+      "VN residual previo": 75.0,
+      "Interes c/100 VN": 1.7,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.7,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2034-12-30",
+      "Año_Mes": "2034-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2035",
+      "VN residual previo": 65.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2035-06-30",
+      "Año_Mes": "2035-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/12/2035",
+      "VN residual previo": 55.0,
+      "Interes c/100 VN": 1.3,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.3,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2035-12-30",
+      "Año_Mes": "2035-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR43O",
+      "Fecha de pago": "30/06/2036",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.1,
+      "Amortizacion c/100 VN": 55.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 56.1,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2036-06-30",
+      "Año_Mes": "2036-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "31/03/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-03-31",
+      "Año_Mes": "2026-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.69,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.69,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-30",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-30",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-30",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-06-30",
+      "Año_Mes": "2028-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-12-30",
+      "Año_Mes": "2028-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-06-30",
+      "Año_Mes": "2029-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.13,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.13,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-12-30",
+      "Año_Mes": "2029-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2030",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-06-30",
+      "Año_Mes": "2030-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2030",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-12-30",
+      "Año_Mes": "2030-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2031",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-06-30",
+      "Año_Mes": "2031-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2031",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-12-30",
+      "Año_Mes": "2031-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2032",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-06-30",
+      "Año_Mes": "2032-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2032",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-12-30",
+      "Año_Mes": "2032-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2033",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2033-06-30",
+      "Año_Mes": "2033-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2033",
+      "VN residual previo": 95.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 5.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 6.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2033-12-30",
+      "Año_Mes": "2033-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2034",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 1.42,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.42,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2034-06-30",
+      "Año_Mes": "2034-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2034",
+      "VN residual previo": 75.0,
+      "Interes c/100 VN": 1.7,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.7,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2034-12-30",
+      "Año_Mes": "2034-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2035",
+      "VN residual previo": 65.0,
+      "Interes c/100 VN": 1.5,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.5,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2035-06-30",
+      "Año_Mes": "2035-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/12/2035",
+      "VN residual previo": 55.0,
+      "Interes c/100 VN": 1.3,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.3,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2035-12-30",
+      "Año_Mes": "2035-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MR44O",
+      "Fecha de pago": "30/06/2036",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.1,
+      "Amortizacion c/100 VN": 55.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 56.1,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2036-06-30",
+      "Año_Mes": "2036-06",
+      "Mes_Num": 6
+    },
+    {
       "Ticker": "MSSFO",
       "Fecha de pago": "23/07/2024",
       "VN residual previo": 100.0,
@@ -20297,6 +23729,149 @@ const jsonData = {
       "Fecha_ISO": "2029-04-16",
       "Año_Mes": "2029-04",
       "Mes_Num": 4
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/12/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-12-19",
+      "Año_Mes": "2024-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/06/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.49,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-06-19",
+      "Año_Mes": "2025-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/12/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.51,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-19",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.49,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-19",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.51,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-19",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.49,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-19",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "MU32O",
+      "Fecha de pago": "19/12/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 4.51,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 104.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-12-19",
+      "Año_Mes": "2027-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "MUC4O",
+      "Fecha de pago": "27/04/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-04-27",
+      "Año_Mes": "2026-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "MUC4O",
+      "Fecha de pago": "27/10/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.86,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-10-27",
+      "Año_Mes": "2026-10",
+      "Mes_Num": 10
+    },
+    {
+      "Ticker": "MUC4O",
+      "Fecha de pago": "27/04/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.84,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.84,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-04-27",
+      "Año_Mes": "2027-04",
+      "Mes_Num": 4
+    },
+    {
+      "Ticker": "MUC4O",
+      "Fecha de pago": "27/10/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.86,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-10-27",
+      "Año_Mes": "2027-10",
+      "Mes_Num": 10
     },
     {
       "Ticker": "NDT11",
@@ -22964,6 +26539,175 @@ const jsonData = {
       "Mes_Num": 11
     },
     {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-07-28",
+      "Año_Mes": "2025-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/01/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-28",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-28",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/01/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-28",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-07-28",
+      "Año_Mes": "2027-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/01/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-01-28",
+      "Año_Mes": "2028-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-07-28",
+      "Año_Mes": "2028-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/01/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 4.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-01-28",
+      "Año_Mes": "2029-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2029",
+      "VN residual previo": 66.67,
+      "Interes c/100 VN": 4.88,
+      "Amortizacion c/100 VN": 33.33,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 38.21,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-07-28",
+      "Año_Mes": "2029-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/01/2030",
+      "VN residual previo": 66.67,
+      "Interes c/100 VN": 3.58,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.58,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-01-28",
+      "Año_Mes": "2030-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2030",
+      "VN residual previo": 33.34,
+      "Interes c/100 VN": 3.58,
+      "Amortizacion c/100 VN": 33.33,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 36.91,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-07-28",
+      "Año_Mes": "2030-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/01/2031",
+      "VN residual previo": 33.34,
+      "Interes c/100 VN": 1.96,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 1.96,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-01-28",
+      "Año_Mes": "2031-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "OZC6O",
+      "Fecha de pago": "28/07/2031",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 1.96,
+      "Amortizacion c/100 VN": 33.34,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 35.3,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-07-28",
+      "Año_Mes": "2031-07",
+      "Mes_Num": 7
+    },
+    {
       "Ticker": "OZC8O",
       "Fecha de pago": "11/06/2026",
       "VN residual previo": 100.0,
@@ -23159,6 +26903,214 @@ const jsonData = {
       "Mes_Num": 6
     },
     {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-08-25",
+      "Año_Mes": "2025-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-25",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-08-25",
+      "Año_Mes": "2027-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.01,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.01,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-08-25",
+      "Año_Mes": "2028-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 5.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 5.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-08-25",
+      "Año_Mes": "2029-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2030",
+      "VN residual previo": 80.0,
+      "Interes c/100 VN": 6.0,
+      "Amortizacion c/100 VN": 20.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 26.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-08-25",
+      "Año_Mes": "2030-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2031",
+      "VN residual previo": 60.0,
+      "Interes c/100 VN": 5.6,
+      "Amortizacion c/100 VN": 20.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 25.6,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-08-25",
+      "Año_Mes": "2031-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECMO",
+      "Fecha de pago": "25/08/2032",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 4.21,
+      "Amortizacion c/100 VN": 60.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 64.21,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-08-25",
+      "Año_Mes": "2032-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-08-25",
+      "Año_Mes": "2025-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-25",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-08-25",
+      "Año_Mes": "2027-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.01,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.01,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-08-25",
+      "Año_Mes": "2028-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 5.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 5.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-08-25",
+      "Año_Mes": "2029-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2030",
+      "VN residual previo": 80.0,
+      "Interes c/100 VN": 6.0,
+      "Amortizacion c/100 VN": 20.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 26.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2030-08-25",
+      "Año_Mes": "2030-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2031",
+      "VN residual previo": 60.0,
+      "Interes c/100 VN": 5.6,
+      "Amortizacion c/100 VN": 20.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 25.6,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2031-08-25",
+      "Año_Mes": "2031-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "PECNO",
+      "Fecha de pago": "25/08/2032",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 4.21,
+      "Amortizacion c/100 VN": 60.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 64.21,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2032-08-25",
+      "Año_Mes": "2032-08",
+      "Mes_Num": 8
+    },
+    {
       "Ticker": "PFC2O",
       "Fecha de pago": "14/07/2025",
       "VN residual previo": 100.0,
@@ -23222,6 +27174,110 @@ const jsonData = {
       "Fecha_ISO": "2027-07-14",
       "Año_Mes": "2027-07",
       "Mes_Num": 7
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-08",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-08",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/05/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.85,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.85,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-08",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/11/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-11-08",
+      "Año_Mes": "2027-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/05/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.87,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.87,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-05-08",
+      "Año_Mes": "2028-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/11/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.9,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-11-08",
+      "Año_Mes": "2028-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/05/2029",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.85,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.85,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-05-08",
+      "Año_Mes": "2029-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "PFC3O",
+      "Fecha de pago": "08/11/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.9,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-11-08",
+      "Año_Mes": "2029-11",
+      "Mes_Num": 11
     },
     {
       "Ticker": "PLC1O",
@@ -27319,6 +31375,162 @@ const jsonData = {
       "Mes_Num": 10
     },
     {
+      "Ticker": "RC3CO",
+      "Fecha de pago": "15/12/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-15",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "RC3CO",
+      "Fecha de pago": "15/03/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 8.59,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 8.59,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-03-15",
+      "Año_Mes": "2026-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "RC3CO",
+      "Fecha de pago": "15/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 7.04,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 7.04,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-15",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "RC3CO",
+      "Fecha de pago": "15/09/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 6.48,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 6.48,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-09-15",
+      "Año_Mes": "2026-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "RC3CO",
+      "Fecha de pago": "15/12/2026",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 6.41,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 106.41,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-15",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-21",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.65,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.65,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-21",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/05/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.6,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.6,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-21",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/11/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.65,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.65,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-11-21",
+      "Año_Mes": "2027-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/05/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.62,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.62,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-05-21",
+      "Año_Mes": "2028-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/11/2028",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.65,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.65,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-11-21",
+      "Año_Mes": "2028-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "RC5CO",
+      "Fecha de pago": "21/05/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.6,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.6,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-05-21",
+      "Año_Mes": "2029-05",
+      "Mes_Num": 5
+    },
+    {
       "Ticker": "RCCRO",
       "Fecha de pago": "09/05/2025",
       "VN residual previo": 100.0,
@@ -28619,6 +32831,162 @@ const jsonData = {
       "Mes_Num": 1
     },
     {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-26",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/11/2026",
+      "VN residual previo": 91.0,
+      "Interes c/100 VN": 3.28,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 12.28,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-26",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/02/2027",
+      "VN residual previo": 82.0,
+      "Interes c/100 VN": 1.49,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 10.49,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-26",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/05/2027",
+      "VN residual previo": 73.0,
+      "Interes c/100 VN": 1.3,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 10.3,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-26",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/08/2027",
+      "VN residual previo": 64.0,
+      "Interes c/100 VN": 1.2,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 10.2,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-08-26",
+      "Año_Mes": "2027-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/11/2027",
+      "VN residual previo": 55.0,
+      "Interes c/100 VN": 1.05,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 10.05,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-11-26",
+      "Año_Mes": "2027-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/02/2028",
+      "VN residual previo": 46.0,
+      "Interes c/100 VN": 0.9,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 9.9,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-02-26",
+      "Año_Mes": "2028-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/05/2028",
+      "VN residual previo": 37.0,
+      "Interes c/100 VN": 0.74,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 9.74,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-05-26",
+      "Año_Mes": "2028-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/08/2028",
+      "VN residual previo": 28.0,
+      "Interes c/100 VN": 0.61,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 9.61,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-08-26",
+      "Año_Mes": "2028-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/11/2028",
+      "VN residual previo": 19.0,
+      "Interes c/100 VN": 0.46,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 9.46,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-11-26",
+      "Año_Mes": "2028-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/02/2029",
+      "VN residual previo": 10.0,
+      "Interes c/100 VN": 0.31,
+      "Amortizacion c/100 VN": 9.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 9.31,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-02-26",
+      "Año_Mes": "2029-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "SBC3O",
+      "Fecha de pago": "26/05/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 0.16,
+      "Amortizacion c/100 VN": 10.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 10.16,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-05-26",
+      "Año_Mes": "2029-05",
+      "Mes_Num": 5
+    },
+    {
       "Ticker": "SFD34",
       "Fecha de pago": "11/12/2025",
       "VN residual previo": 100.0,
@@ -28864,6 +33232,279 @@ const jsonData = {
       "Fecha_ISO": "2034-12-11",
       "Año_Mes": "2034-12",
       "Mes_Num": 12
+    },
+    {
+      "Ticker": "SIC1O",
+      "Fecha de pago": "09/12/2024",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2024-12-09",
+      "Año_Mes": "2024-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "SIC1O",
+      "Fecha de pago": "09/06/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-06-09",
+      "Año_Mes": "2025-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "SIC1O",
+      "Fecha de pago": "09/12/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-12-09",
+      "Año_Mes": "2025-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "SIC1O",
+      "Fecha de pago": "09/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.24,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-09",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "SIC1O",
+      "Fecha de pago": "09/12/2026",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.26,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-09",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/01/2026",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-14",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/07/2026",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 3.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-14",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/01/2027",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 3.43,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.43,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-14",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/07/2027",
+      "VN residual previo": 80.75,
+      "Interes c/100 VN": 3.37,
+      "Amortizacion c/100 VN": 4.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 7.62,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-07-14",
+      "Año_Mes": "2027-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/01/2028",
+      "VN residual previo": 76.5,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 4.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 7.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-01-14",
+      "Año_Mes": "2028-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/07/2028",
+      "VN residual previo": 68.0,
+      "Interes c/100 VN": 3.05,
+      "Amortizacion c/100 VN": 8.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.55,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-07-14",
+      "Año_Mes": "2028-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/01/2029",
+      "VN residual previo": 59.5,
+      "Interes c/100 VN": 2.74,
+      "Amortizacion c/100 VN": 8.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-01-14",
+      "Año_Mes": "2029-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEAO",
+      "Fecha de pago": "14/07/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.36,
+      "Amortizacion c/100 VN": 59.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 61.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-07-14",
+      "Año_Mes": "2029-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/01/2026",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-01-14",
+      "Año_Mes": "2026-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/07/2026",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 3.37,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.37,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-07-14",
+      "Año_Mes": "2026-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/01/2027",
+      "VN residual previo": 85.0,
+      "Interes c/100 VN": 3.43,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.43,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-01-14",
+      "Año_Mes": "2027-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/07/2027",
+      "VN residual previo": 80.75,
+      "Interes c/100 VN": 3.37,
+      "Amortizacion c/100 VN": 4.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 7.62,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-07-14",
+      "Año_Mes": "2027-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/01/2028",
+      "VN residual previo": 76.5,
+      "Interes c/100 VN": 3.26,
+      "Amortizacion c/100 VN": 4.25,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 7.51,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-01-14",
+      "Año_Mes": "2028-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/07/2028",
+      "VN residual previo": 68.0,
+      "Interes c/100 VN": 3.05,
+      "Amortizacion c/100 VN": 8.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.55,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2028-07-14",
+      "Año_Mes": "2028-07",
+      "Mes_Num": 7
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/01/2029",
+      "VN residual previo": 59.5,
+      "Interes c/100 VN": 2.74,
+      "Amortizacion c/100 VN": 8.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 11.24,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-01-14",
+      "Año_Mes": "2029-01",
+      "Mes_Num": 1
+    },
+    {
+      "Ticker": "SNEBO",
+      "Fecha de pago": "14/07/2029",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.36,
+      "Amortizacion c/100 VN": 59.5,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 61.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2029-07-14",
+      "Año_Mes": "2029-07",
+      "Mes_Num": 7
     },
     {
       "Ticker": "SNSBO",
@@ -30827,6 +35468,71 @@ const jsonData = {
       "Fecha_ISO": "2029-03-05",
       "Año_Mes": "2029-03",
       "Mes_Num": 3
+    },
+    {
+      "Ticker": "TLCVO",
+      "Fecha de pago": "29/05/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-05-29",
+      "Año_Mes": "2026-05",
+      "Mes_Num": 5
+    },
+    {
+      "Ticker": "TLCVO",
+      "Fecha de pago": "29/08/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-08-29",
+      "Año_Mes": "2026-08",
+      "Mes_Num": 8
+    },
+    {
+      "Ticker": "TLCVO",
+      "Fecha de pago": "29/11/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.88,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.88,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-11-29",
+      "Año_Mes": "2026-11",
+      "Mes_Num": 11
+    },
+    {
+      "Ticker": "TLCVO",
+      "Fecha de pago": "28/02/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.87,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.87,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-02-28",
+      "Año_Mes": "2027-02",
+      "Mes_Num": 2
+    },
+    {
+      "Ticker": "TLCVO",
+      "Fecha de pago": "29/05/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 0.86,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 100.86,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-05-29",
+      "Año_Mes": "2027-05",
+      "Mes_Num": 5
     },
     {
       "Ticker": "TLCWO",
@@ -33830,6 +38536,45 @@ const jsonData = {
       "Fecha_ISO": "2038-04-08",
       "Año_Mes": "2038-04",
       "Mes_Num": 4
+    },
+    {
+      "Ticker": "WBS1O",
+      "Fecha de pago": "29/09/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-09-29",
+      "Año_Mes": "2025-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "WBS1O",
+      "Fecha de pago": "29/03/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 3.72,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 3.72,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-03-29",
+      "Año_Mes": "2026-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "WBS1O",
+      "Fecha de pago": "29/09/2026",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 3.78,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 103.78,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-09-29",
+      "Año_Mes": "2026-09",
+      "Mes_Num": 9
     },
     {
       "Ticker": "XMC1O",
@@ -37680,6 +42425,97 @@ const jsonData = {
       "Mes_Num": 6
     },
     {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/09/2025",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 0.0,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 0.0,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2025-09-03",
+      "Año_Mes": "2025-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/06/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 6.36,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 6.36,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-06-03",
+      "Año_Mes": "2026-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/09/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.14,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.14,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-09-03",
+      "Año_Mes": "2026-09",
+      "Mes_Num": 9
+    },
+    {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/12/2026",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.12,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.12,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2026-12-03",
+      "Año_Mes": "2026-12",
+      "Mes_Num": 12
+    },
+    {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/03/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.1,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.1,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-03-03",
+      "Año_Mes": "2027-03",
+      "Mes_Num": 3
+    },
+    {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/06/2027",
+      "VN residual previo": 100.0,
+      "Interes c/100 VN": 2.14,
+      "Amortizacion c/100 VN": 0.0,
+      "Obs. Prox. Pago": "Renta",
+      "Flujo total c/100 VN": 2.14,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-06-03",
+      "Año_Mes": "2027-06",
+      "Mes_Num": 6
+    },
+    {
+      "Ticker": "ZPC3O",
+      "Fecha de pago": "03/09/2027",
+      "VN residual previo": 0.0,
+      "Interes c/100 VN": 2.14,
+      "Amortizacion c/100 VN": 100.0,
+      "Obs. Prox. Pago": "Renta + Amort.",
+      "Flujo total c/100 VN": 102.14,
+      "Ley": "Ley ARG",
+      "Fecha_ISO": "2027-09-03",
+      "Año_Mes": "2027-09",
+      "Mes_Num": 9
+    },
+    {
       "Ticker": "ZZC1O",
       "Fecha de pago": "21/02/2025",
       "VN residual previo": 100.0,
@@ -38052,9 +42888,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "N/D",
-      "DM": "N/D",
-      "Paridad": "N/D"
+      "YTM": "7.30%",
+      "DM": "6.68",
+      "Paridad": "104.15%"
     },
     "VSCXO": {
       "Cupon": 7.9,
@@ -38063,9 +42899,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.53%",
-      "DM": "6.9",
-      "Paridad": "103.50%"
+      "YTM": "7.12%",
+      "DM": "6.77",
+      "Paridad": "109.80%"
     },
     "YM34O": {
       "Cupon": 8.3,
@@ -38074,9 +42910,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.11%",
-      "DM": "4.9",
-      "Paridad": "106.50%"
+      "YTM": "6.96%",
+      "DM": "4.78",
+      "Paridad": "108.45%"
     },
     "MGCRO": {
       "Cupon": 7.8,
@@ -38085,9 +42921,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.63%",
-      "DM": "7.1",
-      "Paridad": "101.90%"
+      "YTM": "7.28%",
+      "DM": "7.07",
+      "Paridad": "107.10%"
     },
     "YMCXO": {
       "Cupon": 8.8,
@@ -38096,9 +42932,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.10%",
-      "DM": "3.5",
-      "Paridad": "106.50%"
+      "YTM": "7.68%",
+      "DM": "3.34",
+      "Paridad": "108.85%"
     },
     "TLCPO": {
       "Cupon": 9.3,
@@ -38107,9 +42943,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.75%",
-      "DM": "4.5",
-      "Paridad": "107.90%"
+      "YTM": "7.10%",
+      "DM": "4.51",
+      "Paridad": "113.95%"
     },
     "DNCAO": {
       "Cupon": 9.5,
@@ -38118,9 +42954,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.50%",
-      "DM": "4.0",
-      "Paridad": "100.90%"
+      "YTM": "9.21%",
+      "DM": "3.97",
+      "Paridad": "105.60%"
     },
     "IRCPO": {
       "Cupon": 8.0,
@@ -38129,9 +42965,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.33%",
-      "DM": "5.4",
-      "Paridad": "104.50%"
+      "YTM": "7.07%",
+      "DM": "5.30",
+      "Paridad": "109.65%"
     },
     "TLCTO": {
       "Cupon": 8.5,
@@ -38140,9 +42976,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.71%",
-      "DM": "6.0",
-      "Paridad": "106.00%"
+      "YTM": "7.45%",
+      "DM": "5.98",
+      "Paridad": "108.80%"
     },
     "TLCMO": {
       "Cupon": 9.5,
@@ -38151,9 +42987,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.07%",
-      "DM": "3.2",
-      "Paridad": "108.60%"
+      "YTM": "6.22%",
+      "DM": "3.12",
+      "Paridad": "112.80%"
     },
     "VSCVO": {
       "Cupon": 8.5,
@@ -38162,9 +42998,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.22%",
-      "DM": "4.4",
-      "Paridad": "106.50%"
+      "YTM": "6.47%",
+      "DM": "4.35",
+      "Paridad": "112.25%"
     },
     "TSC4O": {
       "Cupon": 7.75,
@@ -38173,9 +43009,9 @@ const jsonData = {
       "Emisor": "TRANSPORTADORA DE GAS DEL SUR S.A",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "N/D",
-      "DM": "N/D",
-      "Paridad": "N/D"
+      "YTM": "6.89%",
+      "DM": "6.25",
+      "Paridad": "109.00%"
     },
     "EAC4O": {
       "Cupon": 9.8,
@@ -38184,9 +43020,9 @@ const jsonData = {
       "Emisor": "MSU GREEN ENERGY S.A.U.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "10.28%",
-      "DM": "5.5",
-      "Paridad": "98.40%"
+      "YTM": "9.56%",
+      "DM": "5.46",
+      "Paridad": "104.70%"
     },
     "YMCIO": {
       "Cupon": 9.0,
@@ -38195,9 +43031,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.69%",
-      "DM": "1.5",
-      "Paridad": "103.60%"
+      "YTM": "3.41%",
+      "DM": "1.42",
+      "Paridad": "94.40%"
     },
     "CP38O": {
       "Cupon": 11.9,
@@ -38206,9 +43042,9 @@ const jsonData = {
       "Emisor": "COMPAÑIA GENERAL DE",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "11.39%",
-      "DM": "3.1",
-      "Paridad": "102.60%"
+      "YTM": "9.54%",
+      "DM": "3.08",
+      "Paridad": "112.10%"
     },
     "MGCOO": {
       "Cupon": 7.9,
@@ -38217,9 +43053,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.23%",
-      "DM": "5.9",
-      "Paridad": "104.70%"
+      "YTM": "6.93%",
+      "DM": "5.80",
+      "Paridad": "108.50%"
     },
     "TSC3O": {
       "Cupon": 8.5,
@@ -38228,9 +43064,9 @@ const jsonData = {
       "Emisor": "TRANSPORTADORA DE",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.01%",
-      "DM": "3.9",
-      "Paridad": "106.70%"
+      "YTM": "6.21%",
+      "DM": "3.85",
+      "Paridad": "111.00%"
     },
     "YMCJO": {
       "Cupon": 7.0,
@@ -38239,9 +43075,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.69%",
-      "DM": "4.3",
-      "Paridad": "101.90%"
+      "YTM": "6.46%",
+      "DM": "4.27",
+      "Paridad": "106.05%"
     },
     "YM39O": {
       "Cupon": 8.8,
@@ -38250,9 +43086,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.47%",
-      "DM": "3.2",
-      "Paridad": "108.20%"
+      "YTM": "5.89%",
+      "DM": "3.17",
+      "Paridad": "111.25%"
     },
     "RUCDO": {
       "Cupon": 9.8,
@@ -38261,9 +43097,9 @@ const jsonData = {
       "Emisor": "MSU ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.02%",
-      "DM": "2.9",
-      "Paridad": "102.80%"
+      "YTM": "8.31%",
+      "DM": "2.89",
+      "Paridad": "107.60%"
     },
     "PN43O": {
       "Cupon": 7.8,
@@ -38272,9 +43108,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.39%",
-      "DM": "6.4",
-      "Paridad": "103.30%"
+      "YTM": "6.87%",
+      "DM": "6.39",
+      "Paridad": "108.05%"
     },
     "DNC7O": {
       "Cupon": 9.8,
@@ -38283,9 +43119,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "8.95%",
-      "DM": "2.5",
-      "Paridad": "102.60%"
+      "YTM": "7.54%",
+      "DM": "2.49",
+      "Paridad": "110.10%"
     },
     "PLC5O": {
       "Cupon": 8.1,
@@ -38294,9 +43130,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.33%",
-      "DM": "3.7",
-      "Paridad": "103.60%"
+      "YTM": "6.38%",
+      "DM": "3.69",
+      "Paridad": "109.90%"
     },
     "VSCTO": {
       "Cupon": 7.6,
@@ -38305,9 +43141,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.12%",
-      "DM": "5.9",
-      "Paridad": "103.80%"
+      "YTM": "6.60%",
+      "DM": "5.85",
+      "Paridad": "108.95%"
     },
     "YFCJO": {
       "Cupon": 7.9,
@@ -38316,9 +43152,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.81%",
-      "DM": "4.0",
-      "Paridad": "104.90%"
+      "YTM": "6.42%",
+      "DM": "3.95",
+      "Paridad": "109.85%"
     },
     "TTCDO": {
       "Cupon": 7.6,
@@ -38327,9 +43163,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.82%",
-      "DM": "3.4",
-      "Paridad": "103.30%"
+      "YTM": "5.86%",
+      "DM": "3.37",
+      "Paridad": "109.40%"
     },
     "MGCMO": {
       "Cupon": 8.0,
@@ -38338,9 +43174,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.01%",
-      "DM": "3.9",
-      "Paridad": "104.30%"
+      "YTM": "6.05%",
+      "DM": "4.01",
+      "Paridad": "108.55%"
     },
     "GN49O": {
       "Cupon": 7.8,
@@ -38349,9 +43185,9 @@ const jsonData = {
       "Emisor": "GENNEIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.23%",
-      "DM": "4.7",
-      "Paridad": "103.20%"
+      "YTM": "6.62%",
+      "DM": "4.68",
+      "Paridad": "108.40%"
     },
     "PN38O": {
       "Cupon": 6.5,
@@ -38360,9 +43196,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.01%",
-      "DM": "0.9",
-      "Paridad": "101.50%"
+      "YTM": "0.31%",
+      "DM": "0.90",
+      "Paridad": "106.20%"
     },
     "BACGO": {
       "Cupon": 8.0,
@@ -38371,9 +43207,9 @@ const jsonData = {
       "Emisor": "BANCO MACRO S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.21%",
-      "DM": "2.4",
-      "Paridad": "102.30%"
+      "YTM": "5.51%",
+      "DM": "2.39",
+      "Paridad": "108.25%"
     },
     "BACHO": {
       "Cupon": 8.0,
@@ -38382,9 +43218,9 @@ const jsonData = {
       "Emisor": "BANCO MACRO S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.07%",
-      "DM": "3.6",
-      "Paridad": "104.00%"
+      "YTM": "6.26%",
+      "DM": "3.55",
+      "Paridad": "107.90%"
     },
     "PNXCO": {
       "Cupon": 8.5,
@@ -38393,9 +43229,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.71%",
-      "DM": "3.7",
-      "Paridad": "107.40%"
+      "YTM": "5.70%",
+      "DM": "3.65",
+      "Paridad": "114.65%"
     },
     "BYCHO": {
       "Cupon": 7.8,
@@ -38404,9 +43240,9 @@ const jsonData = {
       "Emisor": "BANCO DE GALICIA Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.25%",
-      "DM": "1.9",
-      "Paridad": "103.10%"
+      "YTM": "3.98%",
+      "DM": "1.84",
+      "Paridad": "110.80%"
     },
     "ARC1O": {
       "Cupon": 8.5,
@@ -38415,9 +43251,9 @@ const jsonData = {
       "Emisor": "AEROPUERTOS",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "1.14%",
-      "DM": "2.4",
-      "Paridad": "118.80%"
+      "YTM": "5.23%",
+      "DM": "2.46",
+      "Paridad": "107.15%"
     },
     "IRCFO": {
       "Cupon": 8.8,
@@ -38426,9 +43262,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.51%",
-      "DM": "1.3",
-      "Paridad": "103.30%"
+      "YTM": "4.67%",
+      "DM": "1.28",
+      "Paridad": "51.05%"
     },
     "TTCAO": {
       "Cupon": 7.6,
@@ -38437,9 +43273,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.86%",
-      "DM": "4.3",
-      "Paridad": "103.90%"
+      "YTM": "6.22%",
+      "DM": "4.23",
+      "Paridad": "107.75%"
     },
     "CAC5O": {
       "Cupon": 9.3,
@@ -38448,9 +43284,9 @@ const jsonData = {
       "Emisor": "CAPEX S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.86%",
-      "DM": "0.9",
-      "Paridad": "101.40%"
+      "YTM": "4.84%",
+      "DM": "1.11",
+      "Paridad": "52.77%"
     },
     "OZC8O": {
       "Cupon": 9.8,
@@ -38459,9 +43295,9 @@ const jsonData = {
       "Emisor": "EDEMSA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "10.74%",
-      "DM": "4.1",
-      "Paridad": "97.00%"
+      "YTM": "10.00%",
+      "DM": "4.01",
+      "Paridad": "102.40%"
     },
     "PNDCO": {
       "Cupon": 9.1,
@@ -38470,9 +43306,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "1.12%",
-      "DM": "0.5",
-      "Paridad": "103.80%"
+      "YTM": "-3.37%",
+      "DM": "0.39",
+      "Paridad": "43.30%"
     },
     "YCAMO": {
       "Cupon": 7.0,
@@ -38481,9 +43317,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "8.92%",
-      "DM": "0.9",
-      "Paridad": "98.40%"
+      "YTM": "0.79%",
+      "DM": "0.83",
+      "Paridad": "106.25%"
     },
     "RAC5O": {
       "Cupon": 8.3,
@@ -38503,9 +43339,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.51%",
-      "DM": "4.4",
-      "Paridad": "109.90%"
+      "YTM": "6.92%",
+      "DM": "4.30",
+      "Paridad": "110.30%"
     },
     "MCC3O": {
       "Cupon": 7.5,
@@ -38514,9 +43350,9 @@ const jsonData = {
       "Emisor": "PECOM SERVICIOS",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.00%",
-      "DM": "3.1",
-      "Paridad": "102.00%"
+      "YTM": "7.43%",
+      "DM": "2.97",
+      "Paridad": "103.15%"
     },
     "VSCRO": {
       "Cupon": 7.7,
@@ -38525,9 +43361,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.63%",
-      "DM": "3.4",
-      "Paridad": "103.90%"
+      "YTM": "5.72%",
+      "DM": "3.31",
+      "Paridad": "110.45%"
     },
     "WBS3O": {
       "Cupon": 6.0,
@@ -38547,9 +43383,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.80%",
-      "DM": "1.8",
-      "Paridad": "105.20%"
+      "YTM": "7.26%",
+      "DM": "1.65",
+      "Paridad": "105.10%"
     },
     "YM38O": {
       "Cupon": 7.5,
@@ -38558,9 +43394,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.93%",
-      "DM": "0.9",
-      "Paridad": "103.40%"
+      "YTM": "3.63%",
+      "DM": "0.80",
+      "Paridad": "104.35%"
     },
     "YM37O": {
       "Cupon": 7.0,
@@ -38569,9 +43405,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.44%",
-      "DM": "0.7",
-      "Paridad": "102.60%"
+      "YTM": "4.20%",
+      "DM": "0.61",
+      "Paridad": "102.50%"
     },
     "YM42O": {
       "Cupon": 7.0,
@@ -38580,9 +43416,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.99%",
-      "DM": "2.3",
-      "Paridad": "104.90%"
+      "YTM": "5.54%",
+      "DM": "2.16",
+      "Paridad": "105.45%"
     },
     "BYCVO": {
       "Cupon": 6.3,
@@ -38602,9 +43438,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.25%",
-      "DM": "0.3",
-      "Paridad": "101.90%"
+      "YTM": "2.05%",
+      "DM": "0.19",
+      "Paridad": "104.50%"
     },
     "PN35O": {
       "Cupon": 7.0,
@@ -38613,9 +43449,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.13%",
-      "DM": "2.7",
-      "Paridad": "105.40%"
+      "YTM": "5.43%",
+      "DM": "2.58",
+      "Paridad": "107.75%"
     },
     "PLC6O": {
       "Cupon": 6.5,
@@ -38624,9 +43460,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.22%",
-      "DM": "2.2",
-      "Paridad": "103.10%"
+      "YTM": "5.33%",
+      "DM": "2.13",
+      "Paridad": "106.30%"
     },
     "YM35O": {
       "Cupon": 6.3,
@@ -38646,9 +43482,9 @@ const jsonData = {
       "Emisor": "PETROQUIMICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.95%",
-      "DM": "3.5",
-      "Paridad": "104.30%"
+      "YTM": "7.82%",
+      "DM": "3.53",
+      "Paridad": "101.75%"
     },
     "DNCBO": {
       "Cupon": 7.5,
@@ -38668,9 +43504,9 @@ const jsonData = {
       "Emisor": "LOMA NEGRA C.I.A.S.A",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.45%",
-      "DM": "0.9",
-      "Paridad": "103.40%"
+      "YTM": "4.56%",
+      "DM": "0.81",
+      "Paridad": "104.00%"
     },
     "PLC2O": {
       "Cupon": 7.5,
@@ -38679,9 +43515,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.64%",
-      "DM": "2.9",
-      "Paridad": "105.90%"
+      "YTM": "5.96%",
+      "DM": "2.81",
+      "Paridad": "107.75%"
     },
     "YM43O": {
       "Cupon": 5.5,
@@ -38690,9 +43526,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.75%",
-      "DM": "3.1",
-      "Paridad": "96.30%"
+      "YTM": "6.17%",
+      "DM": "3.05",
+      "Paridad": "100.40%"
     },
     "IRCOO": {
       "Cupon": 7.3,
@@ -38701,9 +43537,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.43%",
-      "DM": "2.8",
-      "Paridad": "105.50%"
+      "YTM": "5.98%",
+      "DM": "2.67",
+      "Paridad": "104.80%"
     },
     "MGCQO": {
       "Cupon": 7.3,
@@ -38712,9 +43548,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.06%",
-      "DM": "1.7",
-      "Paridad": "102.30%"
+      "YTM": "3.59%",
+      "DM": "1.74",
+      "Paridad": "107.45%"
     },
     "PN36O": {
       "Cupon": 7.3,
@@ -38723,9 +43559,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.30%",
-      "DM": "4.2",
-      "Paridad": "109.00%"
+      "YTM": "5.85%",
+      "DM": "4.10",
+      "Paridad": "108.95%"
     },
     "RC2CO": {
       "Cupon": 5.9,
@@ -38734,9 +43570,9 @@ const jsonData = {
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.84%",
-      "DM": "0.2",
-      "Paridad": "100.70%"
+      "YTM": "-1.27%",
+      "DM": "0.07",
+      "Paridad": "103.05%"
     },
     "CICAO": {
       "Cupon": 8.0,
@@ -38745,9 +43581,9 @@ const jsonData = {
       "Emisor": "CNH INDUSTRIAL CAPITAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.74%",
-      "DM": "1.6",
-      "Paridad": "102.30%"
+      "YTM": "6.98%",
+      "DM": "1.51",
+      "Paridad": "104.00%"
     },
     "PN41O": {
       "Cupon": 7.5,
@@ -38756,9 +43592,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.08%",
-      "DM": "2.6",
-      "Paridad": "106.70%"
+      "YTM": "5.76%",
+      "DM": "2.56",
+      "Paridad": "105.20%"
     },
     "LMS7O": {
       "Cupon": 7.0,
@@ -38767,9 +43603,9 @@ const jsonData = {
       "Emisor": "ALUMINIO ARGENTINO",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.10%",
-      "DM": "1.1",
-      "Paridad": "102.30%"
+      "YTM": "2.96%",
+      "DM": "1.02",
+      "Paridad": "79.22%"
     },
     "BF37O": {
       "Cupon": 6.0,
@@ -38789,9 +43625,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.07%",
-      "DM": "0.9",
-      "Paridad": "104.00%"
+      "YTM": "3.19%",
+      "DM": "0.75",
+      "Paridad": "104.90%"
     },
     "TLCOO": {
       "Cupon": 7.0,
@@ -38800,9 +43636,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.16%",
-      "DM": "2.0",
-      "Paridad": "104.10%"
+      "YTM": "5.66%",
+      "DM": "1.95",
+      "Paridad": "104.95%"
     },
     "MGCTO": {
       "Cupon": 5.5,
@@ -38811,9 +43647,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.68%",
-      "DM": "2.4",
-      "Paridad": "102.10%"
+      "YTM": "5.65%",
+      "DM": "2.24",
+      "Paridad": "102.25%"
     },
     "OZC3O": {
       "Cupon": 8.0,
@@ -38822,9 +43658,9 @@ const jsonData = {
       "Emisor": "EDEMSA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.57%",
-      "DM": "1.2",
-      "Paridad": "101.90%"
+      "YTM": "6.09%",
+      "DM": "1.09",
+      "Paridad": "104.60%"
     },
     "OLC7O": {
       "Cupon": 6.9,
@@ -38833,9 +43669,9 @@ const jsonData = {
       "Emisor": "OLEODUCTOS DEL VALLE",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.92%",
-      "DM": "2.9",
-      "Paridad": "103.30%"
+      "YTM": "6.07%",
+      "DM": "2.95",
+      "Paridad": "103.20%"
     },
     "PLC3O": {
       "Cupon": 7.3,
@@ -38844,9 +43680,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.09%",
-      "DM": "1.6",
-      "Paridad": "103.70%"
+      "YTM": "5.12%",
+      "DM": "1.48",
+      "Paridad": "104.25%"
     },
     "NPCDO": {
       "Cupon": 6.0,
@@ -38855,9 +43691,9 @@ const jsonData = {
       "Emisor": "CENTRAL PUERTO S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.44%",
-      "DM": "3.2",
-      "Paridad": "102.10%"
+      "YTM": "6.20%",
+      "DM": "3.06",
+      "Paridad": "101.85%"
     },
     "YMCYO": {
       "Cupon": 6.5,
@@ -38866,9 +43702,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.84%",
-      "DM": "2.0",
-      "Paridad": "103.60%"
+      "YTM": "4.92%",
+      "DM": "1.85",
+      "Paridad": "104.40%"
     },
     "VBC2O": {
       "Cupon": 7.8,
@@ -38888,9 +43724,9 @@ const jsonData = {
       "Emisor": "MSU ENERGY S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.58%",
-      "DM": "1.0",
-      "Paridad": "101.10%"
+      "YTM": "7.37%",
+      "DM": "0.91",
+      "Paridad": "101.20%"
     },
     "CS48O": {
       "Cupon": 8.0,
@@ -38899,9 +43735,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.07%",
-      "DM": "1.7",
-      "Paridad": "105.40%"
+      "YTM": "5.66%",
+      "DM": "1.63",
+      "Paridad": "105.50%"
     },
     "XMC1O": {
       "Cupon": 8.0,
@@ -38910,9 +43746,9 @@ const jsonData = {
       "Emisor": "MINERA EXAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.76%",
-      "DM": "0.9",
-      "Paridad": "103.20%"
+      "YTM": "6.13%",
+      "DM": "0.83",
+      "Paridad": "104.40%"
     },
     "MGCNO": {
       "Cupon": 5.8,
@@ -38921,9 +43757,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.01%",
-      "DM": "2.0",
-      "Paridad": "103.60%"
+      "YTM": "5.04%",
+      "DM": "1.84",
+      "Paridad": "104.00%"
     },
     "STCFO": {
       "Cupon": 8.3,
@@ -38932,9 +43768,9 @@ const jsonData = {
       "Emisor": "GRUPO ST S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.49%",
-      "DM": "0.5",
-      "Paridad": "102.00%"
+      "YTM": "3.08%",
+      "DM": "0.42",
+      "Paridad": "102.80%"
     },
     "YM41O": {
       "Cupon": 6.0,
@@ -38943,9 +43779,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.78%",
-      "DM": "0.4",
-      "Paridad": "100.50%"
+      "YTM": "4.24%",
+      "DM": "0.31",
+      "Paridad": "101.65%"
     },
     "OLC5O": {
       "Cupon": 7.9,
@@ -38954,9 +43790,9 @@ const jsonData = {
       "Emisor": "OLEODUCTOS DEL VALLE S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.15%",
-      "DM": "1.7",
-      "Paridad": "106.60%"
+      "YTM": "4.95%",
+      "DM": "1.57",
+      "Paridad": "106.95%"
     },
     "OLC6O": {
       "Cupon": 7.5,
@@ -38965,9 +43801,9 @@ const jsonData = {
       "Emisor": "OLEODUCTOS DEL VALLE S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.93%",
-      "DM": "2.8",
-      "Paridad": "104.90%"
+      "YTM": "5.62%",
+      "DM": "2.35",
+      "Paridad": "106.90%"
     },
     "RC1CO": {
       "Cupon": 7.6,
@@ -38976,9 +43812,9 @@ const jsonData = {
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.37%",
-      "DM": "4.7",
-      "Paridad": "111.60%"
+      "YTM": "6.14%",
+      "DM": "4.58",
+      "Paridad": "108.40%"
     },
     "CS50O": {
       "Cupon": 7.3,
@@ -38987,9 +43823,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.17%",
-      "DM": "2.2",
-      "Paridad": "104.90%"
+      "YTM": "6.04%",
+      "DM": "2.20",
+      "Paridad": "103.00%"
     },
     "YFCNO": {
       "Cupon": 6.0,
@@ -38998,9 +43834,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-0.56%",
-      "DM": "0.2",
-      "Paridad": "101.00%"
+      "YTM": "1.62%",
+      "DM": "0.06",
+      "Paridad": "102.90%"
     },
     "YM40O": {
       "Cupon": 7.5,
@@ -39009,9 +43845,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.95%",
-      "DM": "1.8",
-      "Paridad": "105.00%"
+      "YTM": "5.39%",
+      "DM": "1.75",
+      "Paridad": "104.40%"
     },
     "OT42O": {
       "Cupon": 8.0,
@@ -39020,9 +43856,9 @@ const jsonData = {
       "Emisor": "OILTANKING EBYTEM S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.44%",
-      "DM": "2.9",
-      "Paridad": "105.20%"
+      "YTM": "6.22%",
+      "DM": "2.78",
+      "Paridad": "107.00%"
     },
     "HJCIO": {
       "Cupon": 7.5,
@@ -39031,9 +43867,9 @@ const jsonData = {
       "Emisor": "JOHN DEERE CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.08%",
-      "DM": "0.8",
-      "Paridad": "101.90%"
+      "YTM": "4.55%",
+      "DM": "0.66",
+      "Paridad": "104.25%"
     },
     "LUC5O": {
       "Cupon": 8.0,
@@ -39042,9 +43878,9 @@ const jsonData = {
       "Emisor": "LUZ DE TRES PICOS S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.76%",
-      "DM": "2.1",
-      "Paridad": "100.80%"
+      "YTM": "7.66%",
+      "DM": "2.12",
+      "Paridad": "101.40%"
     },
     "TTCEO": {
       "Cupon": 5.5,
@@ -39053,9 +43889,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.26%",
-      "DM": "2.5",
-      "Paridad": "100.80%"
+      "YTM": "5.57%",
+      "DM": "2.37",
+      "Paridad": "101.70%"
     },
     "LOC6O": {
       "Cupon": 6.5,
@@ -39064,9 +43900,9 @@ const jsonData = {
       "Emisor": "LOMA NEGRA C.I.A.S.A",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.40%",
-      "DM": "2.2",
-      "Paridad": "102.70%"
+      "YTM": "5.94%",
+      "DM": "2.09",
+      "Paridad": "102.30%"
     },
     "MTC2O": {
       "Cupon": 6.5,
@@ -39086,9 +43922,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.90%",
-      "DM": "3.0",
-      "Paridad": "105.20%"
+      "YTM": "5.34%",
+      "DM": "2.99",
+      "Paridad": "107.10%"
     },
     "CS47O": {
       "Cupon": 7.0,
@@ -39097,9 +43933,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.96%",
-      "DM": "2.0",
-      "Paridad": "104.40%"
+      "YTM": "5.81%",
+      "DM": "1.91",
+      "Paridad": "104.85%"
     },
     "NPCCO": {
       "Cupon": 8.0,
@@ -39108,9 +43944,9 @@ const jsonData = {
       "Emisor": "CENTRAL PUERTO S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.46%",
-      "DM": "2.5",
-      "Paridad": "101.70%"
+      "YTM": "5.76%",
+      "DM": "2.54",
+      "Paridad": "106.60%"
     },
     "TLCUO": {
       "Cupon": 6.5,
@@ -39119,9 +43955,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.58%",
-      "DM": "2.2",
-      "Paridad": "102.30%"
+      "YTM": "6.00%",
+      "DM": "2.20",
+      "Paridad": "101.45%"
     },
     "CS52O": {
       "Cupon": 4.8,
@@ -39130,9 +43966,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.87%",
-      "DM": "1.6",
-      "Paridad": "98.30%"
+      "YTM": "5.62%",
+      "DM": "1.49",
+      "Paridad": "100.50%"
     },
     "TLCWO": {
       "Cupon": 6.3,
@@ -39141,9 +43977,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.83%",
-      "DM": "3.2",
-      "Paridad": "101.70%"
+      "YTM": "6.02%",
+      "DM": "3.13",
+      "Paridad": "102.85%"
     },
     "ZZC1O": {
       "Cupon": 8.0,
@@ -39152,9 +43988,9 @@ const jsonData = {
       "Emisor": "CAMUZZI GAS PAMPEANA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.04%",
-      "DM": "0.5",
-      "Paridad": "101.00%"
+      "YTM": "5.39%",
+      "DM": "0.42",
+      "Paridad": "101.60%"
     },
     "TTCBO": {
       "Cupon": 6.5,
@@ -39163,9 +43999,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.90%",
-      "DM": "1.1",
-      "Paridad": "103.00%"
+      "YTM": "4.64%",
+      "DM": "1.00",
+      "Paridad": "104.65%"
     },
     "TTC9O": {
       "Cupon": 6.8,
@@ -39174,9 +44010,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.32%",
-      "DM": "2.8",
-      "Paridad": "104.40%"
+      "YTM": "5.62%",
+      "DM": "2.65",
+      "Paridad": "106.15%"
     },
     "OTS2O": {
       "Cupon": 7.0,
@@ -39186,8 +44022,8 @@ const jsonData = {
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
       "YTM": "4.48%",
-      "DM": "0.7",
-      "Paridad": "101.80%"
+      "DM": "0.58",
+      "Paridad": "102.50%"
     },
     "HJCKO": {
       "Cupon": 7.8,
@@ -39196,9 +44032,9 @@ const jsonData = {
       "Emisor": "JOHN DEERE CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.23%",
-      "DM": "2.1",
-      "Paridad": "103.60%"
+      "YTM": "6.46%",
+      "DM": "2.04",
+      "Paridad": "104.20%"
     },
     "MIC6O": {
       "Cupon": 8.0,
@@ -39207,9 +44043,9 @@ const jsonData = {
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.20%",
-      "DM": "1.6",
-      "Paridad": "100.00%"
+      "YTM": "8.29%",
+      "DM": "1.49",
+      "Paridad": "100.25%"
     },
     "VSCPO": {
       "Cupon": 8.0,
@@ -39218,9 +44054,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.46%",
-      "DM": "1.7",
-      "Paridad": "102.90%"
+      "YTM": "4.18%",
+      "DM": "1.68",
+      "Paridad": "109.80%"
     },
     "RCCRO": {
       "Cupon": 6.8,
@@ -39229,9 +44065,9 @@ const jsonData = {
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.55%",
-      "DM": "0.7",
-      "Paridad": "102.40%"
+      "YTM": "3.07%",
+      "DM": "0.62",
+      "Paridad": "104.70%"
     },
     "HJCJO": {
       "Cupon": 8.5,
@@ -39240,9 +44076,9 @@ const jsonData = {
       "Emisor": "JOHN DEERE CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.88%",
-      "DM": "0.9",
-      "Paridad": "103.40%"
+      "YTM": "4.82%",
+      "DM": "0.81",
+      "Paridad": "104.25%"
     },
     "TTC8O": {
       "Cupon": 5.0,
@@ -39251,9 +44087,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.96%",
-      "DM": "1.2",
-      "Paridad": "103.60%"
+      "YTM": "3.95%",
+      "DM": "1.04",
+      "Paridad": "103.10%"
     },
     "SIC2O": {
       "Cupon": 7.5,
@@ -39273,9 +44109,9 @@ const jsonData = {
       "Emisor": "CNH INDUSTRIAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.94%",
-      "DM": "2.1",
-      "Paridad": "99.40%"
+      "YTM": "7.39%",
+      "DM": "2.09",
+      "Paridad": "101.20%"
     },
     "PN34O": {
       "Cupon": 5.0,
@@ -39284,9 +44120,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.30%",
-      "DM": "1.1",
-      "Paridad": "101.90%"
+      "YTM": "3.56%",
+      "DM": "0.97",
+      "Paridad": "103.75%"
     },
     "PN37O": {
       "Cupon": 6.3,
@@ -39295,9 +44131,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.99%",
-      "DM": "2.0",
-      "Paridad": "102.70%"
+      "YTM": "5.17%",
+      "DM": "1.93",
+      "Paridad": "104.40%"
     },
     "CS49O": {
       "Cupon": 7.3,
@@ -39317,9 +44153,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "2.27%",
-      "DM": "0.8",
-      "Paridad": "103.30%"
+      "YTM": "3.69%",
+      "DM": "0.65",
+      "Paridad": "102.35%"
     },
     "OTS6O": {
       "Cupon": 6.7,
@@ -39328,9 +44164,9 @@ const jsonData = {
       "Emisor": "OTAMERICA EBYTEM S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.30%",
-      "DM": "2.5",
-      "Paridad": "101.50%"
+      "YTM": "6.09%",
+      "DM": "2.40",
+      "Paridad": "106.20%"
     },
     "DEC2O": {
       "Cupon": 8.5,
@@ -39339,9 +44175,9 @@ const jsonData = {
       "Emisor": "EDESA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "9.81%",
-      "DM": "0.5",
-      "Paridad": "99.40%"
+      "YTM": "6.24%",
+      "DM": "0.43",
+      "Paridad": "101.45%"
     },
     "YFCOO": {
       "Cupon": 6.8,
@@ -39350,9 +44186,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.44%",
-      "DM": "2.0",
-      "Paridad": "105.10%"
+      "YTM": "4.98%",
+      "DM": "1.93",
+      "Paridad": "108.95%"
     },
     "CACDO": {
       "Cupon": 8.3,
@@ -39361,9 +44197,9 @@ const jsonData = {
       "Emisor": "CAPEX S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.89%",
-      "DM": "2.4",
-      "Paridad": "103.70%"
+      "YTM": "7.81%",
+      "DM": "2.27",
+      "Paridad": "103.65%"
     },
     "MCC1O": {
       "Cupon": 7.9,
@@ -39372,9 +44208,9 @@ const jsonData = {
       "Emisor": "PECOM SERVICIOS ENERGIA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.53%",
-      "DM": "2.2",
-      "Paridad": "103.40%"
+      "YTM": "6.94%",
+      "DM": "2.17",
+      "Paridad": "102.45%"
     },
     "IRCJO": {
       "Cupon": 7.0,
@@ -39383,9 +44219,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.40%",
-      "DM": "0.5",
-      "Paridad": "101.40%"
+      "YTM": "4.12%",
+      "DM": "0.45",
+      "Paridad": "101.60%"
     },
     "BYCXO": {
       "Cupon": 5.5,
@@ -39394,9 +44230,9 @@ const jsonData = {
       "Emisor": "BANCO DE GALICIA Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.71%",
-      "DM": "0.4",
-      "Paridad": "101.50%"
+      "YTM": "2.89%",
+      "DM": "0.29",
+      "Paridad": "102.00%"
     },
     "PFC2O": {
       "Cupon": 7.3,
@@ -39405,9 +44241,9 @@ const jsonData = {
       "Emisor": "PROFERTIL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.75%",
-      "DM": "0.9",
-      "Paridad": "102.30%"
+      "YTM": "4.55%",
+      "DM": "0.79",
+      "Paridad": "103.40%"
     },
     "SBC2O": {
       "Cupon": 74.9,
@@ -39416,9 +44252,9 @@ const jsonData = {
       "Emisor": "SCANIA CREDIT ARGENTINA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "99.73%",
-      "DM": "0.4",
-      "Paridad": "99.30%"
+      "YTM": "6.09%",
+      "DM": "1.10",
+      "Paridad": "93.70%"
     },
     "PLC1O": {
       "Cupon": 6.0,
@@ -39427,9 +44263,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.74%",
-      "DM": "1.4",
-      "Paridad": "101.80%"
+      "YTM": "4.43%",
+      "DM": "1.26",
+      "Paridad": "104.40%"
     },
     "YFCLO": {
       "Cupon": 6.8,
@@ -39438,9 +44274,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.55%",
-      "DM": "2.0",
-      "Paridad": "104.90%"
+      "YTM": "5.46%",
+      "DM": "1.95",
+      "Paridad": "103.25%"
     },
     "MIC3O": {
       "Cupon": 8.5,
@@ -39449,9 +44285,9 @@ const jsonData = {
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.24%",
-      "DM": "0.2",
-      "Paridad": "100.40%"
+      "YTM": "9.84%",
+      "DM": "0.15",
+      "Paridad": "100.55%"
     },
     "OTS5O": {
       "Cupon": 6.7,
@@ -39460,9 +44296,9 @@ const jsonData = {
       "Emisor": "OTAMERICA EBYTEM S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.09%",
-      "DM": "0.2",
-      "Paridad": "100.80%"
+      "YTM": "2.56%",
+      "DM": "0.11",
+      "Paridad": "103.05%"
     },
     "AERBO": {
       "Cupon": 5.5,
@@ -39471,9 +44307,9 @@ const jsonData = {
       "Emisor": "AEROPUERTOS",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.44%",
-      "DM": "0.3",
-      "Paridad": "100.70%"
+      "YTM": "3.01%",
+      "DM": "0.25",
+      "Paridad": "101.85%"
     },
     "BYCWO": {
       "Cupon": 6.0,
@@ -39482,9 +44318,9 @@ const jsonData = {
       "Emisor": "BANCO DE GALICIA Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "2.81%",
-      "DM": "0.3",
-      "Paridad": "101.00%"
+      "YTM": "1.29%",
+      "DM": "0.22",
+      "Paridad": "103.00%"
     },
     "AFCIO": {
       "Cupon": 6.5,
@@ -39493,9 +44329,9 @@ const jsonData = {
       "Emisor": "BANCO COMAFI S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-0.40%",
-      "DM": "0.3",
-      "Paridad": "101.70%"
+      "YTM": "1.44%",
+      "DM": "0.15",
+      "Paridad": "103.05%"
     },
     "MCC2O": {
       "Cupon": 7.5,
@@ -39504,9 +44340,9 @@ const jsonData = {
       "Emisor": "PECOM SERVICIOS ENERGIA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.41%",
-      "DM": "0.8",
-      "Paridad": "101.70%"
+      "YTM": "5.96%",
+      "DM": "0.67",
+      "Paridad": "103.20%"
     },
     "PN42O": {
       "Cupon": 6.0,
@@ -39515,9 +44351,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.77%",
-      "DM": "0.7",
-      "Paridad": "101.50%"
+      "YTM": "5.14%",
+      "DM": "0.55",
+      "Paridad": "102.95%"
     },
     "MSSFO": {
       "Cupon": 7.5,
@@ -39526,9 +44362,9 @@ const jsonData = {
       "Emisor": "MSU S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.10%",
-      "DM": "0.9",
-      "Paridad": "100.50%"
+      "YTM": "6.78%",
+      "DM": "0.79",
+      "Paridad": "101.70%"
     },
     "LDCGO": {
       "Cupon": 7.0,
@@ -39537,9 +44373,9 @@ const jsonData = {
       "Emisor": "LEDESMA S.A.A.I.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.25%",
-      "DM": "1.1",
-      "Paridad": "101.00%"
+      "YTM": "6.69%",
+      "DM": "0.96",
+      "Paridad": "101.20%"
     },
     "YFCKO": {
       "Cupon": 5.3,
@@ -39548,9 +44384,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-4.86%",
-      "DM": "0.3",
-      "Paridad": "103.00%"
+      "YTM": "1.57%",
+      "DM": "0.19",
+      "Paridad": "101.00%"
     },
     "IRCNO": {
       "Cupon": 5.8,
@@ -39559,9 +44395,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.78%",
-      "DM": "1.1",
-      "Paridad": "101.20%"
+      "YTM": "4.68%",
+      "DM": "1.04",
+      "Paridad": "102.00%"
     },
     "LMS8O": {
       "Cupon": 6.3,
@@ -39570,9 +44406,9 @@ const jsonData = {
       "Emisor": "ALUMINIO ARGENTINO",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-1.50%",
-      "DM": "0.4",
-      "Paridad": "102.90%"
+      "YTM": "-12.91%",
+      "DM": "0.32",
+      "Paridad": "80.39%"
     },
     "CS51O": {
       "Cupon": 5.8,
@@ -39581,9 +44417,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.14%",
-      "DM": "0.4",
-      "Paridad": "100.30%"
+      "YTM": "4.61%",
+      "DM": "0.34",
+      "Paridad": "101.25%"
     },
     "SBC1O": {
       "Cupon": 8.8,
@@ -39592,9 +44428,9 @@ const jsonData = {
       "Emisor": "SCANIA CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.11%",
-      "DM": "0.5",
-      "Paridad": "101.00%"
+      "YTM": "4.83%",
+      "DM": "0.58",
+      "Paridad": "59.49%"
     },
     "GYC5O": {
       "Cupon": 8.8,
@@ -39603,9 +44439,9 @@ const jsonData = {
       "Emisor": "360 ENERGY SOLAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "9.46%",
-      "DM": "0.9",
-      "Paridad": "99.60%"
+      "YTM": "8.25%",
+      "DM": "0.88",
+      "Paridad": "100.85%"
     },
     "SNSBO": {
       "Cupon": 9.5,
@@ -39614,9 +44450,9 @@ const jsonData = {
       "Emisor": "S.A. SAN MIGUEL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.65%",
-      "DM": "0.1",
-      "Paridad": "84.40%"
+      "YTM": "17.85%",
+      "DM": "1.90",
+      "Paridad": "83.39%"
     },
     "MIC4O": {
       "Cupon": 8.3,
@@ -39625,9 +44461,9 @@ const jsonData = {
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.67%",
-      "DM": "0.9",
-      "Paridad": "102.60%"
+      "YTM": "6.26%",
+      "DM": "0.80",
+      "Paridad": "102.80%"
     },
     "BF39O": {
       "Cupon": 5.8,
@@ -39636,9 +44472,9 @@ const jsonData = {
       "Emisor": "BANCO BBVA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.00%",
-      "DM": "0.3",
-      "Paridad": "101.60%"
+      "YTM": "3.76%",
+      "DM": "0.22",
+      "Paridad": "102.00%"
     },
     "HBCAO": {
       "Cupon": 7.0,
@@ -39658,9 +44494,9 @@ const jsonData = {
       "Emisor": "GENNEIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.87%",
-      "DM": "1.9",
-      "Paridad": "100.40%"
+      "YTM": "5.99%",
+      "DM": "1.85",
+      "Paridad": "102.60%"
     },
     "CACBO": {
       "Cupon": 7.8,
@@ -39669,9 +44505,9 @@ const jsonData = {
       "Emisor": "CAPEX S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.55%",
-      "DM": "1.7",
-      "Paridad": "104.00%"
+      "YTM": "6.83%",
+      "DM": "1.54",
+      "Paridad": "103.60%"
     },
     "VBC1O": {
       "Cupon": 7.5,
@@ -39680,9 +44516,9 @@ const jsonData = {
       "Emisor": "BANCO DE VALORES S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.82%",
-      "DM": "0.6",
-      "Paridad": "101.00%"
+      "YTM": "11.61%",
+      "DM": "0.43",
+      "Paridad": "102.00%"
     },
     "EMC1O": {
       "Cupon": 7.5,
@@ -39691,9 +44527,9 @@ const jsonData = {
       "Emisor": "COMPAÑIA MEGA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.23%",
-      "DM": "0.9",
-      "Paridad": "102.00%"
+      "YTM": "4.70%",
+      "DM": "0.76",
+      "Paridad": "103.65%"
     },
     "HBCDO": {
       "Cupon": 6.0,
@@ -39702,9 +44538,9 @@ const jsonData = {
       "Emisor": "BANCO HIPOTECARIO",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "-0.57%",
-      "DM": "0.3",
-      "Paridad": "101.90%"
+      "YTM": "3.99%",
+      "DM": "0.18",
+      "Paridad": "102.25%"
     },
     "CS53O": {
       "Cupon": 6.3,
@@ -39713,8 +44549,8 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.41%",
-      "DM": "3.2",
+      "YTM": "6.11%",
+      "DM": "3.06",
       "Paridad": "103.00%"
     },
     "OTS3O": {
@@ -39724,9 +44560,9 @@ const jsonData = {
       "Emisor": "OTAMERICA EBYTEM",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.99%",
-      "DM": "2.0",
-      "Paridad": "102.40%"
+      "YTM": "4.50%",
+      "DM": "1.91",
+      "Paridad": "106.00%"
     },
     "PQCRO": {
       "Cupon": 6.8,
@@ -39735,9 +44571,9 @@ const jsonData = {
       "Emisor": "PETROQUIMICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.48%",
-      "DM": "1.9",
-      "Paridad": "98.80%"
+      "YTM": "6.44%",
+      "DM": "1.84",
+      "Paridad": "103.40%"
     },
     "CP40O": {
       "Cupon": 9.5,
@@ -39746,9 +44582,9 @@ const jsonData = {
       "Emisor": "COMPAÑIA GENERAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.02%",
-      "DM": "1.4",
-      "Paridad": "105.40%"
+      "YTM": "8.35%",
+      "DM": "1.30",
+      "Paridad": "102.00%"
     },
     "YFCGO": {
       "Cupon": 6.0,
@@ -39757,9 +44593,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "2.02%",
-      "DM": "0.5",
-      "Paridad": "102.20%"
+      "YTM": "0.04%",
+      "DM": "0.46",
+      "Paridad": "103.00%"
     },
     "OT41O": {
       "Cupon": 7.0,
@@ -39768,9 +44604,9 @@ const jsonData = {
       "Emisor": "OILTANKING EBYTEM",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.45%",
-      "DM": "1.3",
-      "Paridad": "103.70%"
+      "YTM": "5.22%",
+      "DM": "1.22",
+      "Paridad": "103.50%"
     },
     "MSSGO": {
       "Cupon": 8.5,
@@ -39779,9 +44615,9 @@ const jsonData = {
       "Emisor": "MSU S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.75%",
-      "DM": "2.2",
-      "Paridad": "99.80%"
+      "YTM": "8.26%",
+      "DM": "2.13",
+      "Paridad": "104.35%"
     },
     "GYC4O": {
       "Cupon": 8.0,
@@ -39790,9 +44626,9 @@ const jsonData = {
       "Emisor": "360 ENERGY SOLAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.55%",
-      "DM": "1.1",
-      "Paridad": "101.90%"
+      "YTM": "8.33%",
+      "DM": "1.00",
+      "Paridad": "100.85%"
     },
     "YMCZO": {
       "Cupon": 7.0,
@@ -39801,9 +44637,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.43%",
-      "DM": "1.9",
-      "Paridad": "101.30%"
+      "YTM": "3.81%",
+      "DM": "1.85",
+      "Paridad": "109.35%"
     },
     "JNC6O": {
       "Cupon": 9.0,
@@ -39812,9 +44648,9 @@ const jsonData = {
       "Emisor": "INVERSORA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.07%",
-      "DM": "1.0",
-      "Paridad": "101.10%"
+      "YTM": "7.09%",
+      "DM": "0.93",
+      "Paridad": "106.00%"
     },
     "BF44O": {
       "Cupon": 5.0,
@@ -39823,9 +44659,9 @@ const jsonData = {
       "Emisor": "BANCO BBVA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.64%",
-      "DM": "1.6",
-      "Paridad": "102.30%"
+      "YTM": "5.66%",
+      "DM": "1.50",
+      "Paridad": "100.80%"
     },
     "YFCIO": {
       "Cupon": 5.9,
@@ -39834,9 +44670,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.31%",
-      "DM": "0.7",
-      "Paridad": "101.20%"
+      "YTM": "4.54%",
+      "DM": "0.66",
+      "Paridad": "102.00%"
     },
     "PQCTO": {
       "Cupon": 8.5,
@@ -39845,9 +44681,9 @@ const jsonData = {
       "Emisor": "PETROQUIMICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.79%",
-      "DM": "1.7",
-      "Paridad": "103.30%"
+      "YTM": "5.82%",
+      "DM": "1.65",
+      "Paridad": "106.00%"
     },
     "VAC3P": {
       "Cupon": 9.5,
@@ -39867,9 +44703,9 @@ const jsonData = {
       "Emisor": "PLAZA LOGISTICA S.R.L.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.84%",
-      "DM": "1.6",
-      "Paridad": "99.00%"
+      "YTM": "6.14%",
+      "DM": "1.55",
+      "Paridad": "101.75%"
     },
     "SNSDO": {
       "Cupon": 9.5,
@@ -39878,9 +44714,9 @@ const jsonData = {
       "Emisor": "S.A. SAN MIGUEL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "78.85%",
-      "DM": "0.3",
-      "Paridad": "79.20%"
+      "YTM": "25.11%",
+      "DM": "1.76",
+      "Paridad": "73.03%"
     },
     "RZABO": {
       "Cupon": 8.0,
@@ -39889,9 +44725,9 @@ const jsonData = {
       "Emisor": "RIZOBACTER",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "53.44%",
-      "DM": "0.8",
-      "Paridad": "65.10%"
+      "YTM": "37.70%",
+      "DM": "1.34",
+      "Paridad": "64.12%"
     },
     "GN48O": {
       "Cupon": 6.5,
@@ -39900,9 +44736,9 @@ const jsonData = {
       "Emisor": "GENNEIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.44%",
-      "DM": "1.4",
-      "Paridad": "98.80%"
+      "YTM": "4.58%",
+      "DM": "1.37",
+      "Paridad": "102.90%"
     },
     "GN43O": {
       "Cupon": 6.3,
@@ -39911,9 +44747,9 @@ const jsonData = {
       "Emisor": "GENNEIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.28%",
-      "DM": "0.5",
-      "Paridad": "100.10%"
+      "YTM": "2.66%",
+      "DM": "0.47",
+      "Paridad": "101.80%"
     },
     "RZ9BO": {
       "Cupon": 3.74,
@@ -39922,9 +44758,9 @@ const jsonData = {
       "Emisor": "RIZOBACTER",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "N/D",
-      "DM": "N/D",
-      "Paridad": "N/D"
+      "YTM": "55.76%",
+      "DM": "1.13",
+      "Paridad": "52.51%"
     },
     "FO4AO": {
       "Cupon": 7.9,
@@ -39933,9 +44769,9 @@ const jsonData = {
       "Emisor": "FUTUROS Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.15%",
-      "DM": "1.7",
-      "Paridad": "101.70%"
+      "YTM": "7.16%",
+      "DM": "0.77",
+      "Paridad": "101.90%"
     },
     "CWC6O": {
       "Cupon": 9.5,
@@ -39944,9 +44780,9 @@ const jsonData = {
       "Emisor": "CROWN POINT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "42.77%",
-      "DM": "0.5",
-      "Paridad": "83.50%"
+      "YTM": "16.15%",
+      "DM": "0.51",
+      "Paridad": "100.00%"
     },
     "PUC2O": {
       "Cupon": 8.8,
@@ -39955,9 +44791,9 @@ const jsonData = {
       "Emisor": "PETROLEOS",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.63%",
-      "DM": "0.9",
-      "Paridad": "100.20%"
+      "YTM": "8.51%",
+      "DM": "0.87",
+      "Paridad": "100.70%"
     },
     "HVS1O": {
       "Cupon": 8.8,
@@ -39966,9 +44802,9 @@ const jsonData = {
       "Emisor": "HAVANNA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.30%",
-      "DM": "1.7",
-      "Paridad": "104.60%"
+      "YTM": "8.45%",
+      "DM": "1.55",
+      "Paridad": "102.50%"
     },
     "BPCTO": {
       "Cupon": 8.0,
@@ -39977,9 +44813,9 @@ const jsonData = {
       "Emisor": "BANCO SUPERVIELLE",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.71%",
-      "DM": "0.9",
-      "Paridad": "101.40%"
+      "YTM": "6.29%",
+      "DM": "0.88",
+      "Paridad": "102.00%"
     },
     "ZPC2O": {
       "Cupon": 7.5,
@@ -39988,9 +44824,9 @@ const jsonData = {
       "Emisor": "PLAZA LOGISTICA S.R.L.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.05%",
-      "DM": "0.8",
-      "Paridad": "102.00%"
+      "YTM": "11.11%",
+      "DM": "0.64",
+      "Paridad": "98.00%"
     },
     "BGC4O": {
       "Cupon": 6.3,
@@ -39999,9 +44835,9 @@ const jsonData = {
       "Emisor": "BANCO PATAGONIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "2.16%",
-      "DM": "0.3",
-      "Paridad": "101.10%"
+      "YTM": "2.28%",
+      "DM": "0.17",
+      "Paridad": "102.75%"
     },
     "AFCHO": {
       "Cupon": 6.8,
@@ -40021,9 +44857,9 @@ const jsonData = {
       "Emisor": "BANCO BBVA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "13.53%",
-      "DM": "0.9",
-      "Paridad": "92.40%"
+      "YTM": "5.29%",
+      "DM": "0.90",
+      "Paridad": "100.00%"
     },
     "BPCSO": {
       "Cupon": 6.8,
@@ -40065,9 +44901,9 @@ const jsonData = {
       "Emisor": "BANCO DE SERVICIOS Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "52.66%",
-      "DM": "0.1",
-      "Paridad": "93.00%"
+      "YTM": "1.08%",
+      "DM": "0.11",
+      "Paridad": "101.90%"
     },
     "COC2O": {
       "Cupon": 6.8,
@@ -40098,9 +44934,9 @@ const jsonData = {
       "Emisor": "INVERSORA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "27.30%",
-      "DM": "0.1",
-      "Paridad": "96.80%"
+      "YTM": "6.79%",
+      "DM": "0.07",
+      "Paridad": "101.00%"
     },
     "LR7BO": {
       "Cupon": 9.0,
@@ -40142,9 +44978,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "3.67%",
+      "YTM": "3.76%",
       "DM": "1.06",
-      "Paridad": "102.85%"
+      "Paridad": "102.75%"
     },
     "AL29": {
       "Cupon": 1.0,
@@ -40153,9 +44989,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "7.68%",
+      "YTM": "7.67%",
       "DM": "1.41",
-      "Paridad": "54.46%"
+      "Paridad": "54.47%"
     },
     "GD29": {
       "Cupon": 1.0,
@@ -40164,9 +45000,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "5.38%",
-      "DM": "1.45",
-      "Paridad": "56.28%"
+      "YTM": "5.28%",
+      "DM": "1.46",
+      "Paridad": "56.36%"
     },
     "AL30": {
       "Cupon": 0.8,
@@ -40175,9 +45011,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "8.37%",
+      "YTM": "8.64%",
       "DM": "1.81",
-      "Paridad": "56.05%"
+      "Paridad": "55.78%"
     },
     "AO28": {
       "Cupon": 6.0,
@@ -40186,9 +45022,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.04%",
+      "YTM": "9.07%",
       "DM": "1.84",
-      "Paridad": "94.95%"
+      "Paridad": "94.90%"
     },
     "GD30": {
       "Cupon": 0.8,
@@ -40197,9 +45033,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "6.28%",
+      "YTM": "6.43%",
       "DM": "1.87",
-      "Paridad": "58.25%"
+      "Paridad": "58.09%"
     },
     "AN29": {
       "Cupon": 6.5,
@@ -40208,9 +45044,9 @@ const jsonData = {
       "Emisor": "TESORO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.17%",
+      "YTM": "10.25%",
       "DM": "2.62",
-      "Paridad": "92.54%"
+      "Paridad": "92.35%"
     },
     "AE38": {
       "Cupon": 5.0,
@@ -40219,9 +45055,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.52%",
-      "DM": "4.17",
-      "Paridad": "78.92%"
+      "YTM": "10.57%",
+      "DM": "4.16",
+      "Paridad": "78.75%"
     },
     "GD38": {
       "Cupon": 5.0,
@@ -40230,9 +45066,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.12%",
-      "DM": "4.33",
-      "Paridad": "83.73%"
+      "YTM": "9.26%",
+      "DM": "4.31",
+      "Paridad": "83.25%"
     },
     "AL35": {
       "Cupon": 4.1,
@@ -40241,9 +45077,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.27%",
-      "DM": "4.93",
-      "Paridad": "76.28%"
+      "YTM": "10.35%",
+      "DM": "4.92",
+      "Paridad": "76.00%"
     },
     "GD35": {
       "Cupon": 4.1,
@@ -40252,9 +45088,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.38%",
+      "YTM": "9.43%",
       "DM": "5.00",
-      "Paridad": "79.75%"
+      "Paridad": "79.55%"
     },
     "AL41": {
       "Cupon": 3.5,
@@ -40263,9 +45099,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.39%",
-      "DM": "5.32",
-      "Paridad": "70.75%"
+      "YTM": "10.61%",
+      "DM": "5.29",
+      "Paridad": "69.92%"
     },
     "GD41": {
       "Cupon": 3.5,
@@ -40274,9 +45110,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.49%",
+      "YTM": "9.54%",
       "DM": "5.47",
-      "Paridad": "74.26%"
+      "Paridad": "74.07%"
     },
     "GD46": {
       "Cupon": 4.1,
@@ -40285,11 +45121,22 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.33%",
-      "DM": "5.93",
-      "Paridad": "68.38%"
+      "YTM": "9.25%",
+      "DM": "5.95",
+      "Paridad": "68.70%"
     },
     "BPOA7": {
+      "Cupon": 5.0,
+      "Vencimiento": "31-Oct-27",
+      "VencAño": 2027,
+      "Emisor": "BANCO CENTRAL",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "BOPREAL",
+      "YTM": "2.91%",
+      "DM": "0.84",
+      "Paridad": "103.65%"
+    },
+    "BPOB7": {
       "Cupon": 5.0,
       "Vencimiento": "31-Oct-27",
       "VencAño": 2027,
@@ -40299,17 +45146,6 @@ const jsonData = {
       "YTM": "2.51%",
       "DM": "0.84",
       "Paridad": "104.00%"
-    },
-    "BPOB7": {
-      "Cupon": 5.0,
-      "Vencimiento": "31-Oct-27",
-      "VencAño": 2027,
-      "Emisor": "BANCO CENTRAL",
-      "Ley": "Ley ARG",
-      "Tipo_Inst": "BOPREAL",
-      "YTM": "2.45%",
-      "DM": "0.84",
-      "Paridad": "104.05%"
     },
     "BPOC7": {
       "Cupon": 5.0,
@@ -40439,9 +45275,9 @@ const jsonData = {
       "Emisor": "CORDOBA",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Provincial",
-      "YTM": "-72.97%",
-      "DM": "0.47",
-      "Paridad": "3.75%"
+      "YTM": "-75.67%",
+      "DM": "0.52",
+      "Paridad": "3.80%"
     },
     "CO27D": {
       "Cupon": 6.9,
@@ -40461,9 +45297,9 @@ const jsonData = {
       "Emisor": "CORDOBA",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Provincial",
-      "YTM": "7.82%",
-      "DM": "3.64",
-      "Paridad": "110.10%"
+      "YTM": "7.84%",
+      "DM": "3.63",
+      "Paridad": "110.00%"
     },
     "CO35": {
       "Cupon": 8.6,
@@ -40595,7 +45431,447 @@ const jsonData = {
       "Tipo_Inst": "Bono Nacional",
       "YTM": "9.97%",
       "DM": "2.59",
-      "Paridad": "90.64%"
+      "Paridad": "90.63%"
+    },
+    "AFCJO": {
+      "Cupon": 2.36,
+      "Vencimiento": "06-Feb-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "4.06%",
+      "DM": "0.39",
+      "Paridad": "100.75%"
+    },
+    "AFCKO": {
+      "Cupon": 3.47,
+      "Vencimiento": "06-Feb-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "5.14%",
+      "DM": "2.14",
+      "Paridad": "105.00%"
+    },
+    "AFCPO": {
+      "Cupon": 2.63,
+      "Vencimiento": "05-Jun-28",
+      "VencAño": 2028,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "6.20%",
+      "DM": "1.56",
+      "Paridad": "100.00%"
+    },
+    "BF45O": {
+      "Cupon": 1.64,
+      "Vencimiento": "08-May-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "8.40%",
+      "DM": "0.60",
+      "Paridad": "98.00%"
+    },
+    "BVCRO": {
+      "Cupon": 5.24,
+      "Vencimiento": "15-Ene-27",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "4.43%",
+      "DM": "0.33",
+      "Paridad": "102.00%"
+    },
+    "BYY2O": {
+      "Cupon": 2.38,
+      "Vencimiento": "05-Jun-28",
+      "VencAño": 2028,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "6.24%",
+      "DM": "1.57",
+      "Paridad": "99.00%"
+    },
+    "CIC7O": {
+      "Cupon": 6.0,
+      "Vencimiento": "12-Nov-26",
+      "VencAño": 2026,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "0.69%",
+      "DM": "0.17",
+      "Paridad": "102.90%"
+    },
+    "CIC8O": {
+      "Cupon": 7.5,
+      "Vencimiento": "12-Nov-28",
+      "VencAño": 2028,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "7.01%",
+      "DM": "1.87",
+      "Paridad": "103.70%"
+    },
+    "CIC9O": {
+      "Cupon": 8.25,
+      "Vencimiento": "21-May-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "8.00%",
+      "DM": "0.62",
+      "Paridad": "102.80%"
+    },
+    "CLI1O": {
+      "Cupon": 7.0,
+      "Vencimiento": "10-Dic-34",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "31.55%",
+      "DM": "3.38",
+      "Paridad": "33.45%"
+    },
+    "CLSIO": {
+      "Cupon": 2.24,
+      "Vencimiento": "10-Dic-31",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "13.88%",
+      "DM": "3.76",
+      "Paridad": "44.94%"
+    },
+    "CP36O": {
+      "Cupon": 6.5,
+      "Vencimiento": "10-Oct-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "7.15%",
+      "DM": "0.96",
+      "Paridad": "102.20%"
+    },
+    "CP37O": {
+      "Cupon": 7.0,
+      "Vencimiento": "10-Mar-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "6.92%",
+      "DM": "0.46",
+      "Paridad": "100.15%"
+    },
+    "CS46O": {
+      "Cupon": 1.5,
+      "Vencimiento": "18-Jul-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "1.78%",
+      "DM": "0.83",
+      "Paridad": "100.00%"
+    },
+    "FYC1O": {
+      "Cupon": 3.78,
+      "Vencimiento": "11-May-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "7.86%",
+      "DM": "2.23",
+      "Paridad": "102.00%"
+    },
+    "GOC4O": {
+      "Cupon": 10.950000000000001,
+      "Vencimiento": "28-Oct-30",
+      "VencAño": 2030,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "20.53%",
+      "DM": "1.74",
+      "Paridad": "85.02%"
+    },
+    "HJCFO": {
+      "Cupon": 5.0,
+      "Vencimiento": "21-Oct-26",
+      "VencAño": 2026,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "1.44%",
+      "DM": "0.11",
+      "Paridad": "102.35%"
+    },
+    "HJCGO": {
+      "Cupon": 6.5,
+      "Vencimiento": "21-Oct-28",
+      "VencAño": 2028,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "6.36%",
+      "DM": "1.84",
+      "Paridad": "103.00%"
+    },
+    "HJCHO": {
+      "Cupon": 7.0,
+      "Vencimiento": "17-Ene-28",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "4.98%",
+      "DM": "1.24",
+      "Paridad": "103.75%"
+    },
+    "HJCLO": {
+      "Cupon": 3.26,
+      "Vencimiento": "08-Dic-28",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "6.57%",
+      "DM": "1.96",
+      "Paridad": "101.75%"
+    },
+    "ICC6O": {
+      "Cupon": 1.86,
+      "Vencimiento": "22-May-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "3.07%",
+      "DM": "0.67",
+      "Paridad": "100.65%"
+    },
+    "IRCQO": {
+      "Cupon": 1.88,
+      "Vencimiento": "08-Jun-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "4.31%",
+      "DM": "0.70",
+      "Paridad": "100.60%"
+    },
+    "MJC1O": {
+      "Cupon": 3.97,
+      "Vencimiento": "19-Feb-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "0.07%",
+      "DM": "0.44",
+      "Paridad": "104.00%"
+    },
+    "MR43O": {
+      "Cupon": 1.69,
+      "Vencimiento": "30-Jun-36",
+      "VencAño": 2036,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "24.99%",
+      "DM": "5.25",
+      "Paridad": "23.50%"
+    },
+    "MR44O": {
+      "Cupon": 1.69,
+      "Vencimiento": "30-Jun-36",
+      "VencAño": 2036,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "24.51%",
+      "DM": "5.30",
+      "Paridad": "24.11%"
+    },
+    "MU32O": {
+      "Cupon": 9.0,
+      "Vencimiento": "19-Dic-27",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "12.11%",
+      "DM": "1.08",
+      "Paridad": "98.86%"
+    },
+    "MUC4O": {
+      "Cupon": 3.86,
+      "Vencimiento": "27-Oct-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "9.62%",
+      "DM": "0.98",
+      "Paridad": "101.10%"
+    },
+    "OZC6O": {
+      "Cupon": 9.76,
+      "Vencimiento": "28-Jul-31",
+      "VencAño": 2031,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "9.68%",
+      "DM": "2.99",
+      "Paridad": "103.00%"
+    },
+    "PECMO": {
+      "Cupon": 3.0,
+      "Vencimiento": "25-Ago-32",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "17.80%",
+      "DM": "4.02",
+      "Paridad": "56.99%"
+    },
+    "PECNO": {
+      "Cupon": 3.0,
+      "Vencimiento": "25-Ago-32",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "16.35%",
+      "DM": "4.09",
+      "Paridad": "60.45%"
+    },
+    "PFC3O": {
+      "Cupon": 2.9,
+      "Vencimiento": "08-Nov-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "5.84%",
+      "DM": "2.72",
+      "Paridad": "101.95%"
+    },
+    "RC3CO": {
+      "Cupon": 28.52,
+      "Vencimiento": "15-Dic-26",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "1000.00%",
+      "DM": "18.07",
+      "Paridad": "0.07%"
+    },
+    "RC5CO": {
+      "Cupon": 2.65,
+      "Vencimiento": "21-May-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "5.85%",
+      "DM": "2.37",
+      "Paridad": "100.35%"
+    },
+    "SBC3O": {
+      "Cupon": 3.28,
+      "Vencimiento": "26-May-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "7.32%",
+      "DM": "1.28",
+      "Paridad": "101.05%"
+    },
+    "SIC1O": {
+      "Cupon": 6.5,
+      "Vencimiento": "09-Dic-26",
+      "VencAño": null,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "5.59%",
+      "DM": "0.23",
+      "Paridad": "101.90%"
+    },
+    "SNEAO": {
+      "Cupon": 3.37,
+      "Vencimiento": "14-Jul-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "25.64%",
+      "DM": "1.75",
+      "Paridad": "61.50%"
+    },
+    "SNEBO": {
+      "Cupon": 3.37,
+      "Vencimiento": "14-Jul-29",
+      "VencAño": 2029,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "20.06%",
+      "DM": "1.85",
+      "Paridad": "68.00%"
+    },
+    "TLCVO": {
+      "Cupon": 1.76,
+      "Vencimiento": "29-May-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "4.61%",
+      "DM": "0.67",
+      "Paridad": "99.40%"
+    },
+    "WBS1O": {
+      "Cupon": 7.5,
+      "Vencimiento": "29-Sep-26",
+      "VencAño": 2026,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "0.59%",
+      "DM": "0.05",
+      "Paridad": "103.75%"
+    },
+    "ZPC3O": {
+      "Cupon": 10.620000000000001,
+      "Vencimiento": "03-Sep-27",
+      "VencAño": 2027,
+      "Emisor": "Otros",
+      "Ley": "Ley ARG",
+      "Tipo_Inst": "Otros",
+      "YTM": "6.68%",
+      "DM": "0.89",
+      "Paridad": "102.05%"
     }
   }
 };
