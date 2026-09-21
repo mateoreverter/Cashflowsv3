@@ -1,6 +1,6 @@
 const jsonData = {
   "metadata": {
-    "ultima_actualizacion": "21/09/2026 16:02:29",
+    "ultima_actualizacion": "21/09/2026 19:58:49",
     "total_activos": 268,
     "fuente": "Data912 API (vía GitHub Actions)"
   },
@@ -42524,9 +42524,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.45%",
+      "YTM": "7.48%",
       "DM": "6.62",
-      "Paridad": "103.30%"
+      "Paridad": "103.10%"
     },
     "VSCXO": {
       "Cupon": 7.9,
@@ -42535,9 +42535,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.39%",
-      "DM": "6.69",
-      "Paridad": "108.05%"
+      "YTM": "7.32%",
+      "DM": "6.70",
+      "Paridad": "108.55%"
     },
     "YM34O": {
       "Cupon": 8.3,
@@ -42557,9 +42557,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.41%",
-      "DM": "7.01",
-      "Paridad": "106.35%"
+      "YTM": "7.39%",
+      "DM": "7.02",
+      "Paridad": "106.50%"
     },
     "YMCXO": {
       "Cupon": 8.8,
@@ -42568,9 +42568,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.59%",
+      "YTM": "6.56%",
       "DM": "3.51",
-      "Paridad": "108.75%"
+      "Paridad": "108.85%"
     },
     "TLCPO": {
       "Cupon": 9.3,
@@ -42579,9 +42579,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.17%",
-      "DM": "4.47",
-      "Paridad": "113.85%"
+      "YTM": "7.10%",
+      "DM": "4.48",
+      "Paridad": "114.20%"
     },
     "DNCAO": {
       "Cupon": 9.5,
@@ -42590,9 +42590,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.33%",
+      "YTM": "9.30%",
       "DM": "3.94",
-      "Paridad": "105.40%"
+      "Paridad": "105.50%"
     },
     "IRCPO": {
       "Cupon": 8.0,
@@ -42601,9 +42601,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.11%",
+      "YTM": "7.09%",
       "DM": "5.27",
-      "Paridad": "109.65%"
+      "Paridad": "109.75%"
     },
     "TLCTO": {
       "Cupon": 8.5,
@@ -42623,9 +42623,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.45%",
-      "DM": "3.08",
-      "Paridad": "112.20%"
+      "YTM": "6.49%",
+      "DM": "3.07",
+      "Paridad": "112.05%"
     },
     "VSCVO": {
       "Cupon": 8.5,
@@ -42634,9 +42634,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.59%",
+      "YTM": "6.58%",
       "DM": "4.32",
-      "Paridad": "111.85%"
+      "Paridad": "111.90%"
     },
     "TSC4O": {
       "Cupon": 7.75,
@@ -42645,9 +42645,9 @@ const jsonData = {
       "Emisor": "TRANSPORTADORA DE GAS DEL SUR S.A",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "7.07%",
+      "YTM": "7.08%",
       "DM": "6.20",
-      "Paridad": "108.00%"
+      "Paridad": "107.95%"
     },
     "EAC4O": {
       "Cupon": 9.8,
@@ -42656,9 +42656,9 @@ const jsonData = {
       "Emisor": "MSU GREEN ENERGY S.A.U.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.83%",
-      "DM": "5.40",
-      "Paridad": "103.50%"
+      "YTM": "9.77%",
+      "DM": "5.41",
+      "Paridad": "103.80%"
     },
     "YMCIO": {
       "Cupon": 9.0,
@@ -42667,9 +42667,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "3.76%",
+      "YTM": "3.50%",
       "DM": "1.39",
-      "Paridad": "94.04%"
+      "Paridad": "94.37%"
     },
     "CP38O": {
       "Cupon": 11.9,
@@ -42678,9 +42678,9 @@ const jsonData = {
       "Emisor": "COMPAÑIA GENERAL DE",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "9.60%",
+      "YTM": "9.51%",
       "DM": "3.05",
-      "Paridad": "112.20%"
+      "Paridad": "112.50%"
     },
     "MGCOO": {
       "Cupon": 7.9,
@@ -42700,9 +42700,9 @@ const jsonData = {
       "Emisor": "TRANSPORTADORA DE",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.35%",
-      "DM": "3.81",
-      "Paridad": "110.60%"
+      "YTM": "6.34%",
+      "DM": "3.82",
+      "Paridad": "110.65%"
     },
     "YMCJO": {
       "Cupon": 7.0,
@@ -42722,9 +42722,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.02%",
+      "YTM": "6.06%",
       "DM": "3.13",
-      "Paridad": "111.00%"
+      "Paridad": "110.85%"
     },
     "RUCDO": {
       "Cupon": 9.8,
@@ -42744,9 +42744,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.94%",
-      "DM": "6.35",
-      "Paridad": "107.75%"
+      "YTM": "7.07%",
+      "DM": "6.33",
+      "Paridad": "106.85%"
     },
     "DNC7O": {
       "Cupon": 9.8,
@@ -42766,9 +42766,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.47%",
+      "YTM": "6.51%",
       "DM": "3.66",
-      "Paridad": "109.75%"
+      "Paridad": "109.60%"
     },
     "VSCTO": {
       "Cupon": 7.6,
@@ -42788,9 +42788,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.81%",
+      "YTM": "6.80%",
       "DM": "3.89",
-      "Paridad": "108.40%"
+      "Paridad": "108.45%"
     },
     "TTCDO": {
       "Cupon": 7.6,
@@ -42799,9 +42799,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.05%",
+      "YTM": "6.02%",
       "DM": "3.33",
-      "Paridad": "108.90%"
+      "Paridad": "109.00%"
     },
     "MGCMO": {
       "Cupon": 8.0,
@@ -42810,9 +42810,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.28%",
-      "DM": "3.97",
-      "Paridad": "107.75%"
+      "YTM": "6.05%",
+      "DM": "3.99",
+      "Paridad": "108.75%"
     },
     "GN49O": {
       "Cupon": 7.8,
@@ -42821,9 +42821,9 @@ const jsonData = {
       "Emisor": "GENNEIA S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "6.97%",
+      "YTM": "6.96%",
       "DM": "4.63",
-      "Paridad": "106.85%"
+      "Paridad": "106.90%"
     },
     "PN38O": {
       "Cupon": 6.5,
@@ -42832,9 +42832,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "-0.00%",
+      "YTM": "0.22%",
       "DM": "0.87",
-      "Paridad": "106.50%"
+      "Paridad": "106.30%"
     },
     "BACGO": {
       "Cupon": 8.0,
@@ -42843,9 +42843,9 @@ const jsonData = {
       "Emisor": "BANCO MACRO S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.56%",
+      "YTM": "5.64%",
       "DM": "2.36",
-      "Paridad": "108.30%"
+      "Paridad": "108.10%"
     },
     "BACHO": {
       "Cupon": 8.0,
@@ -42865,9 +42865,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.77%",
+      "YTM": "5.71%",
       "DM": "3.62",
-      "Paridad": "114.55%"
+      "Paridad": "114.80%"
     },
     "BYCHO": {
       "Cupon": 7.8,
@@ -42887,9 +42887,9 @@ const jsonData = {
       "Emisor": "AEROPUERTOS",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "5.57%",
-      "DM": "2.42",
-      "Paridad": "106.45%"
+      "YTM": "5.72%",
+      "DM": "2.41",
+      "Paridad": "106.05%"
     },
     "IRCFO": {
       "Cupon": 8.8,
@@ -42898,9 +42898,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "4.50%",
+      "YTM": "4.39%",
       "DM": "1.25",
-      "Paridad": "51.23%"
+      "Paridad": "51.30%"
     },
     "TTCAO": {
       "Cupon": 7.6,
@@ -42942,9 +42942,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY S.A.",
       "Ley": "Ley NY",
       "Tipo_Inst": "ON",
-      "YTM": "-2.83%",
-      "DM": "0.36",
-      "Paridad": "43.17%"
+      "YTM": "-7.76%",
+      "DM": "0.38",
+      "Paridad": "43.97%"
     },
     "YCAMO": {
       "Cupon": 7.0,
@@ -42975,9 +42975,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.89%",
+      "YTM": "6.92%",
       "DM": "4.27",
-      "Paridad": "110.65%"
+      "Paridad": "110.50%"
     },
     "MCC3O": {
       "Cupon": 7.5,
@@ -42986,9 +42986,9 @@ const jsonData = {
       "Emisor": "PECOM SERVICIOS",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.44%",
+      "YTM": "7.32%",
       "DM": "2.95",
-      "Paridad": "103.35%"
+      "Paridad": "103.70%"
     },
     "VSCRO": {
       "Cupon": 7.7,
@@ -42997,9 +42997,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.95%",
+      "YTM": "6.00%",
       "DM": "3.27",
-      "Paridad": "109.80%"
+      "Paridad": "109.65%"
     },
     "WBS3O": {
       "Cupon": 6.0,
@@ -43019,9 +43019,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.09%",
+      "YTM": "7.15%",
       "DM": "1.63",
-      "Paridad": "105.60%"
+      "Paridad": "105.50%"
     },
     "YM38O": {
       "Cupon": 7.5,
@@ -43030,9 +43030,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.02%",
+      "YTM": "4.96%",
       "DM": "0.77",
-      "Paridad": "104.15%"
+      "Paridad": "103.40%"
     },
     "YM37O": {
       "Cupon": 7.0,
@@ -43041,9 +43041,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.32%",
-      "DM": "0.58",
-      "Paridad": "102.55%"
+      "YTM": "3.83%",
+      "DM": "0.59",
+      "Paridad": "102.85%"
     },
     "YM42O": {
       "Cupon": 7.0,
@@ -43052,9 +43052,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.73%",
+      "YTM": "5.75%",
       "DM": "2.12",
-      "Paridad": "105.20%"
+      "Paridad": "105.15%"
     },
     "BYCVO": {
       "Cupon": 6.3,
@@ -43074,9 +43074,9 @@ const jsonData = {
       "Emisor": "EDENOR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.31%",
+      "YTM": "3.61%",
       "DM": "0.16",
-      "Paridad": "104.35%"
+      "Paridad": "104.30%"
     },
     "PN35O": {
       "Cupon": 7.0,
@@ -43085,9 +43085,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.72%",
+      "YTM": "5.68%",
       "DM": "2.54",
-      "Paridad": "107.15%"
+      "Paridad": "107.25%"
     },
     "PLC6O": {
       "Cupon": 6.5,
@@ -43118,9 +43118,9 @@ const jsonData = {
       "Emisor": "PETROQUIMICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.56%",
+      "YTM": "7.69%",
       "DM": "3.51",
-      "Paridad": "102.90%"
+      "Paridad": "102.45%"
     },
     "DNCBO": {
       "Cupon": 7.5,
@@ -43151,9 +43151,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.95%",
+      "YTM": "6.02%",
       "DM": "2.78",
-      "Paridad": "107.95%"
+      "Paridad": "107.75%"
     },
     "YM43O": {
       "Cupon": 5.5,
@@ -43162,9 +43162,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.96%",
+      "YTM": "5.95%",
       "DM": "3.03",
-      "Paridad": "101.20%"
+      "Paridad": "101.25%"
     },
     "IRCOO": {
       "Cupon": 7.3,
@@ -43173,9 +43173,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.91%",
+      "YTM": "5.76%",
       "DM": "2.64",
-      "Paridad": "105.20%"
+      "Paridad": "105.60%"
     },
     "MGCQO": {
       "Cupon": 7.3,
@@ -43195,9 +43195,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.14%",
+      "YTM": "6.13%",
       "DM": "4.05",
-      "Paridad": "107.85%"
+      "Paridad": "107.90%"
     },
     "RC2CO": {
       "Cupon": 5.9,
@@ -43217,9 +43217,9 @@ const jsonData = {
       "Emisor": "CNH INDUSTRIAL CAPITAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.08%",
+      "YTM": "7.05%",
       "DM": "1.48",
-      "Paridad": "104.05%"
+      "Paridad": "104.10%"
     },
     "PN41O": {
       "Cupon": 7.5,
@@ -43228,9 +43228,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.53%",
+      "YTM": "5.49%",
       "DM": "2.54",
-      "Paridad": "106.00%"
+      "Paridad": "106.10%"
     },
     "LMS7O": {
       "Cupon": 7.0,
@@ -43239,9 +43239,9 @@ const jsonData = {
       "Emisor": "ALUMINIO ARGENTINO",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.44%",
-      "DM": "1.01",
-      "Paridad": "80.50%"
+      "YTM": "2.74%",
+      "DM": "0.99",
+      "Paridad": "79.46%"
     },
     "BF37O": {
       "Cupon": 6.0,
@@ -43272,9 +43272,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.64%",
+      "YTM": "5.62%",
       "DM": "1.92",
-      "Paridad": "105.15%"
+      "Paridad": "105.20%"
     },
     "MGCTO": {
       "Cupon": 5.5,
@@ -43294,9 +43294,9 @@ const jsonData = {
       "Emisor": "EDEMSA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.98%",
+      "YTM": "6.62%",
       "DM": "1.06",
-      "Paridad": "103.80%"
+      "Paridad": "104.20%"
     },
     "OLC7O": {
       "Cupon": 6.9,
@@ -43305,9 +43305,9 @@ const jsonData = {
       "Emisor": "OLEODUCTOS DEL VALLE",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.19%",
-      "DM": "2.92",
-      "Paridad": "103.00%"
+      "YTM": "6.34%",
+      "DM": "2.91",
+      "Paridad": "102.55%"
     },
     "PLC3O": {
       "Cupon": 7.3,
@@ -43316,9 +43316,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.90%",
+      "YTM": "4.93%",
       "DM": "1.46",
-      "Paridad": "104.75%"
+      "Paridad": "104.70%"
     },
     "NPCDO": {
       "Cupon": 6.0,
@@ -43327,9 +43327,9 @@ const jsonData = {
       "Emisor": "CENTRAL PUERTO S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.21%",
+      "YTM": "6.36%",
       "DM": "3.03",
-      "Paridad": "102.00%"
+      "Paridad": "101.55%"
     },
     "YMCYO": {
       "Cupon": 6.5,
@@ -43360,9 +43360,9 @@ const jsonData = {
       "Emisor": "MSU ENERGY S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.27%",
+      "YTM": "7.44%",
       "DM": "0.88",
-      "Paridad": "101.50%"
+      "Paridad": "101.35%"
     },
     "CS48O": {
       "Cupon": 8.0,
@@ -43371,9 +43371,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.94%",
+      "YTM": "5.82%",
       "DM": "1.60",
-      "Paridad": "105.20%"
+      "Paridad": "105.40%"
     },
     "XMC1O": {
       "Cupon": 8.0,
@@ -43382,9 +43382,9 @@ const jsonData = {
       "Emisor": "MINERA EXAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.12%",
+      "YTM": "6.18%",
       "DM": "0.80",
-      "Paridad": "104.60%"
+      "Paridad": "104.55%"
     },
     "MGCNO": {
       "Cupon": 5.8,
@@ -43393,9 +43393,9 @@ const jsonData = {
       "Emisor": "PAMPA ENERGIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.62%",
+      "YTM": "4.65%",
       "DM": "1.82",
-      "Paridad": "104.95%"
+      "Paridad": "104.90%"
     },
     "STCFO": {
       "Cupon": 8.3,
@@ -43415,9 +43415,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "1.58%",
+      "YTM": "1.07%",
       "DM": "0.29",
-      "Paridad": "102.55%"
+      "Paridad": "102.70%"
     },
     "OLC5O": {
       "Cupon": 7.9,
@@ -43426,9 +43426,9 @@ const jsonData = {
       "Emisor": "OLEODUCTOS DEL VALLE S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.35%",
+      "YTM": "5.47%",
       "DM": "1.53",
-      "Paridad": "106.45%"
+      "Paridad": "106.25%"
     },
     "OLC6O": {
       "Cupon": 7.5,
@@ -43437,9 +43437,9 @@ const jsonData = {
       "Emisor": "OLEODUCTOS DEL VALLE S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.91%",
+      "YTM": "5.87%",
       "DM": "2.32",
-      "Paridad": "106.35%"
+      "Paridad": "106.45%"
     },
     "RC1CO": {
       "Cupon": 7.6,
@@ -43448,9 +43448,9 @@ const jsonData = {
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.47%",
-      "DM": "4.53",
-      "Paridad": "107.00%"
+      "YTM": "6.53%",
+      "DM": "4.52",
+      "Paridad": "106.70%"
     },
     "CS50O": {
       "Cupon": 7.3,
@@ -43481,9 +43481,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.15%",
+      "YTM": "5.12%",
       "DM": "1.72",
-      "Paridad": "105.00%"
+      "Paridad": "105.05%"
     },
     "OT42O": {
       "Cupon": 8.0,
@@ -43514,9 +43514,9 @@ const jsonData = {
       "Emisor": "LUZ DE TRES PICOS S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.91%",
-      "DM": "2.08",
-      "Paridad": "101.10%"
+      "YTM": "7.16%",
+      "DM": "2.10",
+      "Paridad": "102.70%"
     },
     "TTCEO": {
       "Cupon": 5.5,
@@ -43536,9 +43536,9 @@ const jsonData = {
       "Emisor": "LOMA NEGRA C.I.A.S.A",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.26%",
+      "YTM": "6.07%",
       "DM": "2.06",
-      "Paridad": "101.80%"
+      "Paridad": "102.20%"
     },
     "MTC2O": {
       "Cupon": 6.5,
@@ -43558,9 +43558,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY ARGENTINA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.06%",
+      "YTM": "4.91%",
       "DM": "2.97",
-      "Paridad": "108.15%"
+      "Paridad": "108.65%"
     },
     "CS47O": {
       "Cupon": 7.0,
@@ -43569,9 +43569,9 @@ const jsonData = {
       "Emisor": "CRESUD S.A.C.I.F.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.82%",
+      "YTM": "5.65%",
       "DM": "1.88",
-      "Paridad": "105.00%"
+      "Paridad": "105.35%"
     },
     "NPCCO": {
       "Cupon": 8.0,
@@ -43580,9 +43580,9 @@ const jsonData = {
       "Emisor": "CENTRAL PUERTO S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.68%",
+      "YTM": "5.70%",
       "DM": "2.52",
-      "Paridad": "107.00%"
+      "Paridad": "106.95%"
     },
     "TLCUO": {
       "Cupon": 6.5,
@@ -43591,9 +43591,9 @@ const jsonData = {
       "Emisor": "TELECOM ARGENTINA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.87%",
+      "YTM": "6.01%",
       "DM": "2.17",
-      "Paridad": "101.90%"
+      "Paridad": "101.60%"
     },
     "CS52O": {
       "Cupon": 4.8,
@@ -43624,9 +43624,9 @@ const jsonData = {
       "Emisor": "CAMUZZI GAS PAMPEANA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.67%",
+      "YTM": "4.55%",
       "DM": "0.40",
-      "Paridad": "102.05%"
+      "Paridad": "102.10%"
     },
     "TTCBO": {
       "Cupon": 6.5,
@@ -43635,9 +43635,9 @@ const jsonData = {
       "Emisor": "TECPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.54%",
+      "YTM": "4.44%",
       "DM": "0.98",
-      "Paridad": "104.90%"
+      "Paridad": "105.00%"
     },
     "TTC9O": {
       "Cupon": 6.8,
@@ -43679,9 +43679,9 @@ const jsonData = {
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.35%",
+      "YTM": "8.21%",
       "DM": "1.46",
-      "Paridad": "100.40%"
+      "Paridad": "100.60%"
     },
     "VSCPO": {
       "Cupon": 8.0,
@@ -43690,9 +43690,9 @@ const jsonData = {
       "Emisor": "VISTA ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.70%",
+      "YTM": "4.68%",
       "DM": "1.64",
-      "Paridad": "109.00%"
+      "Paridad": "109.05%"
     },
     "RCCRO": {
       "Cupon": 6.8,
@@ -43701,9 +43701,9 @@ const jsonData = {
       "Emisor": "ARCOR S.A.I.C.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.55%",
-      "DM": "0.59",
-      "Paridad": "104.50%"
+      "YTM": "5.10%",
+      "DM": "0.58",
+      "Paridad": "103.55%"
     },
     "HJCJO": {
       "Cupon": 8.5,
@@ -43712,9 +43712,9 @@ const jsonData = {
       "Emisor": "JOHN DEERE CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.19%",
+      "YTM": "4.70%",
       "DM": "0.78",
-      "Paridad": "104.10%"
+      "Paridad": "104.50%"
     },
     "TTC8O": {
       "Cupon": 5.0,
@@ -43767,9 +43767,9 @@ const jsonData = {
       "Emisor": "PAN AMERICAN ENERGY",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.20%",
+      "YTM": "5.40%",
       "DM": "1.90",
-      "Paridad": "104.50%"
+      "Paridad": "104.10%"
     },
     "CS49O": {
       "Cupon": 7.3,
@@ -43822,9 +43822,9 @@ const jsonData = {
       "Emisor": "YPF ENERGIA ELECTRICA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.74%",
+      "YTM": "5.76%",
       "DM": "1.98",
-      "Paridad": "102.50%"
+      "Paridad": "102.45%"
     },
     "CACDO": {
       "Cupon": 8.3,
@@ -43844,9 +43844,9 @@ const jsonData = {
       "Emisor": "PECOM SERVICIOS ENERGIA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.08%",
+      "YTM": "7.13%",
       "DM": "2.13",
-      "Paridad": "102.35%"
+      "Paridad": "102.25%"
     },
     "IRCJO": {
       "Cupon": 7.0,
@@ -43855,9 +43855,9 @@ const jsonData = {
       "Emisor": "INVERSIONES Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.94%",
+      "YTM": "3.48%",
       "DM": "0.42",
-      "Paridad": "101.80%"
+      "Paridad": "102.00%"
     },
     "BYCXO": {
       "Cupon": 5.5,
@@ -43899,9 +43899,9 @@ const jsonData = {
       "Emisor": "PLUSPETROL S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.45%",
+      "YTM": "4.61%",
       "DM": "1.23",
-      "Paridad": "104.50%"
+      "Paridad": "104.30%"
     },
     "YFCLO": {
       "Cupon": 6.8,
@@ -44009,9 +44009,9 @@ const jsonData = {
       "Emisor": "LEDESMA S.A.A.I.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.11%",
+      "YTM": "6.79%",
       "DM": "0.93",
-      "Paridad": "101.00%"
+      "Paridad": "101.30%"
     },
     "YFCKO": {
       "Cupon": 5.3,
@@ -44064,9 +44064,9 @@ const jsonData = {
       "Emisor": "SCANIA CREDIT",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "5.98%",
-      "DM": "0.55",
-      "Paridad": "59.20%"
+      "YTM": "6.54%",
+      "DM": "0.54",
+      "Paridad": "59.02%"
     },
     "GYC5O": {
       "Cupon": 8.8,
@@ -44075,9 +44075,9 @@ const jsonData = {
       "Emisor": "360 ENERGY SOLAR S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "8.47%",
+      "YTM": "8.94%",
       "DM": "0.85",
-      "Paridad": "100.90%"
+      "Paridad": "100.50%"
     },
     "SNSBO": {
       "Cupon": 9.5,
@@ -44086,9 +44086,9 @@ const jsonData = {
       "Emisor": "S.A. SAN MIGUEL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "21.69%",
+      "YTM": "21.77%",
       "DM": "1.80",
-      "Paridad": "78.10%"
+      "Paridad": "78.00%"
     },
     "MIC4O": {
       "Cupon": 8.3,
@@ -44097,9 +44097,9 @@ const jsonData = {
       "Emisor": "MIRGOR S.A.C.I.F.I.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.14%",
+      "YTM": "7.01%",
       "DM": "0.77",
-      "Paridad": "102.30%"
+      "Paridad": "102.40%"
     },
     "BF39O": {
       "Cupon": 5.8,
@@ -44130,9 +44130,9 @@ const jsonData = {
       "Emisor": "GENNEIA S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.09%",
+      "YTM": "5.95%",
       "DM": "1.82",
-      "Paridad": "102.60%"
+      "Paridad": "102.85%"
     },
     "CACBO": {
       "Cupon": 7.8,
@@ -44152,9 +44152,9 @@ const jsonData = {
       "Emisor": "BANCO DE VALORES S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "4.42%",
-      "DM": "0.45",
-      "Paridad": "101.65%"
+      "YTM": "4.76%",
+      "DM": "0.44",
+      "Paridad": "101.50%"
     },
     "EMC1O": {
       "Cupon": 7.5,
@@ -44207,9 +44207,9 @@ const jsonData = {
       "Emisor": "PETROQUIMICA",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "7.00%",
+      "YTM": "7.03%",
       "DM": "1.80",
-      "Paridad": "102.55%"
+      "Paridad": "102.50%"
     },
     "CP40O": {
       "Cupon": 9.5,
@@ -44240,9 +44240,9 @@ const jsonData = {
       "Emisor": "OILTANKING EBYTEM",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.12%",
-      "DM": "1.19",
-      "Paridad": "102.55%"
+      "YTM": "6.37%",
+      "DM": "1.18",
+      "Paridad": "102.25%"
     },
     "MSSGO": {
       "Cupon": 8.5,
@@ -44273,9 +44273,9 @@ const jsonData = {
       "Emisor": "YPF S.A.",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "3.80%",
-      "DM": "1.83",
-      "Paridad": "109.50%"
+      "YTM": "4.63%",
+      "DM": "1.81",
+      "Paridad": "107.85%"
     },
     "JNC6O": {
       "Cupon": 9.0,
@@ -44405,9 +44405,9 @@ const jsonData = {
       "Emisor": "FUTUROS Y",
       "Ley": "Ley ARG",
       "Tipo_Inst": "ON",
-      "YTM": "6.98%",
-      "DM": "0.74",
-      "Paridad": "102.25%"
+      "YTM": "5.36%",
+      "DM": "0.76",
+      "Paridad": "103.50%"
     },
     "CWC6O": {
       "Cupon": 9.5,
@@ -44614,9 +44614,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "3.82%",
+      "YTM": "3.77%",
       "DM": "1.03",
-      "Paridad": "102.80%"
+      "Paridad": "102.85%"
     },
     "AL29": {
       "Cupon": 1.0,
@@ -44625,9 +44625,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "8.40%",
-      "DM": "1.37",
-      "Paridad": "54.04%"
+      "YTM": "8.61%",
+      "DM": "1.36",
+      "Paridad": "53.89%"
     },
     "GD29": {
       "Cupon": 1.0,
@@ -44636,9 +44636,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "6.61%",
+      "YTM": "6.45%",
       "DM": "1.40",
-      "Paridad": "55.40%"
+      "Paridad": "55.52%"
     },
     "AL30": {
       "Cupon": 0.8,
@@ -44647,9 +44647,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.08%",
+      "YTM": "9.10%",
       "DM": "1.77",
-      "Paridad": "55.48%"
+      "Paridad": "55.46%"
     },
     "AO28": {
       "Cupon": 6.0,
@@ -44658,9 +44658,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.44%",
-      "DM": "1.80",
-      "Paridad": "94.52%"
+      "YTM": "9.34%",
+      "DM": "1.81",
+      "Paridad": "94.69%"
     },
     "GD30": {
       "Cupon": 0.8,
@@ -44669,9 +44669,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "6.89%",
-      "DM": "1.83",
-      "Paridad": "57.71%"
+      "YTM": "7.38%",
+      "DM": "1.81",
+      "Paridad": "57.20%"
     },
     "AN29": {
       "Cupon": 6.5,
@@ -44680,9 +44680,9 @@ const jsonData = {
       "Emisor": "TESORO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.45%",
-      "DM": "2.59",
-      "Paridad": "92.14%"
+      "YTM": "10.58%",
+      "DM": "2.58",
+      "Paridad": "91.84%"
     },
     "AE38": {
       "Cupon": 5.0,
@@ -44691,9 +44691,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "11.40%",
-      "DM": "4.04",
-      "Paridad": "76.36%"
+      "YTM": "11.32%",
+      "DM": "4.05",
+      "Paridad": "76.61%"
     },
     "GD38": {
       "Cupon": 5.0,
@@ -44702,9 +44702,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.73%",
+      "YTM": "9.71%",
       "DM": "4.23",
-      "Paridad": "81.80%"
+      "Paridad": "81.86%"
     },
     "AL35": {
       "Cupon": 4.1,
@@ -44713,9 +44713,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "11.08%",
+      "YTM": "11.05%",
       "DM": "4.83",
-      "Paridad": "73.54%"
+      "Paridad": "73.65%"
     },
     "GD35": {
       "Cupon": 4.1,
@@ -44724,9 +44724,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.95%",
+      "YTM": "9.92%",
       "DM": "4.93",
-      "Paridad": "77.71%"
+      "Paridad": "77.84%"
     },
     "AL41": {
       "Cupon": 3.5,
@@ -44735,9 +44735,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "11.21%",
-      "DM": "5.16",
-      "Paridad": "67.99%"
+      "YTM": "11.09%",
+      "DM": "5.18",
+      "Paridad": "68.39%"
     },
     "GD41": {
       "Cupon": 3.5,
@@ -44746,9 +44746,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.04%",
-      "DM": "5.35",
-      "Paridad": "72.27%"
+      "YTM": "10.00%",
+      "DM": "5.36",
+      "Paridad": "72.45%"
     },
     "GD46": {
       "Cupon": 4.1,
@@ -44757,9 +44757,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "9.93%",
-      "DM": "5.75",
-      "Paridad": "66.22%"
+      "YTM": "9.96%",
+      "DM": "5.74",
+      "Paridad": "66.11%"
     },
     "BPOA7": {
       "Cupon": 5.0,
@@ -44779,9 +44779,9 @@ const jsonData = {
       "Emisor": "BANCO CENTRAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "BOPREAL",
-      "YTM": "2.42%",
+      "YTM": "2.60%",
       "DM": "0.81",
-      "Paridad": "104.15%"
+      "Paridad": "104.00%"
     },
     "BPOC7": {
       "Cupon": 5.0,
@@ -44790,9 +44790,9 @@ const jsonData = {
       "Emisor": "BANCO CENTRAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "BOPREAL",
-      "YTM": "2.37%",
+      "YTM": "2.54%",
       "DM": "0.81",
-      "Paridad": "104.20%"
+      "Paridad": "104.05%"
     },
     "BPOD7": {
       "Cupon": 5.0,
@@ -44801,9 +44801,9 @@ const jsonData = {
       "Emisor": "BANCO CENTRAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "BOPREAL",
-      "YTM": "2.60%",
+      "YTM": "2.54%",
       "DM": "0.81",
-      "Paridad": "104.00%"
+      "Paridad": "104.05%"
     },
     "BPOA8": {
       "Cupon": 3.0,
@@ -44933,9 +44933,9 @@ const jsonData = {
       "Emisor": "CORDOBA",
       "Ley": "Ley NY",
       "Tipo_Inst": "Bono Provincial",
-      "YTM": "7.84%",
+      "YTM": "7.85%",
       "DM": "3.61",
-      "Paridad": "110.25%"
+      "Paridad": "110.20%"
     },
     "CO35": {
       "Cupon": 8.6,
@@ -45065,9 +45065,9 @@ const jsonData = {
       "Emisor": "ESTADO NACIONAL",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Bono Nacional",
-      "YTM": "10.43%",
+      "YTM": "10.41%",
       "DM": "2.55",
-      "Paridad": "89.83%"
+      "Paridad": "89.88%"
     },
     "AFCKO": {
       "Cupon": 3.47,
@@ -45131,9 +45131,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "5.50%",
-      "DM": "0.61",
-      "Paridad": "104.60%"
+      "YTM": "6.13%",
+      "DM": "0.60",
+      "Paridad": "104.20%"
     },
     "CLI1O": {
       "Cupon": 7.0,
@@ -45208,9 +45208,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "15.80%",
-      "DM": "1.83",
-      "Paridad": "92.99%"
+      "YTM": "19.53%",
+      "DM": "1.74",
+      "Paridad": "87.00%"
     },
     "HBCFO": {
       "Cupon": 2.48,
@@ -45252,9 +45252,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "4.83%",
-      "DM": "1.21",
-      "Paridad": "104.10%"
+      "YTM": "5.87%",
+      "DM": "1.20",
+      "Paridad": "102.80%"
     },
     "HJCLO": {
       "Cupon": 3.26,
@@ -45263,9 +45263,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "6.65%",
+      "YTM": "6.80%",
       "DM": "1.93",
-      "Paridad": "101.80%"
+      "Paridad": "101.50%"
     },
     "IRCQO": {
       "Cupon": 1.88,
@@ -45307,9 +45307,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "24.18%",
-      "DM": "5.32",
-      "Paridad": "24.69%"
+      "YTM": "23.80%",
+      "DM": "5.36",
+      "Paridad": "25.20%"
     },
     "MU32O": {
       "Cupon": 9.0,
@@ -45351,9 +45351,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "17.59%",
-      "DM": "4.01",
-      "Paridad": "57.75%"
+      "YTM": "17.92%",
+      "DM": "3.99",
+      "Paridad": "57.00%"
     },
     "PFC3O": {
       "Cupon": 2.9,
@@ -45362,9 +45362,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "5.89%",
+      "YTM": "5.98%",
       "DM": "2.69",
-      "Paridad": "102.00%"
+      "Paridad": "101.75%"
     },
     "RC3CO": {
       "Cupon": 28.52,
@@ -45384,9 +45384,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "6.05%",
+      "YTM": "6.01%",
       "DM": "2.33",
-      "Paridad": "100.05%"
+      "Paridad": "100.15%"
     },
     "SBC3O": {
       "Cupon": 3.28,
@@ -45395,9 +45395,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "7.02%",
-      "DM": "1.25",
-      "Paridad": "101.65%"
+      "YTM": "6.82%",
+      "DM": "1.26",
+      "Paridad": "101.90%"
     },
     "SIC1O": {
       "Cupon": 6.5,
@@ -45417,9 +45417,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "27.00%",
-      "DM": "1.70",
-      "Paridad": "60.50%"
+      "YTM": "27.49%",
+      "DM": "1.69",
+      "Paridad": "60.00%"
     },
     "SNEBO": {
       "Cupon": 3.37,
@@ -45428,9 +45428,9 @@ const jsonData = {
       "Emisor": "Otros",
       "Ley": "Ley ARG",
       "Tipo_Inst": "Otros",
-      "YTM": "20.77%",
-      "DM": "1.82",
-      "Paridad": "67.50%"
+      "YTM": "21.18%",
+      "DM": "1.81",
+      "Paridad": "67.00%"
     },
     "TLCVO": {
       "Cupon": 1.76,
