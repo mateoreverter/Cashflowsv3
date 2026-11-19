@@ -1,306 +1,555 @@
-import os
-import pandas as pd
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Monitor de Cashflows ONs - actualización con una sola base.
+
+Uso normal: py actualizar_datos.py
+Validar sin tocar data.js: py actualizar_datos.py --validar
+Generar sin API (solo excepcional): py actualizar_datos.py --sin-api
+
+Formato salida compatible con el HTML existente: window `const jsonData` en data.js.
+Las cotizaciones en tiempo real siguen viniendo de los endpoints Data912 originales.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
 import json
-import traceback
+import os
+import re
+import sys
+from collections import Counter, defaultdict
+from datetime import date, datetime, timedelta
+from pathlib import Path
+from typing import Any
+
+import pandas as pd
 import requests
 import urllib3
-from datetime import datetime, timedelta
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# Mantenemos la configuración SSL de la implementación anterior para no alterar
+# la conectividad de Data912 en los entornos donde el certificado falla.
+# Si se solucionó en el entorno: DATA912_SSL_VERIFY=1 activa la verificación.
+VERIFY_SSL = os.getenv('DATA912_SSL_VERIFY', '0').strip() == '1'
+if not VERIFY_SSL:
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# =========================================================
-# MATEMÁTICA FINANCIERA (CALCULADORA DE BONOS)
-# =========================================================
+API_URLS = (
+    'https://data912.com/live/arg_corp',
+    'https://data912.com/live/arg_bonds',
+)
+# MAPEO ORIGINAL PRESERVADO: algunos símbolos de mercado difieren del ticker base.
+MAPEO_ESPECIAL = {
+    'BPO27': ['BPJ27D', 'BPO27D', 'BPO2D', 'BPI27D'],
+    'BPO28': ['BPJ28D', 'BPO28D'],
+    'BPOA7': ['BPA7D', 'BPOA7D'],
+    'BPOB7': ['BPB7D', 'BPOB7D'],
+    'BPOC7': ['BPC7D', 'BPOC7D'],
+    'BPOD7': ['BPD7D', 'BPOD7D'],
+    'BPO30': ['BPJ30D', 'BPO30D', 'BPY26D'],
+    'AO29': ['AO29D', 'AO29'],
+    'AL29': ['AL29D'], 'AL30': ['AL30D'],
+    'AL35': ['AL35D'], 'AE38': ['AE38D'], 'GD29': ['GD29D'],
+    'GD30': ['GD30D'], 'GD35': ['GD35D'], 'GD38': ['GD38D'],
+    'GD41': ['GD41D'], 'GD46': ['GD46D'],
+}
+
+RENOMBRES = {
+    'Fecha Cupón': 'Fecha de pago',
+    'VR Cartera': 'VN residual previo',
+    'Renta Efect.': 'Interes c/100 VN',
+    'Amortización % c/100 VN': 'Amortizacion c/100 VN',
+    'Total': 'Flujo total c/100 VN',
+}
+FLUJO_COLUMNAS = ['Ticker', 'Fecha Cupón', 'VR Cartera', 'Renta Efect.',
+                  'Amortización % c/100 VN', 'Obs. Prox. Pago', 'Total']
+UNIVERSO_REQUERIDOS = ['Ticker', 'Ley', 'Emisor', 'Tipo de instrumento']
+
+
+def texto(x: Any) -> str:
+    if x is None or pd.isna(x):
+        return ''
+    return str(x).strip()
+
+
+def ticker(x: Any) -> str:
+    return texto(x).upper()
+
+
+def numero(x: Any, defecto=None):
+    if x is None or pd.isna(x):
+        return defecto
+    if isinstance(x, (int, float)) and not isinstance(x, bool):
+        return float(x)
+    s = str(x).strip().replace(' ', '').replace('\u00a0', '')
+    if not s or s.upper() in {'N/D', '-', 'NAN', 'NONE'}:
+        return defecto
+    s = s.replace('%', '')
+    if ',' in s and '.' in s:
+        s = s.replace('.', '').replace(',', '.') if s.rfind(',') > s.rfind('.') else s.replace(',', '')
+    elif ',' in s:
+        s = s.replace(',', '.')
+    try:
+        return float(s)
+    except ValueError:
+        return defecto
+
+
+def fecha_excel(v: Any):
+    """Fecha segura: datetime, serial Excel, ISO, dd/mm/yyyy, DD-Mon-YY.
+
+    Nunca invierte día y mes de un texto dd/mm/yyyy.
+    """
+    if v is None or pd.isna(v) or str(v).strip() == '':
+        return None
+    if isinstance(v, (datetime, date, pd.Timestamp)):
+        return pd.Timestamp(v).normalize()
+    if isinstance(v, (int, float)) and not isinstance(v, bool):
+        if 20000 <= v <= 100000:
+            return (pd.Timestamp('1899-12-30') + pd.Timedelta(days=float(v))).normalize()
+        return None
+    s = str(v).strip()
+    # Versiones de Excel exportadas como serial en texto
+    if re.fullmatch(r'\d{5}(?:\.0+)?', s):
+        return fecha_excel(float(s))
+    for f in ('%Y-%m-%d', '%Y-%m-%d %H:%M:%S', '%d/%m/%Y', '%d/%m/%y',
+              '%d-%m-%Y', '%d-%m-%y', '%d-%b-%y', '%d-%b-%Y',
+              '%d/%b/%Y', '%d/%b/%y'):
+        try:
+            return pd.Timestamp(datetime.strptime(s, f)).normalize()
+        except ValueError:
+            pass
+    d = pd.to_datetime(s, errors='coerce', dayfirst=True)
+    return d.normalize() if pd.notna(d) else None
+
+
+def tasa_porcentaje(valor: Any) -> str:
+    if isinstance(valor, str) and '%' in valor:
+        return valor.strip()
+    x = numero(valor)
+    if x is None:
+        return 'N/D'
+    return f'{x*100 if abs(x)<1 else x:.2f}%'
+
+
+def paridad_porcentaje(valor: Any) -> str:
+    if isinstance(valor, str) and ('%' in valor or 'USD' in valor.upper()):
+        return valor.strip()
+    x = numero(valor)
+    if x is None:
+        return 'N/D'
+    return f'{x*100 if abs(x)<2 else x:.2f}%'
+
+
+def dm_texto(valor: Any) -> str:
+    x = numero(valor)
+    return f'{x:.2f}' if x is not None else 'N/D'
+
+
 def calcular_tir(precio, flujos_futuros):
-    if not flujos_futuros or precio <= 0 or precio > 200:
+    """Misma matemática del procesador original; solo explicita la convergencia."""
+    if not flujos_futuros or precio is None or precio <= 0 or precio > 200:
         return None
     low, high = -0.99, 10.0
-    for _ in range(100):
-        mid = (low + high) / 2
-        vp = sum([monto / ((1 + mid) ** (dias / 365.0)) for dias, monto in flujos_futuros])
-        if vp > precio: low = mid
-        else: high = mid
-    return mid
+    try:
+        for _ in range(100):
+            mid = (low + high) / 2
+            vp = sum(monto / ((1 + mid) ** (dias / 365.0))
+                     for dias, monto in flujos_futuros)
+            if vp > precio:
+                low = mid
+            else:
+                high = mid
+        return mid
+    except (OverflowError, ZeroDivisionError, ValueError):
+        return None
+
 
 def calcular_dm(tir, precio, flujos_futuros):
-    if not flujos_futuros or precio <= 0 or precio > 200 or tir is None:
+    if not flujos_futuros or precio is None or precio <= 0 or precio > 200 or tir is None:
         return None
-    macaulay = sum([(dias/365.0) * monto / ((1 + tir) ** (dias / 365.0)) for dias, monto in flujos_futuros]) / precio
-    dm = macaulay / (1 + tir)
-    return dm
+    try:
+        macaulay = sum((dias / 365.0) * monto / ((1 + tir) ** (dias / 365.0))
+                       for dias, monto in flujos_futuros) / precio
+        return macaulay / (1 + tir)
+    except (OverflowError, ZeroDivisionError, ValueError):
+        return None
 
-# =========================================================
-# CONEXIÓN A DATA912 CON MAPEO MÚLTIPLE
-# =========================================================
-def obtener_precios_usd_data912(tickers_universo):
-    print("\nConectando a Data912 para descargar precios en vivo...")
-    precios_usd = {}
-    
-    # Diccionario revertido: Solo Bopreales
-    MAPEO_ESPECIAL = {
-        "BPO27": ["BPJ27D", "BPO27D", "BPO2D", "BPI27D"], 
-        "BPO28": ["BPJ28D", "BPO28D"],
-        "BPOA7": ["BPA7D", "BPOA7D"],
-        "BPOB7": ["BPB7D", "BPOB7D"],
-        "BPOC7": ["BPC7D", "BPOC7D"],
-        "BPOD7": ["BPD7D", "BPOD7D"],
-        "BPO30": ["BPJ30D", "BPO30D", "BPY26D"]
-    }
-    
-    urls_api = [
-        "https://data912.com/live/arg_corp",
-        "https://data912.com/live/arg_bonds"
-    ]
-    
+
+def obtener_precios_usd_data912(tickers_universo, getter=requests.get):
+    """Conserva endpoints, campo 'c'/bid, mapeos y denominación USD de Data912."""
+    precios = {}
+    respuesta_ok = 0
+    errores = []
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-        "Accept": "application/json"
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        'Accept': 'application/json',
     }
-    
     raw_items = []
-    for url in urls_api:
+    for url in API_URLS:
         try:
-            print(f" -> Consultando {url}...")
-            response = requests.get(url, headers=headers, timeout=15, verify=False)
-            if response.status_code == 200:
-                raw_items.extend(response.json())
-        except Exception as e:
-            print(f"   [!] Falló la conexión a {url}: {e}")
-            
+            print(f'Consultando Data912: {url}')
+            res = getter(url, headers=headers, timeout=15, verify=VERIFY_SSL)
+            res.raise_for_status()
+            items = res.json()
+            if not isinstance(items, list):
+                raise ValueError('La API no devolvió una lista')
+            raw_items.extend(items)
+            respuesta_ok += 1
+            print(f'  OK: {len(items)} cotizaciones disponibles')
+        except Exception as exc:
+            msg = f'{url}: {str(exc)[:180]}'
+            errores.append(msg)
+            print(f'  AVISO: {msg}')
+
+    inverso = {var.upper(): base for base, variantes in MAPEO_ESPECIAL.items()
+               for var in variantes}
     for item in raw_items:
-        ticker_data = str(item.get('symbol', '')).strip().upper()
-        
-        precio = item.get('c', 0)
-        if precio == 0:
-            precio = item.get('px_bid', 0)
-            
-        if precio > 0:
-            if precio > 200:
-                continue
-                
-            match_especial = False
-            for base_key, variantes in MAPEO_ESPECIAL.items():
-                if ticker_data in variantes:
-                    precios_usd[base_key] = float(precio)
-                    match_especial = True
-                    break
-                    
-            if match_especial:
-                continue
-            
-            if ticker_data.endswith('D'):
-                base_ticker = None
-                if ticker_data in tickers_universo:
-                    base_ticker = ticker_data
-                elif ticker_data[:-1] + 'O' in tickers_universo: 
-                    base_ticker = ticker_data[:-1] + 'O'
-                elif ticker_data[:-1] in tickers_universo: 
-                    base_ticker = ticker_data[:-1]
-                
-                if base_ticker:
-                    precios_usd[base_ticker] = float(precio)
-                        
-    print(f"✓ ¡Éxito! Se rescataron precios limpios en USD para {len(precios_usd)} activos.\n")
-    return precios_usd
+        if not isinstance(item, dict):
+            continue
+        tk_data = ticker(item.get('symbol'))
+        precio = numero(item.get('c'))
+        if precio is None or precio <= 0:
+            precio = numero(item.get('px_bid'))
+        if not precio or not 0 < precio <= 200:
+            continue  # el mismo resguardo anti-precios en pesos del script anterior
+        base = inverso.get(tk_data)
+        if base and base in tickers_universo:
+            precios[base] = precio
+            continue
+        if tk_data.endswith('D'):
+            if tk_data in tickers_universo:
+                precios[tk_data] = precio
+            elif tk_data[:-1] + 'O' in tickers_universo:
+                precios[tk_data[:-1] + 'O'] = precio
+            elif tk_data[:-1] in tickers_universo:
+                precios[tk_data[:-1]] = precio
+    return precios, respuesta_ok, errores
 
-def formatear_fecha(fecha_dt):
-    meses = {1: 'Ene', 2: 'Feb', 3: 'Mar', 4: 'Abr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Ago', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dic'}
-    if pd.isnull(fecha_dt): return ''
-    return f"{fecha_dt.strftime('%d')}-{meses[fecha_dt.month]}-{fecha_dt.strftime('%y')}"
 
-# =========================================================
-# PROCESAMIENTO PRINCIPAL
-# =========================================================
-def main():
-    directorio_base = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
-    
-    archivo_flujos = os.path.join(directorio_base, 'flujos.xlsx')
-    archivo_universo = os.path.join(directorio_base, 'cashflows_ON_USD_ley_ARG_NY_universo_solo_USD_2.xlsx')
-    archivo_salida_js = os.path.join(directorio_base, 'data.js')
+def ubicaciones(base: Path):
+    unificado = base / 'Base_Cashflows.xlsx'
+    if unificado.is_file():
+        return unificado, unificado, True
+    flujos = base / 'flujos.xlsx'
+    universo = base / 'cashflows_ON_USD_ley_ARG_NY_universo_solo_USD_2.xlsx'
+    if flujos.is_file() and universo.is_file():
+        print('Modo compatible: se encontraron los 2 Excel antiguos.')
+        return flujos, universo, False
+    raise FileNotFoundError(
+        'No se encontró Base_Cashflows.xlsx ni el par de archivos originales. '
+        'Colocalos con actualizar_datos.py.'
+    )
 
-    print("Cargando archivos Excel...")
-    df_flujos = pd.read_excel(archivo_flujos)
-    
-    xls = pd.ExcelFile(archivo_universo)
-    hoja_universo = 'Universo' if 'Universo' in xls.sheet_names else xls.sheet_names[0]
-    df_universo = pd.read_excel(archivo_universo, sheet_name=hoja_universo)
 
-    tickers_universo_set = set(df_universo['Ticker'].dropna().astype(str).str.strip().str.upper())
-    
-    print("Mapeando flujos futuros para calcular TIR...")
-    hoy = datetime.now()
-    flujos_futuros_dict = {}
-    
-    df_flujos['Fecha_DT_temp'] = pd.to_datetime(df_flujos['Fecha Cupón'], errors='coerce')
-    
-    for _, row in df_flujos.iterrows():
-        if pd.isna(row['Ticker']) or pd.isna(row['Fecha_DT_temp']): continue
-        
-        tk = str(row['Ticker']).strip().upper()
-        fecha_pago = row['Fecha_DT_temp']
-        monto = float(row.get('Total', 0.0)) if pd.notnull(row.get('Total')) else 0.0
-        
-        if fecha_pago >= hoy and monto > 0:
-            dias = (fecha_pago - hoy).days
-            if tk not in flujos_futuros_dict: flujos_futuros_dict[tk] = []
-            flujos_futuros_dict[tk].append((dias, monto))
+def leer_datos(base: Path):
+    ruta_f, ruta_u, combinado = ubicaciones(base)
+    df_f = pd.read_excel(ruta_f, sheet_name='Flujos' if combinado else 0)
+    df_u = pd.read_excel(ruta_u, sheet_name='Universo' if combinado else 'Universo')
+    for key in FLUJO_COLUMNAS:
+        if key not in df_f.columns:
+            raise ValueError(f'Falta columna de Flujos: {key}')
+    for key in UNIVERSO_REQUERIDOS:
+        if key not in df_u.columns:
+            raise ValueError(f'Falta columna de Universo: {key}')
+    df_f = df_f.copy()
+    df_u = df_u.copy()
+    df_f['Ticker'] = df_f['Ticker'].map(ticker)
+    df_u['Ticker'] = df_u['Ticker'].map(ticker)
+    df_f = df_f[df_f['Ticker'] != ''].copy()
+    df_u = df_u[df_u['Ticker'] != ''].copy()
+    return df_f, df_u, combinado
 
-    flujos_año_actual = df_flujos[df_flujos['Fecha_DT_temp'].dt.year == hoy.year]
-    cupones_calculados = flujos_año_actual.groupby('Ticker')['Renta Efect.'].sum().to_dict()
-    vencimientos_calculados = df_flujos.groupby('Ticker')['Fecha_DT_temp'].max().to_dict()
 
-    precios_usd = obtener_precios_usd_data912(tickers_universo_set.union(set(df_flujos['Ticker'].dropna().str.strip().str.upper())))
+def validar_flujos(df_f):
+    validos = []
+    fechas_invalidas = []
+    importes_invalidos = []
+    inconsistencias = []
+    duplicados = []
+    claves = Counter()
+    for num, row in enumerate(df_f.to_dict('records'), start=2):
+        tk = ticker(row.get('Ticker'))
+        f = fecha_excel(row.get('Fecha Cupón'))
+        if f is None:
+            fechas_invalidas.append((tk, num, texto(row.get('Fecha Cupón'))))
+            continue
+        conv = {}
+        for col in ('VR Cartera', 'Renta Efect.', 'Amortización % c/100 VN', 'Total'):
+            x = numero(row.get(col))
+            if x is None:
+                importes_invalidos.append((tk, num, col, texto(row.get(col))))
+            conv[col] = x
+        if any(v is None for v in conv.values()):
+            continue
+        if abs(conv['Renta Efect.'] + conv['Amortización % c/100 VN'] - conv['Total']) > 0.06:
+            inconsistencias.append((tk, num, f.strftime('%d/%m/%Y')))
+        claves[tk, f.strftime('%Y-%m-%d')] += 1
+        validos.append({
+            'Ticker': tk,
+            'Fecha de pago': f.strftime('%d/%m/%Y'),
+            'VN residual previo': conv['VR Cartera'],
+            'Interes c/100 VN': conv['Renta Efect.'],
+            'Amortizacion c/100 VN': conv['Amortización % c/100 VN'],
+            'Obs. Prox. Pago': texto(row.get('Obs. Prox. Pago')),
+            'Flujo total c/100 VN': conv['Total'],
+            'Fecha_ISO': f.strftime('%Y-%m-%d'),
+            'Año_Mes': f.strftime('%Y-%m'),
+            'Mes_Num': f.month,
+            '_fecha': f,
+        })
+    duplicados = [(k[0], k[1], v) for k,v in claves.items() if v > 1]
+    return validos, fechas_invalidas, importes_invalidos, inconsistencias, duplicados
 
-    print("Calculando Métricas y armando Universo...")
+
+def cargar_universo(df_u):
+    uni = {}
+    duplicados = []
+    excluidos = set()
+    monedas_bloqueadas = set()
+    por_verificar = set()
+    for row in df_u.to_dict('records'):
+        tk = ticker(row.get('Ticker'))
+        include = texto(row.get('Incluir Dashboard', 'SI')).upper()
+        if tk in uni or tk in excluidos:
+            duplicados.append(tk)
+            continue  # PRIMER registro gana: no pisar la ficha por un duplicado posterior
+        if include not in {'SI', 'SÍ', 'S', '1', 'TRUE', 'YES', 'X', ''}:
+            excluidos.add(tk)
+            continue
+        if 'Moneda Pago' in df_u.columns:
+            moneda = texto(row.get('Moneda Pago')).upper()
+            # Reincorporaciones antiguas sin validar: excepcionalmente no borrarlas
+            # de golpe; permanecen visibles y figuran en el reporte a auditar.
+            recuperado = texto(row.get('Origen ficha')).startswith('Recuperado de data.js')
+            if moneda not in {'USD', 'US$', 'DOLARES', 'DÓLARES'}:
+                if recuperado:
+                    por_verificar.add(tk)
+                else:
+                    excluidos.add(tk)
+                    monedas_bloqueadas.add(tk)
+                    continue
+        uni[tk] = row
+    return uni, duplicados, excluidos, monedas_bloqueadas, por_verificar
+
+
+def construir(base: Path, validar: bool, sin_api: bool, permite_sin_api: bool):
+    print('Cargando Excel maestro...')
+    df_f, df_u, combinado = leer_datos(base)
+    catalogo, uni_duplicados, excluidos, monedas_bloqueadas, por_verificar = cargar_universo(df_u)
+    flujos, fechas_malas, numeros_malos, totales_distintos, fechas_duplicadas = validar_flujos(df_f)
+    por_ticker = defaultdict(list)
+    for f in flujos:
+        por_ticker[f['Ticker']].append(f)
+    pendientes = sorted(set(por_ticker) - set(catalogo) - excluidos)
+    sin_flujo = sorted(set(catalogo) - set(por_ticker))
+
+    print(f'  Base: {"unificada" if combinado else "legacy 2 Excel"}')
+    print(f'  Flujos válidos: {len(flujos)} / {len(df_f)}')
+    print(f'  Activos incluidos: {len(catalogo)} / con pagos: {len(set(catalogo)&set(por_ticker))}')
+    print(f'  Activos de Flujos pendientes de catalogar: {len(pendientes)}')
+    print(f'  Activos incluidos sin Flujos: {len(sin_flujo)}')
+    print(f'  Duplicados de ticker en Universo: {len(uni_duplicados)}')
+    print(f'  Moneda pendiente de revisar en catálogo anterior: {len(por_verificar)}')
+    print(f'  Fechas inválidas: {len(fechas_malas)}; importes inválidos: {len(numeros_malos)}')
+    print(f'  Fechas repetidas ticker/día: {len(fechas_duplicadas)} (sin eliminar)')
+
+    reporte = []
+    for tk in pendientes:
+        reporte.append([tk, 'PENDIENTE', len(por_ticker[tk]), 'Existe en Flujos pero falta ficha en Universo (no se publica)'])
+    for tk in sin_flujo:
+        reporte.append([tk, 'SIN FLUJOS', 0, 'Ficha incluida sin cronograma de pagos'])
+    for tk in sorted(monedas_bloqueadas):
+        reporte.append([tk, 'MONEDA NO CONFIRMADA', len(por_ticker.get(tk, [])),
+                        'No se publica: confirmar pago en USD en Universo'])
+    for tk in sorted(por_verificar):
+        reporte.append([tk, 'FICHA LEGACY A AUDITAR', len(por_ticker.get(tk, [])),
+                        'Se conservó del dashboard previo; revisar ley, moneda y emisor'])
+    for tk in uni_duplicados:
+        reporte.append([tk, 'UNIVERSO DUPLICADO', len(por_ticker.get(tk, [])), 'Se usa la primera ficha; revisar la duplicada'])
+    for tk, f, n in fechas_duplicadas:
+        reporte.append([tk, 'FECHA REPETIDA', n, f'{f}: se mantienen las {n} filas, sin borrar nada'])
+    for tk, r, val in fechas_malas:
+        reporte.append([tk, 'FECHA INVALIDA', 0, f'Fila Excel {r}: {val}'])
+    for tk, r, col, val in numeros_malos:
+        reporte.append([tk, 'NUMERO INVALIDO', 0, f'Fila Excel {r} / {col}: {val}'])
+    for tk, r, fecha in totales_distintos:
+        reporte.append([tk, 'TOTAL A REVISAR', 1, f'Fila Excel {r} / {fecha}: total no coincide con renta+amortización'])
+    with (base / 'reporte_actualizacion.csv').open('w', encoding='utf-8-sig', newline='') as fh:
+        writer = csv.writer(fh, delimiter=';')
+        writer.writerow(['Ticker', 'Estado', 'Filas', 'Detalle'])
+        writer.writerows(reporte)
+
+    if fechas_malas or numeros_malos:
+        raise ValueError('Hay fechas o importes ilegibles en Flujos; ver reporte_actualizacion.csv. Se protegió data.js.')
+    if validar:
+        print('Control completado; data.js y data.json no fueron modificados.')
+        return {'pendientes': len(pendientes), 'sin_flujos': len(sin_flujo)}
+
+    # Todo el procesamiento de flujos es independiente de la cotización actual:
+    # que falle Data912 no debe borrar cronogramas ni inventar precios.
+    precios, endpoints_ok, errores = ({}, 0, []) if sin_api else obtener_precios_usd_data912(set(catalogo))
+    if not sin_api and (not endpoints_ok or len(precios) == 0) and not permite_sin_api:
+        raise RuntimeError('Data912 no entregó precios utilizables: data.js anterior preservado. '
+                           'Usar --sin-api solo si necesitás generar la base sin cotizaciones actuales.')
+
+    hoy = pd.Timestamp(datetime.now().date())
+    flujos_futuros = defaultdict(list)
+    for f in flujos:
+        if f['Ticker'] not in catalogo:
+            continue
+        dias = (f['_fecha'] - hoy).days
+        if dias >= 0 and f['Flujo total c/100 VN'] > 0:
+            flujos_futuros[f['Ticker']].append((dias, f['Flujo total c/100 VN']))
+
     universo_dict = {}
-    mapa_leyes = {}
-
-    def procesar_activo(tk, row=None):
-        if row is not None:
-            venc_str = str(row.get('Fecha Vencimiento', '')) if pd.notnull(row.get('Fecha Vencimiento')) else ''
-            emisor_str = str(row.get('Emisor', '')) if pd.notnull(row.get('Emisor')) else ''
-            ley_str = str(row.get('Ley', '')) if pd.notnull(row.get('Ley')) else 'Ley ARG'
-            tipo_inst = str(row.get('Tipo de instrumento', 'ON')).strip() if pd.notnull(row.get('Tipo de instrumento')) else 'ON'
-            cupon_excel = row.get('Tasa Cupon Vigente %', 0.0)
-            
-            ytm_excel = str(row.get('YTM', 'N/D')) if pd.notnull(row.get('YTM')) else 'N/D'
-            dm_excel = str(row.get('DM', 'N/D')) if pd.notnull(row.get('DM')) else 'N/D'
-            paridad_excel = str(row.get('Paridad', 'N/D')) if pd.notnull(row.get('Paridad')) else 'N/D'
-        else:
-            fecha_venc_dt = vencimientos_calculados.get(tk)
-            venc_str = formatear_fecha(fecha_venc_dt)
-            emisor_str = 'Otros'
-            ley_str = 'Ley ARG'
-            tipo_inst = 'Otros'
-            cupon_excel = 0.0
-            ytm_excel, dm_excel, paridad_excel = 'N/D', 'N/D', 'N/D'
-
-        if pd.isna(cupon_excel) or cupon_excel == 0.0:
-            cupon_excel = cupones_calculados.get(tk, 0.0)
-            
-        mapa_leyes[tk] = ley_str
-        
-        venc_year = None
-        try:
-            venc_dt = pd.to_datetime(venc_str, errors='coerce')
-            if pd.notnull(venc_dt): venc_year = int(venc_dt.year)
-        except: pass
-
-        if tk in precios_usd and tk in flujos_futuros_dict:
-            precio_hoy = precios_usd[tk]
-            flujos = flujos_futuros_dict[tk]
-            
-            tir_math = calcular_tir(precio_hoy, flujos)
-            dm_math = calcular_dm(tir_math, precio_hoy, flujos)
-            
-            ytm_val = f"{tir_math*100:.2f}%" if tir_math is not None else ytm_excel
-            dm_val = f"{dm_math:.2f}" if dm_math is not None else dm_excel
-            paridad_val = f"{precio_hoy:.2f}%" 
-            
-        else:
-            ytm_val = ytm_excel
-            dm_val = dm_excel
-            paridad_val = paridad_excel
-
-            if ytm_val != 'N/D' and '%' not in ytm_val:
-                try: ytm_val = f"{float(ytm_val)*100:.2f}%" if float(ytm_val) < 1 else f"{float(ytm_val):.2f}%"
-                except: pass
-            if paridad_val != 'N/D' and '%' not in paridad_val and 'USD' not in paridad_val:
-                try: paridad_val = f"{float(paridad_val)*100:.2f}%" if float(paridad_val) < 2 else f"{float(paridad_val):.2f}%"
-                except: pass
-
+    for tk, row in catalogo.items():
+        venc = fecha_excel(row.get('Fecha Vencimiento'))
+        if venc is None and por_ticker.get(tk):
+            venc = max(f['_fecha'] for f in por_ticker[tk])
+        cupon = numero(row.get('Tasa Cupon Vigente %'))
+        # No convertir automáticamente pagos parciales del año en una tasa contractual.
+        if cupon is None:
+            cupon = 0.0  # sin dato: mantener compatibilidad de tipos con el HTML
+        ley = texto(row.get('Ley')) or 'Sin verificar'
+        emisor = texto(row.get('Emisor')) or 'Emisor a verificar'
+        tipo = texto(row.get('Tipo de instrumento')) or 'Sin clasificar'
+        ytm = tasa_porcentaje(row.get('YTM'))
+        dm = dm_texto(row.get('DM'))
+        paridad = paridad_porcentaje(row.get('Paridad'))
+        if tk in precios and tk in flujos_futuros:
+            precio = precios[tk]
+            tir_math = calcular_tir(precio, flujos_futuros[tk])
+            dm_math = calcular_dm(tir_math, precio, flujos_futuros[tk])
+            if tir_math is not None:
+                ytm = f'{tir_math * 100:.2f}%'
+            if dm_math is not None:
+                dm = f'{dm_math:.2f}'
+            # El endpoint original entrega cotizaciones USD; preservamos escala.
+            paridad = f'{precio:.2f}%'
         universo_dict[tk] = {
-            'Cupon': float(cupon_excel),
-            'Vencimiento': venc_str if venc_str != 'nan' else '',
-            'VencAño': venc_year,
-            'Emisor': emisor_str if emisor_str != 'nan' else '',
-            'Ley': ley_str,
-            'Tipo_Inst': tipo_inst,
-            'YTM': ytm_val,
-            'DM': dm_val,
-            'Paridad': paridad_val
+            'Cupon': float(cupon),
+            'Vencimiento': venc.strftime('%d/%m/%Y') if venc is not None else '',
+            'VencAño': int(venc.year) if venc is not None else None,
+            'Emisor': emisor,
+            'Ley': ley,
+            'Tipo_Inst': tipo,
+            'YTM': ytm,
+            'DM': dm,
+            'Paridad': paridad,
         }
 
-    for _, row in df_universo.iterrows():
-        if pd.notna(row.get('Ticker')):
-            procesar_activo(str(row['Ticker']).strip().upper(), row)
-
-    for tk in df_flujos['Ticker'].dropna().unique():
-        tk = str(tk).strip().upper()
-        if tk not in universo_dict:
-            procesar_activo(tk)
-
-    print("\nEjecutando limpieza de bonos en pesos y basura...")
-    prefijos_basura = ('TX', 'TC', 'T2', 'T3', 'T4', 'T5', 'T6', 'DI', 'PR', 'PA', 'TV', 'TO', 'CU', 'NO')
-    tickers_a_eliminar = []
-    
-    for tk, data in universo_dict.items():
-        if tk.startswith(prefijos_basura):
-            tickers_a_eliminar.append(tk)
+    # Mantenemos íntegros los importes, incluso duplicados históricos a auditar.
+    cashflows = []
+    for f in flujos:
+        if f['Ticker'] not in universo_dict:
             continue
-            
-        if data['Emisor'] == 'Otros' and data['Paridad'] == 'N/D':
-            tickers_a_eliminar.append(tk)
+        item = {k: v for k, v in f.items() if k != '_fecha'}
+        item['Ley'] = universo_dict[f['Ticker']]['Ley']
+        cashflows.append(item)
+    cashflows.sort(key=lambda f: (f['Ticker'], f['Fecha_ISO']))
 
-    for tk in tickers_a_eliminar:
-        if tk in universo_dict:
-            del universo_dict[tk]
-            
-    print(f"-> Se eliminaron {len(tickers_a_eliminar)} instrumentos que no corresponden a la curva Hard Dollar.\n")
+    if sin_api:
+        fuente = 'Referencias del Excel (sin consulta a Data912)'
+        api_estado = 'sin_consulta'
+    elif endpoints_ok == 2:
+        fuente = 'Data912 API (precios actuales)'
+        api_estado = 'ok'
+    elif endpoints_ok == 1:
+        fuente = 'Data912 API (respuesta parcial: 1 de 2 endpoints)'
+        api_estado = 'parcial'
+    else:
+        fuente = 'Referencias del Excel; Data912 no respondió'
+        api_estado = 'sin_datos'
 
-    print("Formateando hoja de flujos...")
-    df_flujos = df_flujos.drop(columns=['Fecha_DT_temp'], errors='ignore')
-
-    rename_map = {
-        'Fecha Cupón': 'Fecha de pago',
-        'VR Cartera': 'VN residual previo',
-        'Renta Efect.': 'Interes c/100 VN',
-        'Amortización % c/100 VN': 'Amortizacion c/100 VN',
-        'Total': 'Flujo total c/100 VN'
+    datos = {
+        'metadata': {
+            'ultima_actualizacion': datetime.now().strftime('%d/%m/%Y %H:%M:%S'),
+            'total_activos': len(universo_dict),
+            'fuente': fuente,
+            'api_estado': api_estado,
+            'precios_api': len(precios),
+            'endpoints_api_ok': endpoints_ok,
+            'activos_con_flujos': len(set(catalogo) & set(por_ticker)),
+            'total_flujos': len(cashflows),
+            'activos_pendientes_revision': len(pendientes),
+            'activos_sin_flujos': len(sin_flujo),
+        },
+        'cashflows': cashflows,
+        'universo': universo_dict,
     }
-    df_cf_clean = df_flujos.rename(columns=rename_map)
-    df_cf_clean = df_cf_clean.dropna(subset=['Ticker'])
-    df_cf_clean['Ticker'] = df_cf_clean['Ticker'].astype(str).str.strip().str.upper()
-    
-    df_cf_clean = df_cf_clean[df_cf_clean['Ticker'].isin(universo_dict.keys())]
-    
-    if 'Ley' not in df_cf_clean.columns:
-        df_cf_clean['Ley'] = df_cf_clean['Ticker'].map(mapa_leyes).fillna('Ley ARG')
+    # Validar serialización antes de escribir. Usar archivos temporales evita
+    # dejar data.js truncado si ocurre un error al generar JSON.
+    contenido = json.dumps(datos, ensure_ascii=False, separators=(',', ':'), allow_nan=False)
+    js = 'const jsonData = ' + contenido + ';\n'
+    temp_js = base / 'data.js.tmp'
+    temp_json = base / 'data.json.tmp'
+    temp_js.write_text(js, encoding='utf-8')
+    temp_json.write_text(contenido + '\n', encoding='utf-8')
+    os.replace(temp_js, base / 'data.js')
+    os.replace(temp_json, base / 'data.json')
+    print(f'OK: data.js y data.json actualizados. {len(universo_dict)} activos, {len(cashflows)} pagos.')
+    print(f'Data912: {api_estado} / precios: {len(precios)} / reporte_actualizacion.csv generado')
+    if errores:
+        print('Avisos de Data912: ' + '; '.join(errores))
+    return datos['metadata']
 
-    if 'Fecha de pago' in df_cf_clean.columns:
-        df_cf_clean['Fecha_DT'] = pd.to_datetime(df_cf_clean['Fecha de pago'], errors='coerce')
-        df_cf_clean['Fecha de pago'] = df_cf_clean['Fecha_DT'].dt.strftime('%d/%m/%Y')
-        df_cf_clean['Fecha_ISO'] = df_cf_clean['Fecha_DT'].dt.strftime('%Y-%m-%d')
-        df_cf_clean['Año_Mes'] = df_cf_clean['Fecha_DT'].dt.strftime('%Y-%m')
-        df_cf_clean['Mes_Num'] = df_cf_clean['Fecha_DT'].dt.month
-        df_cf_clean = df_cf_clean.drop(columns=['Fecha_DT'])
 
-    df_cf_clean = df_cf_clean.fillna('')
+def pausar_si_interactivo():
+    """Mantiene abierta la consola de Windows al abrir el .py con doble clic.
 
-    hora_arg = datetime.utcnow() - timedelta(hours=3)
-    metadata = {
-        "ultima_actualizacion": hora_arg.strftime("%d/%m/%Y %H:%M:%S"),
-        "total_activos": len(universo_dict),
-        "fuente": "Data912 API (vía GitHub Actions)"
-    }
+    No bloquea ejecuciones automáticas, GitHub Actions, tareas sin consola,
+    ni procesos que importen este módulo (p. ej. prueba_compatibilidad.py).
+    """
+    if not sys.stdin or not sys.stdin.isatty():
+        return
+    if os.environ.get('CI', '').lower() in ('1', 'true', 'yes'):
+        return
+    if os.environ.get('GITHUB_ACTIONS', '').lower() == 'true':
+        return
+    try:
+        input('\nPresioná ENTER para cerrar esta ventana...')
+    except (EOFError, KeyboardInterrupt):
+        pass
 
-    output_data = {
-        "metadata": metadata,
-        "cashflows": df_cf_clean.to_dict(orient='records'),
-        "universo": universo_dict
-    }
 
-    print(f"Guardando data.js en: {archivo_salida_js}...")
-    with open(archivo_salida_js, "w", encoding="utf-8") as f:
-        f.write("const jsonData = ")
-        json.dump(output_data, f, ensure_ascii=False, indent=2)
-        f.write(";")
+def main(argv=None):
+    parser = argparse.ArgumentParser(description='Actualizar dashboard Cashflows sin perder la API Data912')
+    parser.add_argument('--validar', action='store_true', help='Controlar Excel y generar reporte, sin tocar los datos JS')
+    parser.add_argument('--sin-api', action='store_true', help='Generar sin precios API: solo para contingencias')
+    parser.add_argument('--permitir-sin-api', action='store_true', help='No bloquear si los 2 endpoints fallan')
+    parser.add_argument('--directorio', type=Path, default=Path(__file__).resolve().parent)
+    parser.add_argument('--no-pausar', action='store_true', help='No esperar ENTER; útil para .bat y automatizaciones')
+    args = parser.parse_args(argv)
+    codigo = 0
+    try:
+        resumen = construir(args.directorio.resolve(), args.validar, args.sin_api, args.permitir_sin_api)
+        print('\n' + '=' * 58)
+        if args.validar:
+            print('CONTROL COMPLETADO CORRECTAMENTE - no se modificaron los datos JS')
+            print(f'Pendientes de catalogar: {resumen.get("pendientes", 0)}')
+            print(f'Activos incluidos sin flujos: {resumen.get("sin_flujos", 0)}')
+        else:
+            print('ACTUALIZACION FINALIZADA CORRECTAMENTE')
+            print(f'Activos en dashboard: {resumen["total_activos"]}')
+            print(f'Activos con pagos: {resumen["activos_con_flujos"]}')
+            print(f'Registros de flujos: {resumen["total_flujos"]}')
+            print(f'Data912: {resumen["api_estado"]} - {resumen["precios_api"]} precios')
+            print(f'Endpoints con respuesta: {resumen["endpoints_api_ok"]} de 2')
+            print(f'Ultima actualizacion: {resumen["ultima_actualizacion"]}')
+            print('Archivos generados: data.js, data.json y reporte_actualizacion.csv')
+        print('=' * 58)
+    except Exception as exc:
+        codigo = 1
+        print('\n' + '=' * 58, file=sys.stderr)
+        print(f'ERROR: {exc}', file=sys.stderr)
+        print('No se pudo completar la actualizacion. Revisá los mensajes anteriores.', file=sys.stderr)
+        print('=' * 58, file=sys.stderr)
+    finally:
+        if not args.no_pausar:
+            pausar_si_interactivo()
+    return codigo
 
-    print("¡Éxito total! Archivo JS generado listo para usar de forma local.")
 
 if __name__ == '__main__':
-    try:
-        main()
-    except Exception as e:
-        print("\n--- Ocurrió un ERROR ---")
-        traceback.print_exc()
+    sys.exit(main())

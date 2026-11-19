@@ -41,7 +41,7 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Conectado</span>
+              <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Base cargada</span>
             </button>
           </div>
           <p class="text-xs text-slate-400">Obligaciones Negociables en USD (Ley ARG & Ley NY)</p>
@@ -342,7 +342,7 @@
         </div>
         <div>
           <h3 class="text-lg font-bold text-white">Estado del Servidor</h3>
-          <p class="text-xs text-emerald-400 font-semibold">Sistema Online Integrado</p>
+          <p class="text-xs text-emerald-400 font-semibold">Datos de la última actualización</p>
         </div>
       </div>
       <div class="space-y-3 text-sm">
@@ -358,9 +358,13 @@
           <span class="text-slate-400"><i class="fa-solid fa-file-invoice-dollar w-4 mr-1"></i>Total activos:</span>
           <span id="modalTotalAssets" class="font-bold text-emerald-400">0</span>
         </div>
+        <div class="flex justify-between items-center bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+          <span class="text-slate-400"><i class="fa-solid fa-list-check w-4 mr-1"></i>Activos para revisar:</span>
+          <span id="modalPendientes" class="font-bold text-amber-400">0</span>
+        </div>
       </div>
       <div class="mt-5 pt-4 border-t border-slate-800 text-center">
-        <p class="text-[10px] text-slate-500 italic">Actualización automática (GitHub Actions) Lunes a Viernes a las 11:00, 15:00 y 17:00 hs.</p>
+        <p class="text-[10px] text-slate-500 italic">La cotización API se actualiza al ejecutar el procesador. El cronograma se obtiene del Excel maestro.</p>
       </div>
     </div>
   </div>
@@ -410,6 +414,7 @@
       document.getElementById('modalLastUpdate').innerText = systemMetaData.ultima_actualizacion || 'N/D';
       document.getElementById('modalTotalAssets').innerText = systemMetaData.total_activos || Object.keys(universoData).length;
       document.getElementById('modalFuente').innerText = systemMetaData.fuente || 'Local';
+      document.getElementById('modalPendientes').innerText = systemMetaData.activos_pendientes_revision ?? 'N/D';
       document.getElementById('statusModal').classList.remove('hidden');
     }
     
