@@ -5,30 +5,62 @@ on:
     - cron: '0 14,18,20 * * 1-5'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+# Evita que dos actualizaciones automáticas publiquen a la vez.
+concurrency:
+  group: cashflows-data912-main
+  cancel-in-progress: false
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 1. Clonar el repositorio
-      uses: actions/checkout@v4
+      - name: 1. Clonar el repositorio
+        uses: actions/checkout@v4
 
-    - name: 2. Configurar Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: 2. Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-    - name: 3. Instalar librerías matemáticas
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: 3. Instalar librerías
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: 4. Ejecutar el script (Data912)
-      run: python actualizar_datos.py
+      - name: 4. Actualizar Data912 y publicar sin pisar cambios
+        shell: bash
+        run: |
+          set -e
+          git config user.name "GitHub Action Bot"
+          git config user.email "action@github.com"
 
-    - name: 5. Guardar el nuevo data.js en el repositorio
-      run: |
-        git config --global user.name 'GitHub Action Bot'
-        git config --global user.email 'action@github.com'
-        git add data.js
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Actualización automática de precios de mercado" && git push)
+          for intento in 1 2 3 4; do
+            echo "Intento ${intento}/4: obteniendo el último estado de main..."
+            git fetch origin main
+            git reset --hard FETCH_HEAD
+
+            # Reprocesa el Excel y consulta Data912 contra la versión más reciente.
+            python actualizar_datos.py
+            git add data.js
+
+            if git diff --cached --quiet; then
+              echo "No hay cambios en data.js para publicar."
+              exit 0
+            fi
+
+            git commit -m "🤖 Actualización automática de precios de mercado"
+            if git push origin HEAD:main; then
+              echo "Actualización publicada correctamente."
+              exit 0
+            fi
+
+            echo "Otro cambio llegó a main antes del push; se reintentará sin forzar nada."
+            sleep $((intento * 3))
+          done
+
+          echo "No se pudo publicar luego de cuatro intentos."
+          exit 1
